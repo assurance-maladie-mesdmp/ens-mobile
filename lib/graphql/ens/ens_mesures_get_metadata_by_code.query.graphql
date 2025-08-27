@@ -1,0 +1,7 @@
+# import './ens_mesures_metadata_fields.fragment.graphql'
+
+query get_metadata_by_code($code: String!) {
+    measureMetaData(code: $code) {
+        ...metadataFields
+    }
+}

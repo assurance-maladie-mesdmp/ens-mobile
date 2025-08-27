@@ -1,0 +1,5 @@
+mutation set_preference_notification($changePreferenceNotificationInput: ChangePreferenceNotificationInput!) {
+    setPreferenceNotification(changePreferenceNotificationInput: $changePreferenceNotificationInput){
+        success
+    }
+}

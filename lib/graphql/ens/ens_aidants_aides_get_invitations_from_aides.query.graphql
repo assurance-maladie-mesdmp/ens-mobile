@@ -1,0 +1,12 @@
+# import './ens_aidants_aides_acteur.fragment.graphql'
+
+query get_invitations_from_aides {
+    delegationInvitations(filter: {direction: INCOMING, type: CAREGIVING, status: PENDING}){
+        id
+        delegator {
+            ...acteur
+        }
+        creationDate
+        expirationDate
+    }
+}

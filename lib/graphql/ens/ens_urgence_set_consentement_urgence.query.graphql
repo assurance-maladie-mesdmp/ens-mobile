@@ -1,0 +1,31 @@
+mutation set_consentement_urgence(
+    $newValueETREAT: Boolean!, $consentementIdETREAT: String!,
+    $newValueBTG: Boolean!, $consentementIdBTG: String!,
+    $newValueMASKED: Boolean!, $consentementIdMASKED: String!,
+    $patientId: String!
+){
+    setETREAT: setDmpConsentement(
+        newValue: $newValueETREAT,
+        purpose: "ETREAT",
+        consentementId: $consentementIdETREAT,
+        patientId: $patientId
+    ){
+        success
+    }
+    setBTG: setDmpConsentement(
+        newValue: $newValueBTG,
+        purpose: "BTG",
+        consentementId: $consentementIdBTG,
+        patientId: $patientId
+    ){
+        success
+    }
+    setMASKED: setDmpConsentement(
+        newValue: $newValueMASKED,
+        purpose: "MASKED",
+        consentementId: $consentementIdMASKED,
+        patientId: $patientId
+    ){
+        success
+    }
+}

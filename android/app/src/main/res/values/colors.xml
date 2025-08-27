@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#E11A81</color>
+    <color name="blue">#0C75F6</color>
+    <color name="error">#FFC74E5A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="polygonViewCircleStrokeColor">#0C75F6</color>
+    <color name="polygonViewCircleBackground">#9AFFFFFF</color>
+    <color name="primary">#0C419A</color>
+    <color name="text">#4E5C7F</color>
+    <color name="text_title">#262939</color>
+</resources>

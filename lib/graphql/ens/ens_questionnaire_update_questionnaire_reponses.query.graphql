@@ -1,0 +1,5 @@
+mutation update_questionnaire_reponses($healthQuizResponse: HealthQuizResponseInput!, $responseId: String!) {
+    updateHealthQuizResponses(responseId: $responseId, healthQuizResponseInput: $healthQuizResponse) {
+        success
+    }
+}

@@ -1,0 +1,53 @@
+fragment traitement on TreatmentModel {
+    id
+    name
+    comment
+    startDay
+    startMonth
+    startYear
+    endDay
+    endMonth
+    endYear
+    dosage
+    linkedDiseases {
+        ...maladieLie
+    }
+    linkedAllergies {
+        ...allergieLie
+    }
+}
+
+fragment maladieLie on LinkedDiseaseModel {
+    linkId
+    disease {
+        ...maladieSansTraitementLie
+    }
+}
+
+fragment allergieLie on LinkedAllergyModel {
+    linkId
+    allergy {
+        id
+        name
+        comment
+    }
+}
+
+fragment maladieSansTraitementLie on DiseaseWithoutLinkTreatmentModel {
+    id
+    name
+    comment
+    startDay
+    startMonth
+    startYear
+    endDay
+    endMonth
+    endYear
+    linkedDocuments {
+        linkId
+        document {
+            id
+            title
+        }
+    }
+}

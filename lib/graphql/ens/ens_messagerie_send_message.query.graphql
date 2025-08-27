@@ -1,0 +1,14 @@
+# import './ens_messagerie_message_response.fragment.graphql'
+# import './ens_messagerie_mailbox.fragment.graphql'
+
+mutation send_message($input: SendResponseInput!) {
+    sendMessage(sendResponseInput: $input) {
+        conversationId
+        mailBoxModel {
+            ...mailBox
+        }
+        messageResponseModel {
+            ...messageResponse
+        }
+    }
+}

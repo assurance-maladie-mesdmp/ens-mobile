@@ -1,0 +1,18 @@
+fragment questionnaire on HealthQuizStatusModel {
+    response {
+        id
+        version
+        status
+        lastUpdateUserDate
+        lastUpdateUserDateFormatted
+        questionToDisplay
+    }
+    code
+    lastVersion
+    ageMin
+    ageMax
+    title
+    availableLimitDate
+    availableLimitDateFormatted
+    isEditable
+}

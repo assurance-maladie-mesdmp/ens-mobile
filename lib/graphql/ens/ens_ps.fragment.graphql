@@ -1,0 +1,19 @@
+# import './ens_es.fragment.graphql'
+
+fragment ps on HealthProfessionalModel {
+    nationalId,
+    healthProfessionalId,
+    declaredReferrer,
+    incorrectReferrer,
+    firstName,
+    lastName,
+    exercices {
+        profession,
+        specialities,
+    },
+    adresses {
+        ...adresse_ps_es
+    },
+    role
+    active
+}

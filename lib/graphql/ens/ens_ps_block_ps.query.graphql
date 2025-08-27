@@ -1,0 +1,5 @@
+mutation block_ps($patientId: String! $rpps: String!) {
+    blockPS(patientId: $patientId, rppsId: $rpps) {
+        success
+    }
+}

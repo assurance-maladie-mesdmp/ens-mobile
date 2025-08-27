@@ -1,0 +1,31 @@
+fragment service on Service {
+    id
+    name
+    description
+    editor {
+        name
+    }
+    logo {
+        file
+        type
+    }
+    finalities {
+        icone
+        libelle
+        description
+    }
+    codesRegions
+    thematics
+    status
+    cguUrl
+}
+
+fragment region on Region {
+    code
+    label
+}
+
+fragment thematics on Thematics {
+    code
+    label
+}

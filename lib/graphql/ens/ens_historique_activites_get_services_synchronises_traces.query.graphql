@@ -1,0 +1,8 @@
+query get_services_synchronises_traces($patientId: String!) {
+    synchronizedServicesActivityHistory(synchronizedServicesActivityHistory: {patientId:  $patientId}) {
+        date
+        name
+        author
+        authorType
+    }
+}

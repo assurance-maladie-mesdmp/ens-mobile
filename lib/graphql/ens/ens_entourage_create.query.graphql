@@ -1,0 +1,5 @@
+mutation create_entourage_contact($input: ContactPostInput!) {
+    postEntourageContact(contactPostInput: $input) {
+        effectiveDate
+    }
+}

@@ -1,0 +1,5 @@
+mutation update_consentement_after_majorite($serviceOid: String!, $patientId: String) {
+    deleteConsentReapprovalRequirement(patientId: $patientId, serviceOid: $serviceOid) {
+        success
+    }
+}

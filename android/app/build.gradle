@@ -1,0 +1,141 @@
+/*
+  Copyright (c) 2020-2025 Caisse Nationale d’Assurance Maladie et Ministère de la Santé et de l’Accès aux Soins. All rights reserved.
+  Use of this source code is governed by a CeCILL v2.1 license that can be found in the LICENSE file.
+*/
+
+import java.nio.charset.StandardCharsets
+
+/*
+    Ce fichier à été modifié pour des raisons de sécurité.
+*/
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.firebase.crashlytics"
+    id "com.google.gms.google-services"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode') ?: '1'
+def flutterVersionName = localProperties.getProperty('flutter.versionName') ?: '1.0'
+
+def dartEnvironmentVariables = [
+        env: null
+]
+
+if (project.hasProperty('dart-defines')) {
+    def encodedParams = project.property('dart-defines')
+    dartEnvironmentVariables = dartEnvironmentVariables + encodedParams
+            .split(',')
+            .collectEntries { entry ->
+                def decoded = new String(Base64.getDecoder().decode(entry))
+                def pair = URLDecoder.decode(decoded, 'UTF-8').split('=')
+                [(pair.first()): pair.last()]
+            }
+}
+
+def appProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("params/params_${dartEnvironmentVariables.env}.properties")
+if (keystorePropertiesFile.exists()) {
+    appProperties.load(new InputStreamReader(new FileInputStream(keystorePropertiesFile), StandardCharsets.UTF_8))
+}
+
+android {
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    signingConfigs {
+        parameterized {
+            storeFile appProperties['storeFile'] ? file(appProperties['storeFile']) : null
+            storePassword appProperties['certPassword'] ?: null
+            keyAlias appProperties['certAlias'] ?: null
+            keyPassword appProperties['certPassword'] ?: null
+        }
+    }
+
+    defaultConfig {
+        applicationId appProperties['applicationId']
+        minSdkVersion 27
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        resValue("string", "custom_scheme", "${appProperties['scheme']}")
+        resValue("string", "app_name", "${appProperties['appName']}")
+
+        manifestPlaceholders = manifestPlaceholders += [
+                'appAuthRedirectScheme': "${appProperties['scheme']}",
+        ]
+
+        signingConfig appProperties['storeFile'] ? signingConfigs.parameterized : signingConfigs.debug
+    }
+
+    flavorDimensions "app"
+    productFlavors {
+        prod {
+            dimension "app"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.parameterized
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:***'
+    implementation 'com.google.android.material:material:***'
+    implementation 'androidx.constraintlayout:constraintlayout:***'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:***'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:***'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:***'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation "androidx.core:core-ktx:***"
+    implementation "androidx.activity:activity-ktx:***"
+    implementation 'com.google.zxing:core:***'
+    implementation 'com.quickbirdstudios:opencv:***'
+    testImplementation 'junit:junit:***'
+    testImplementation 'org.mockito:mockito-inline:***'
+}

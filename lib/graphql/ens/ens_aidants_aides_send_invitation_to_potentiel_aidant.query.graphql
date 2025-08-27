@@ -1,0 +1,5 @@
+mutation send_invitation_to_potentiel_aidant($delegationInviteToCaregivingInput:DelegationInviteToCaregivingInput!) {
+    delegationInviteToCaregiving(input: $delegationInviteToCaregivingInput) {
+        success
+    }
+}

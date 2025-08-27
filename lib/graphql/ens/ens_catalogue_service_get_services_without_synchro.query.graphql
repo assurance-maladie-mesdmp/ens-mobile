@@ -1,0 +1,15 @@
+# import './ens_catalogue_services.fragment.graphql'
+
+query get_services_without_synchro {
+    fetchCatalogueServices {
+        services {
+            ...service
+        }
+        regions {
+            ...region
+        }
+        thematics {
+            ...thematics
+        }
+    }
+}

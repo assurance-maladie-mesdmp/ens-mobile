@@ -1,0 +1,7 @@
+# import './ens_incentive_reco.fragment.graphql'
+
+query get_recommandations($patientId: String!) {
+    getIncentiveReco(patientId: $patientId){
+        ...incentiveReco
+    }
+}

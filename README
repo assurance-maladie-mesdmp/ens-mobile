@@ -1,0 +1,90 @@
+
+Mon Espace Santé - application mobile pour Android et iOS
+
+Auteurs
+  Ce code source a été développé dans le cadre de marchés publics. Bien que le 
+  développement ait été partiellement sous-traité à des sociétés tierces, ce 
+  code est entièrement et exclusivement la propriété de l’Assurance Maladie et 
+  du Ministère de la Santé et de l’Accès aux soins.
+
+Licence et conditions d’utilisation
+  Ce code est distribué sous les termes de la licence CeCILL 2.1.
+
+Cible
+  Cette application s’adresse à l’ensemble des usagers de Mon Espace Santé.
+
+Principe de fonctionnement du code et données utilisées
+  L’application mobile Mon Espace Santé ne réalise pas en elle-même des 
+  traitements métier : elle invoque des web services sur Internet auprès du 
+  système d’information Mon Espace Santé où les traitements sont réalisés, et 
+  permet en outre à son utilisateur d’afficher et de modifier des données et 
+  fichiers contenus dans ce système d’information. Pour des raisons de 
+  sécurité, ce code source a été expurgé, avant publication, des parties 
+  sensibles concernant les mécanismes d’authentification et d’habilitation, ainsi 
+  que de la liste des bibliothèques tierces avec lesquelles il se retrouve 
+  compilé quand il est diffusé sur les magasins d’applications mobiles publics.
+
+Liens utiles
+  - Le service Mon Espace Santé est accessible à l’adresse suivante :
+   https://www.monespacesante.fr
+  - Le site de présentation de l’Assurance Maladie est accessible à l’adresse 
+    suivante :
+    https://www.assurance-maladie.ameli.fr
+  - Le site de présentation du Ministère de la Santé et de l’Accès aux soins est 
+    accessible à l’adresse suivante :
+    https://sante.gouv.fr
+
+Contact
+  Pour toute question ou information concernant le code source de cette 
+  application, vous pouvez vous adresser à la Caisse Nationale de l’Assurance 
+  Maladie :
+  Caisse Nationale de l’Assurance Maladie
+  Direction de la communication
+  26-50, avenue du Professeur André-Lemierre
+  75986 Paris cedex 20
+  FRANCE
+
+--------------------------------------------------------------------------------
+
+Mon Espace Santé - Mobile application for Android and iOS
+
+Authors
+  This source code was developed as part of public contracts. Although the
+  development was partially subcontracted to third-party companies, this code is
+  entirely and exclusively the property of the National Health Insurance and the
+  Ministry of Health and Access to Care.
+
+License and Terms of Use
+  This code is distributed under the terms of the CeCILL 2.1 license.
+
+Target Audience
+  This application is intended for all users of Mon Espace Santé.
+
+Code Functionality and Data Used
+  The Mon Espace Santé mobile application does not perform business processes by
+  itself: it invokes web services over the Internet from the Mon Espace Santé
+  information system where the processes are executed, and it also allows its
+  user to display and modify data and files contained within this information
+  system. For security reasons, this source code has been purged, prior to
+  publication, of sensitive parts concerning authentication and authorization
+  mechanisms, as well as the list of third-party libraries with which it is
+  compiled when released on public mobile app stores.
+
+Useful Links
+  - The Mon Espace Santé service is accessible at the following URL:
+    https://www.monespacesante.fr
+  - The presentation site of the National Health Insurance is accessible at the
+    following URL:
+    https://www.assurance-maladie.ameli.fr
+  - The presentation site of the Ministry of Health and Access to Care is
+   accessible at the following URL:
+    https://sante.gouv.fr
+
+Contact
+  For any questions or information regarding the source code of this
+  application, you can contact the National Health Insurance:
+  Caisse Nationale de l’Assurance Maladie
+  Direction de la communication
+  26-50, Avenue du Professeur André-Lemierre
+  75986 Paris cedex 20
+  FRANCE

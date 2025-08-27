@@ -1,0 +1,11 @@
+# import './ens_aidants_aides_delegation.fragment.graphql'
+# import './ens_aidants_aides_invitation.fragment.graphql'
+
+query get_delegations_pour_aide {
+    delegations(filter: {onlyActive: true, withDetails: true, type: CAREGIVING, direction: OUTGOING}) {
+        ...delegation
+    }
+    delegationInvitations(filter: {type: CAREGIVING, status: PENDING, direction: OUTGOING}) {
+        ...invitation
+    }
+}

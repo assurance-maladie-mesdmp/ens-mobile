@@ -1,0 +1,40 @@
+fragment metadataFields on MeasureMetaDataModel {
+    metrics {
+        code
+        unit
+        label
+        placeholder
+        maxlength
+        hint
+        constraints {
+            regexp
+            message
+            range {
+                min
+                max
+            }
+        }
+    }
+    comments {
+        code
+        label
+        placeholder
+        options {
+            code
+            label
+            extraValueMetadata {
+                fieldLabel
+                maxLength
+                constraints {
+                    regexp
+                    message
+                    range {
+                        min
+                        max
+                    }
+                }
+            }
+        }
+    }
+}
+

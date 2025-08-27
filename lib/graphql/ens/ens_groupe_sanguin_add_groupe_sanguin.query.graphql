@@ -1,0 +1,5 @@
+mutation add_groupe_sanguin($bloodGroupInput: BloodGroupInput!) {
+    createBloodGroup(bloodGroupInput: $bloodGroupInput) {
+        success
+    }
+}

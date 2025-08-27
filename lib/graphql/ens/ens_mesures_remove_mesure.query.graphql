@@ -1,0 +1,6 @@
+mutation remove_mesure($deleteMesure: DeleteMeasureModel!) {
+    removeMeasure(deleteMeasure: $deleteMesure) {
+        success
+    }
+}
+

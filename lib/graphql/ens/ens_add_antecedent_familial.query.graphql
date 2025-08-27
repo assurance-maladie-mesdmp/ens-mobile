@@ -1,0 +1,6 @@
+
+mutation add_antecedent_familial($familyHistory: FamilyHistoryInput!) {
+    postFamilyHistory(familyHistoryInput: $familyHistory) {
+        success
+    }
+}

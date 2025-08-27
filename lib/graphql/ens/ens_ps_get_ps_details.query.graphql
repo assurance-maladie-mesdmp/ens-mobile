@@ -1,0 +1,19 @@
+# import './ens_es.fragment.graphql'
+
+query get_professionnels_de_sante_details($id: String!, $patientId: String!) {
+    getHealthProfessionalReferentialByIdNat(idNat: $id, patientId: $patientId) {
+        idNat
+        firstName
+        lastName
+        profession
+        specialities
+        shortLabelSpecialities
+        isContactable
+        contactId
+        role
+        adresses {
+            ...adresse_ps_es
+        }
+        active
+    }
+}

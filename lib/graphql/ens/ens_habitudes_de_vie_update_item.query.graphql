@@ -1,0 +1,5 @@
+mutation update_habitudes_de_vie_item($lifestyleInput: LifestyleItemInput!, $patientId: String!) {
+    updateLifestyleItem(patientId: $patientId, lifestyleItemInput: $lifestyleInput){
+        success
+    }
+}

@@ -1,0 +1,7 @@
+# import './ens_agenda_rappel.fragment.graphql'
+
+mutation create_rappel($rappel: ReminderToCreateInput!){
+    createReminder(reminder: $rappel){
+        ...rappel
+    }
+}

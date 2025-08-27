@@ -1,0 +1,5 @@
+query get_nom_par_code_cip($code_cip: String!) {
+    getByCip(codeCip: $code_cip) {
+        name
+    }
+}

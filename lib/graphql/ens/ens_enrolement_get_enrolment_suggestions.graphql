@@ -1,0 +1,6 @@
+query EnrolmentUserNameAvailability($userName: String!) {
+    enrolmentUserNameAvailability(userName: $userName) {
+        isAvailable,
+        suggestions,
+    }
+}

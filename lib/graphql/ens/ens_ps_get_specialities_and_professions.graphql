@@ -1,0 +1,10 @@
+# import './ens_discipline.fragment.graphql'
+
+query get_specialities_and_professions {
+    specialities {
+        ...disciplineResponse
+    }
+    professions {
+        ...disciplineResponse
+    }
+}

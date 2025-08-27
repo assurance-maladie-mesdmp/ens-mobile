@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_qr_description">Attestation de vaccination contre la Covid-19</string>
+    <string name="widget_qr_title">Attestation de vaccination Covid-19</string>
+    <string name="widget_qr_fullscreen">Appuyer pour passer en plein écran</string>
+    <string name="widget_qr_no_qr">Aucune attestation de vaccination disponible dans Mon\u00A0espace\u00A0santé</string>
+
+    <!--Strings pour le scan-->
+    <string name="add_document">Ajouter un document</string>
+    <string name="helper_info">Faites glisser les coins pour ajuster</string>
+    <string name="error">Déplacer les coins pour\nobtenir un rectangle</string>
+    <string name="continue_btn">Continuer</string>
+    <string name="skip_btn">Ne pas recadrer</string>
+    <string name="img_description">prévisualisation de la photo</string>
+    
+</resources>

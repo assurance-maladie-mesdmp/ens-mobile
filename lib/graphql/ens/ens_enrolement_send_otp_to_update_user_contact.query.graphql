@@ -1,0 +1,5 @@
+mutation send_otp_to_update_user_contact_in_enrolement($sendOtpUpdateContact: SendOtpUpdateContactInput!) {
+    sendOtpUpdateContact(sendOtpUpdateContact: $sendOtpUpdateContact) {
+        success
+    }
+}

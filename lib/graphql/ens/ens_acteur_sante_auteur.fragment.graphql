@@ -1,0 +1,11 @@
+fragment episodePsAuteur on EpisodePsAuthorViewModel {
+    id
+    fullName
+    profession
+    specialities
+}
+
+fragment episodeEsAuteur on EpisodeEsAuthorViewModel {
+    id
+    name
+}

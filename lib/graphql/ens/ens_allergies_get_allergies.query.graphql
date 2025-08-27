@@ -1,0 +1,10 @@
+# import './ens_allergies.fragment.graphql'
+
+query get_allergies($patientId: String!) {
+    allergies(patientId: $patientId) {
+        allergies {
+            ...allergie
+        }
+        unconcernedDeclarationDate
+    }
+}

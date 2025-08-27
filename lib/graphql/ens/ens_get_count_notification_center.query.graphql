@@ -1,0 +1,5 @@
+query get_unread_notification_center_count {
+    fetchNotificationCenter {
+        unreadNotificationsCount
+    }
+}

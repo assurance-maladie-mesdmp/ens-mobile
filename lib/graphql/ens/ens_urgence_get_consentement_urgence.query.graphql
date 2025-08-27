@@ -1,0 +1,7 @@
+# import './ens_dmp_consentement.fragment.graphql'
+
+query get_consentement_urgence($dmpConsentementInput: GetDmpConsentementInput!){
+    getDmpConsentement(dmpConsentementInput: $dmpConsentementInput){
+        ...dmpConsentement
+    }
+}

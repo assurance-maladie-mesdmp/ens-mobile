@@ -1,0 +1,7 @@
+# import './ens_notification_center.fragment.graphql'
+
+query get_notification_center {
+    fetchNotificationCenter {
+        ...notificationCenter
+    }
+}

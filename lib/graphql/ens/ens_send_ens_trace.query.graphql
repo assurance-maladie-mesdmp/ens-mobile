@@ -1,0 +1,5 @@
+mutation send_ens_trace($userActionInput : UserActionInput!) {
+    sendUserAction(userAction: $userActionInput) {
+        success
+    }
+}

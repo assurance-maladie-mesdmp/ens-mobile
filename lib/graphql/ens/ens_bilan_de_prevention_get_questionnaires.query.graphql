@@ -1,0 +1,16 @@
+# import './ens_bilan_de_prevention_questionnaire.fragment.graphql'
+
+query get_questionnaires($patientId: String!) {
+    fetchAllHealthQuizStatus(patientId: $patientId) {
+        isEmpty
+        healthQuizListToDo {
+            ...questionnaire
+        }
+        healthQuizListDoing {
+            ...questionnaire
+        }
+        healthQuizListDone {
+            ...questionnaire
+        }
+    }
+}

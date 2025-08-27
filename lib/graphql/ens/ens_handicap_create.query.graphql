@@ -1,0 +1,5 @@
+mutation add_handicap($disabilityInput: DisabilityInput!) {
+    createDisability(disabilityInput: $disabilityInput) {
+        success
+    }
+}

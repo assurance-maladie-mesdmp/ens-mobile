@@ -1,0 +1,5 @@
+mutation update_professionel_sante_role($patientId: String!, $psNationalId: String!, $role :HealthProfessionalRoleEnum!){
+    updateHealthProfessionalRoleByIdNat(patientId: $patientId, healthProfessionalIdNat : $psNationalId, role: $role ) {
+        success
+    }
+}

@@ -1,0 +1,11 @@
+fragment incentiveReco on IncentiveRecoViewModel {
+    code
+    family
+    priority
+    data {
+        count
+        quizCode
+        quizVersion
+        lastVersion
+    }
+}

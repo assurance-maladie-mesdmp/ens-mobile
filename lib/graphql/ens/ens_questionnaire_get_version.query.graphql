@@ -1,0 +1,8 @@
+query get_version_questionnaire($patientId: String!, $fileNamePrefix: String!) {
+    getHealthQuizCodeVersion(patientId: $patientId, fileNamePrefix: $fileNamePrefix) {
+        code
+        savedVersion
+        newVersion
+        responseId
+    }
+}

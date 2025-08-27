@@ -1,0 +1,7 @@
+query get_professionnel_de_sante_traces_by_id($input: HealthProfessionalTraceInput!) {
+    getPsTracesHistory(traceHistory: $input) {
+        date
+        name
+        author
+    }
+}

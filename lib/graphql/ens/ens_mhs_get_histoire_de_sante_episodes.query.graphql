@@ -1,0 +1,44 @@
+# import './ens_histoire_sante.fragment.graphql'
+
+query get_histoire_de_sante_episodes($patientId: String!, $currentPage: Float!) {
+    dailyEpisodes(
+        getCompleteNthDailyEpisodesByPatientIdAndCategory: {
+            patientId: $patientId
+            currentPage: $currentPage,
+            episodesPerPage: 6
+        }
+    ) {
+        __typename
+        episodes {
+            # Rappel: ne pas créer de fragment sur episodes => ça ne marche pas à cause de l'interface
+            ... on BiologyEpisodeViewModel {
+                ...episodeBiologie
+            }
+            ... on MedicineEpisodeViewModel {
+                ...episodeMedicament
+            }
+            ... on MedicalDentalCareEpisodeViewModel {
+                ...episodeSoinDentaire
+            }
+            ... on HospitalizationEpisodeViewModel {
+                ...episodeHospitalisation
+            }
+            ... on RadiologyEpisodeViewModel {
+                ...episodeRadiologie
+            }
+            ... on MedicalDeviceEpisodeViewModel {
+                ...episodeDispositifMedical
+            }
+            ... on VaccineEpisodeViewModel {
+                ...episodeVaccin
+            }
+            ... on CvaVaccineEpisodeViewModel {
+                ...episodeVaccination
+            }
+            ... on DiseaseEpisodeViewModel {
+                ...episodeMaladie
+            }
+        }
+        numberOfEpisodes
+    }
+}

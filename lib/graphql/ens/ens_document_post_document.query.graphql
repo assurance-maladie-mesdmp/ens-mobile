@@ -1,0 +1,5 @@
+mutation post_document($input: DocumentInput!) {
+    postDocument(documentInput: $input) {
+        id
+    }
+}

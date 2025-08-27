@@ -1,0 +1,5 @@
+mutation post_dismiss_recommandation($patientId: String!, $recommendationCode: RecommendationCode!) {
+    postponeRecommendationDisplay(patientId: $patientId, recommendationCode: $recommendationCode) {
+        success
+    }
+}

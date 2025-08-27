@@ -1,0 +1,5 @@
+mutation update_traitement($treatment: TreatmentUpdateInput!) {
+    putTreatment(treatmentUpdateInput: $treatment) {
+        success
+    }
+}

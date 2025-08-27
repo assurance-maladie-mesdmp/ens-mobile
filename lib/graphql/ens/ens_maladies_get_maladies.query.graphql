@@ -1,0 +1,10 @@
+# import './ens_maladies.fragment.graphql'
+
+query get_maladies($patientId: String!) {
+    diseases(patientId: $patientId) {
+        diseases {
+            ...maladie
+        }
+        unconcernedDeclarationDate
+    }
+}

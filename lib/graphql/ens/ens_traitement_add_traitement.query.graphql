@@ -1,0 +1,5 @@
+mutation add_traitement($treatment: TreatmentInput!) {
+    postTreatment(treatmentInput: $treatment) {
+        id
+    }
+}

@@ -1,0 +1,16 @@
+query get_ticket_support_details($ticketId: String!) {
+    fetchHelpdeskTicketDetails(ticketId: $ticketId) {
+        id
+        reasonLabel
+        comments {
+            id
+            from
+            message
+            createdAt
+            documents {
+                id
+                name
+            }
+        }
+    }
+}

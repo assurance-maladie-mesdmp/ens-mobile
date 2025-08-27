@@ -1,0 +1,10 @@
+query get_vaccins {
+    vaccinesRef {
+        vaccineRefId
+        label
+        pathologies
+        marketingStart
+        marketingEnd
+        cipCodes
+    }
+}

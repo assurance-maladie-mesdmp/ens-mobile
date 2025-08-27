@@ -1,0 +1,65 @@
+fragment entourageStructure on WishesModel {
+    structure {
+        emergencyContacts {
+            idContact
+            fullName
+            firstName
+            lastName
+            contactType
+            relation
+            fixedLineNumber
+            mobileNumber
+            emailAddress
+            streetAddressLine
+            postalCode
+            city
+            country
+        }
+        trustedPerson {
+            idContact
+            fullName
+            firstName
+            lastName
+            contactType
+            relation
+            fixedLineNumber
+            mobileNumber
+            emailAddress
+            streetAddressLine
+            postalCode
+            city
+            country
+        }
+        caregiverPersons {
+            idContact
+            fullName
+            firstName
+            lastName
+            contactType
+            relation
+            fixedLineNumber
+            mobileNumber
+            emailAddress
+            streetAddressLine
+            postalCode
+            city
+            country
+        }
+        helpedPersons {
+            idContact
+            fullName
+            firstName
+            lastName
+            contactType
+            relation
+            fixedLineNumber
+            mobileNumber
+            emailAddress
+            streetAddressLine
+            postalCode
+            city
+            country
+        }
+        informedAboutOrganDonation
+    }
+}

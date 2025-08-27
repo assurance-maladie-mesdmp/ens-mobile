@@ -1,0 +1,12 @@
+# import './ens_ajout_ad.fragment.graphql'
+
+query get_ads_a_ajouter($accountGetAccountFamilyInput: AccountGetAccountFamilyInput!) {
+    getAccountFamily(accountGetAccountFamilyInput: $accountGetAccountFamilyInput) {
+        profilsToActivate {
+            ...profilMobile
+        }
+        profilsNonActivable {
+            ...profilMobile
+        }
+    }
+}

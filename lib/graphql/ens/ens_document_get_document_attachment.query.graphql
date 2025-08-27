@@ -1,0 +1,7 @@
+query get_document_attachment($documentId: String!, $patientId: String!) {
+    document(patientId: $patientId, id: $documentId) {
+        attachment
+        mimeType
+        measureIds
+    }
+}

@@ -1,0 +1,8 @@
+query get_preference_notification($getPersonalInformationInput: GetPersonalInformationInput!) {
+    getPreferenceNotification(getPreferenceNotification: $getPersonalInformationInput) {
+        preferenceNotification{
+            typeNotification
+            isActive
+        }
+    }
+}

@@ -1,0 +1,13 @@
+# import './ens_aidants_aides_acteur.fragment.graphql'
+
+fragment delegation on Delegation {
+    id
+    delegate {
+        ...acteur
+    }
+    delegator {
+        ...acteur
+    }
+    startDate
+    endDate
+}

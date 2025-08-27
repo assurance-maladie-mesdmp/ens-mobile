@@ -1,0 +1,5 @@
+mutation delete_notification_token($patientId: String!) {
+    deleteNotificationToken(patientId: $patientId) {
+        success
+    }
+}

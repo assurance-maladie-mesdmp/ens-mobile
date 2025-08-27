@@ -1,0 +1,6 @@
+fragment ayantDroits on AyantsDroitsModel {
+    patientId
+    firstName
+    lastName
+    isAide
+}

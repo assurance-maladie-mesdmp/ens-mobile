@@ -1,0 +1,10 @@
+mutation fetch_potentiel_aidant($delegationMatchPotentialDelegateInput: DelegationMatchPotentialDelegateInput!) {
+    delegationMatchPotentialDelegate(input: $delegationMatchPotentialDelegateInput) {
+        idp
+        givenNames
+        familyName
+        birthDate
+        transactionId
+        ins
+    }
+}

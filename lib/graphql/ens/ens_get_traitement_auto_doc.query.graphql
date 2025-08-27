@@ -1,0 +1,6 @@
+query get_treatment_doc_auto_finality($patientId: String!) {
+    fetchTreatmentDocAutoFinalityByPatientId(patientId: $patientId) {
+        consent,
+        isWhitelisted
+    }
+}

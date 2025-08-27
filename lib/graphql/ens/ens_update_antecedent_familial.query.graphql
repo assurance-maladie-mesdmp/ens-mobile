@@ -1,0 +1,5 @@
+mutation update_antecedent_familial($familyHistory: FamilyHistoryUpdateInput!) {
+    putFamilyHistory(familyHistoryUpdateInput: $familyHistory) {
+        success
+    }
+}

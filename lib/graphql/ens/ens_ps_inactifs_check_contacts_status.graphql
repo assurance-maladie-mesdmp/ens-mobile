@@ -1,0 +1,8 @@
+query check_inactifs_ps_contacts_status($contactDetailsInput: [ContactDetailsInput!]!) {
+    checkContactsStatus(contactDetailsInput: $contactDetailsInput) {
+        inactiveContacts {
+            idNat
+            fullName
+        }
+    }
+}

@@ -1,0 +1,6 @@
+query get_motifs_nouvelle_demande {
+    fetchAllReasons {
+        label
+        value
+    }
+}

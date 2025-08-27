@@ -1,0 +1,5 @@
+mutation delete_link($patientId: String!, $deleteLinksInput: DeleteLinkInput!) {
+    deleteLinks(deleteLinksInput: [$deleteLinksInput], patientId: $patientId) {
+        linkId
+    }
+}

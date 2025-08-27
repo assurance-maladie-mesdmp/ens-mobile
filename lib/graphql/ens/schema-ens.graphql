@@ -1,0 +1,3881 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+interface EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+}
+
+enum EpisodeCategory {
+    ALL
+    DISEASE
+    BIOLOGY
+    MEDICINE
+    MEDICAL_DENTAL_CARE
+    HOSPITALIZATION
+    RADIOLOGY
+    MEDICAL_DEVICE
+    VACCINE
+    CVA_VACCINE
+}
+
+type CompteInformationModel {
+    mail: String
+    phoneNumber: String
+}
+
+type AyantsDroitsModel {
+    patientId: String!
+    firstName: String!
+    lastName: String!
+    ensStatus: String!
+    isAide: Boolean!
+    dateCreation: String!
+}
+
+type CloseEnsModel {
+    allEnsClosed: Boolean!
+}
+
+type PersonalInformationModel {
+    lastName: String!
+    firstName: String!
+    birthDate: String!
+    sex: String!
+    mail: String
+    phoneNumber: String
+    ins: String!
+    onboarding: String
+    ensStatus: String!
+    shouldAcceptCGU: Boolean!
+    hasConfidentialitySettingsSet: Boolean!
+    inseeCode: String
+    cguAcceptedAt: String
+    lastNameWithoutAccent: String!
+    firstNameWithoutAccent: String!
+}
+
+type ActivityHistoryModel {
+    date: String!
+    name: String
+    author: String
+    authorType: String
+}
+
+type DmpTraceHistoryModel {
+    date: String!
+    name: String
+    author: String
+    firstName: String
+    lastName: String
+}
+
+type DmpConsentementModel {
+    identifier: String!
+    purpose: String!
+    type: String!
+}
+
+type DmpConsentementHealthcareStaffModel {
+    dmpConsentementModel: DmpConsentementModel!
+    startDate: String!
+    firstName: String
+    lastName: String
+    id: String!
+    healthcareStaffType: String!
+    isAdmin: Boolean!
+    isActive: Boolean!
+    isPS: Boolean!
+}
+
+type PsDmpConsentementConfidentialityModel {
+    consentId: String!
+    healthProfessionalId: String!
+    status: String!
+    startDate: String!
+}
+
+type DmpConsentementConfidentialityModel {
+    confidentialities: [PsDmpConsentementConfidentialityModel!]!
+    btg: Boolean!
+}
+
+type PreferenceNotificationModel {
+    typeNotification: PreferenceNotificationEnum!
+    isActive: Boolean!
+}
+
+enum PreferenceNotificationEnum {
+    NOTIF_MESSAGE
+    NOTIF_DOCUMENT
+    NOTIF_APPOINTMENT
+    NOTIF_SYNCHRONIZED_SERVICE
+    NOTIF_DEPISTAGE
+}
+
+type PreferenceListNotificationModel {
+    preferenceNotification: [PreferenceNotificationModel!]
+}
+
+type Fragment {
+    disponible: Boolean!
+    poids: String!
+    telecharger: String
+}
+
+type DownloadRematInProgressModel {
+    hasDemandInProgress: Boolean!
+    hasDemandAvailable: Boolean!
+    dateCreation: String
+    dateDisponibilite: String
+    dossierMedicalFragment: Fragment
+    messagerieFragment: Fragment
+    ensFragment: Fragment
+}
+
+type Address {
+    cityZipCode: String
+    roadNumber: String
+    roadType: String
+    labelRoadType: String
+    road: String
+    commune: String
+}
+
+type Speciality {
+    codeSavoirFaire: String
+    codeTypeSavoirFaire: String
+    libelleTypeSavoirFaire: String
+    savoirFaire: String
+    libelleCourt: String
+}
+
+type ProfessionWithSpecialities {
+    codeProfession: String
+    profession: String
+    specialities: [Speciality!]!
+}
+
+type ResearchPS {
+    identifiant: String
+    lastName: String!
+    firstName: String!
+    profession: String
+    structureAddress: [Address!]!
+    specialities: String
+    professionsWithSpecialities: [ProfessionWithSpecialities!]!
+    active: Boolean!
+}
+
+type ResearchPSModel {
+    ps: [ResearchPS!]!
+    numberOfPSBeforeFiltering: Float!
+}
+
+type LegalRepresentative {
+    idEns: String!
+    lastName: String!
+    firstName: String!
+    statut: DemandeAccesStatutEnum!
+}
+
+enum DemandeAccesStatutEnum {
+    WAITING
+    VALIDATED
+    REFUSED
+}
+
+type LegalRepresentativeModel {
+    legalRepresentative: [LegalRepresentative!]
+}
+
+type AccountProfil {
+    index: Float!
+    idEns: Float
+    lastName: String!
+    firstName: String!
+    statutProfile: String!
+    delegationActive: Boolean!
+    isAyantDroit: Boolean!
+    hasDeleteRequest: Boolean!
+}
+
+type AccountInfoFamilleDeDroitEnrichiModel {
+    profilsToActivate: [AccountProfil!]
+    profilsActivationSucceed: [AccountProfil!]
+    profilsActivationFailed: [AccountProfil!]
+    profilsNonActivable: [AccountProfil!]
+}
+
+type PendingInvitations {
+    lastName: String!
+    firstName: String!
+    statut: DemandeAccesStatutEnum!
+    endDate: String!
+    idEns: String!
+    birthDate: String!
+}
+
+type PendingInvitationsModel {
+    pendingInvitations: [PendingInvitations!]
+}
+
+type CityModel {
+    cityCode: String!
+    departmentCode: String!
+    zipCode: String!
+    cityName: String!
+}
+
+type GroupedCityModel {
+    inseeCode: String!
+    departmentCode: String!
+    zipCodes: [String!]
+    cityName: String!
+}
+
+type Success {
+    success: Boolean!
+}
+
+type HealthProfessionalExerciceModel {
+    profession: String!
+    specialities: String
+    shortLabelSpecialities: String
+}
+
+type HealthProfessionalAddressModel {
+    adresseName: String
+    cityZipCode: String
+    roadNumber: String
+    roadType: String
+    labelRoadType: String
+    road: String
+    commune: String
+    numeroTelephone: String
+}
+
+type HealthProfessionalModel {
+    healthProfessionalId: String!
+    nationalId: String
+    isContactable: Boolean!
+    contactId: String
+    declaredReferrer: Boolean!
+    incorrectReferrer: Boolean!
+    firstName: String!
+    lastName: String!
+    speciality: HealthProfessionalEnum
+    exercices: [HealthProfessionalExerciceModel!]
+    adresses: [HealthProfessionalAddressModel!]
+    role: HealthProfessionalRoleEnum
+    active: Boolean!
+}
+
+enum HealthProfessionalEnum {
+    GENERAL_PRACTITIONER
+    ALLERGIST
+    CARDIOLOGIST
+    DENTIST
+    DERMATOLOGIST
+    ENDOCRINOLOGIST
+    GASTROENTEROLOGIST
+    GERIATRICIAN
+    GYNECOLOGIST
+    INFECTOLOGIST
+    NURSE
+    PHYSIOTHERAPIST
+    NEUROLOGIST
+    ONCOLOGIST
+    OPHTHALMOLOGIST
+    ORTHOPEDIST
+    SPEECH_THERAPIST
+    ORTHOPTIST
+    ENT_SPECIALIST
+    PEDIATRICIAN
+    PHARMACIST
+    PODIATRIST
+    PULMONOLOGIST
+    PSYCHIATRIST
+    RHEUMATOLOGIST
+    MIDWIFE
+    UROLOGIST
+    OTHER
+}
+
+enum HealthProfessionalRoleEnum {
+    SAGE_FEMME_REFERENTE
+    PHARMACIEN_CORRESPONDANT
+    MEDECIN_TRAITANT
+}
+
+type HealthProfessionalListModel {
+    healthProfessionals: [HealthProfessionalModel!]!
+}
+
+type Filters {
+    withNewMessage: Boolean!
+}
+
+type DeleteDraftSuccess {
+    success: Boolean!
+    patientId: String!
+    filters: Filters!
+    mailBox: MailBoxModel!
+}
+
+type FileModel {
+    id: ID!
+    name: String!
+    createdAt: String!
+    attachment: String!
+    mimeType: String!
+    canAddToDMP: Boolean!
+    attachmentSize: Float!
+}
+
+type FileSimpleModel {
+    id: ID!
+    name: String!
+    size: Float!
+}
+
+type ConversationModel {
+    id: ID!
+    from: String! @deprecated(reason: "use healthProfessionalNames attributes")
+    healthProfessionalNames: [String!]!
+    hasAttachment: Boolean!
+    hasDraft: Boolean!
+    isNewMessage: Boolean!
+    date: String!
+    subject: String!
+    read: Boolean!
+}
+
+type moveToTrashConversationSuccess {
+    success: Boolean!
+    patientId: String!
+}
+
+type MessagingContactModel {
+    id: ID!
+    fullName: String!
+}
+
+type CreateContactModel {
+    success: Boolean!
+    contactId: String!
+}
+
+type InactiveContactModel {
+    idNat: String!
+    fullName: String!
+    typeBal: String!
+}
+
+type MailBoxModel {
+    totalElements: Int!
+    totalPages: Int!
+    userMail: String!
+    remainSizeFilesDefault: Float!
+    conversations: [ConversationModel!]
+    contacts: [MessagingContactModel!]!
+    oneOrMoreUnreadConversation: Boolean!
+}
+
+type ResponseTemplateModel {
+    conversationId: String!
+    messageId: String!
+    from: String!
+    to: String!
+    recipients: [String!]
+    replyOptions: [ReplyTypeEnum!]!
+    conversationFinalizedBy: String
+    remainSizeFiles: Float!
+}
+
+enum ReplyTypeEnum {
+    REPLY
+    REPLY_TO_ALL
+    REPLY_BLOCKED
+    NO_REPLY
+    NEW_MESSAGE
+}
+
+type SendMessageResponseModel {
+    conversationId: String!
+    messageResponseModel: MessageResponseModel!
+    mailBoxModel: MailBoxModel!
+}
+
+type ContactDetails {
+    name: String!
+    type: String!
+    idNat: String
+    typeBal: String
+}
+
+type MessageModel {
+    id: ID!
+    conversationId: String!
+    from: String! @deprecated(reason: "use ContactDetails")
+    contactDetails: [ContactDetails!]!
+    to: [String!]
+    cc: [String!]
+    cci: [String!]
+    date: String!
+    acknowledge: Boolean!
+    subject: String!
+    content: String!
+    read: Boolean!
+    files: [FileSimpleModel!]!
+    recipients: [String!]!
+}
+
+type DraftRecipients {
+    to: [MessagingContactModel!]!
+}
+
+type DraftModel {
+    id: ID!
+    conversationId: String!
+    from: String! @deprecated(reason: "use ContactDetails")
+    contactDetails: [ContactDetails!]!
+    to: [String!]
+    cc: [String!]
+    cci: [String!]
+    date: String!
+    acknowledge: Boolean!
+    subject: String!
+    content: String!
+    read: Boolean!
+    files: [FileSimpleModel!]!
+    recipients: [String!]!
+    parentId: String
+    newMessage: Boolean!
+    draftRecipients: DraftRecipients!
+    remainSizeFiles: Float!
+}
+
+type MessageResponseModel {
+    messages: [MessageModel!]
+    draft: DraftModel
+    responseTemplate: ResponseTemplateModel!
+    subject: String!
+    acknowledge: Boolean!
+}
+
+type AgendaAuthorViewModel {
+    authorLabel: String!
+    type: AgendaAuthorTypeEnum!
+}
+
+enum AgendaAuthorTypeEnum {
+    PATIENT
+    EDITOR_SOLUTION
+}
+
+type AppointmentViewModel {
+    id: String!
+    patientId: String!
+    name: String
+    type: AppointmentType!
+    professionalOrEstablishmentName: String!
+    date: String!
+    comment: String
+    speciality: String
+    address: String
+    status: String
+    author: AgendaAuthorViewModel
+    idProfessionnelSante: String
+    idEtablissementSante: String
+}
+
+enum AppointmentType {
+    PRACTITIONER
+    HEALTHCARE_SERVICE
+}
+
+type ReminderViewModel {
+    id: String!
+    patientId: String!
+    title: String!
+    date: String!
+    comment: String!
+    author: AgendaAuthorViewModel
+}
+
+type PreventionViewModel {
+    code: String!
+    type: String!
+    title: String!
+    dateDebutCampagne: String!
+    dateFinCampagne: String
+    dateDebutPrevention: String!
+    dateFinPrevention: String!
+    statut: PreventionTypeEnum!
+    executionDate: String
+    requirementLevel: String
+}
+
+enum PreventionTypeEnum {
+    TO_PLAN
+    NOT_SPECIFIED
+    DONE
+    NOT_DONE
+}
+
+type FolderViewModel {
+    id: String!
+    title: String!
+    linkId: String
+}
+
+type LinkedFolderViewModel {
+    linkId: String!
+    folder: FolderViewModel
+}
+
+type IdentityModel {
+    id: String!
+    sourceAuthor: SourceAuthor!
+    lastName: String
+    firstName: String
+    isPsClickable: Boolean!
+}
+
+enum SourceAuthor {
+    PRACTITIONER
+    PATIENT
+    DISPOSITIF
+    ORGANISATION
+}
+
+type DocumentListModel {
+    limitExceeded: Boolean!
+    documents: [DocumentModel!]!
+}
+
+type DocumentDetailModel {
+    attachment: String!
+    mimeType: String!
+    measureIds: [String!]!
+    attachmentSize: Float!
+}
+
+type DocumentFileTypeModel {
+    mimeType: String!
+    extensionsAllowed: [String!]!
+    extensionResolved: String!
+    extensionRejected: String!
+}
+
+type DocumentAllowedForDmpModel {
+    acceptedFileTypes: [DocumentFileTypeModel!]!
+    fileSizeMO: Float!
+    acceptedFileExtensions: String!
+}
+
+type CovidCertificateQRCodeModel {
+    binary: String!
+}
+
+type DefaultConfidentialityModel {
+    masked: Boolean!
+}
+
+type DocumentModel {
+    id: ID!
+    title: String!
+    createdAt: String!
+    category: Category!
+    confidentialities: [Confidentiality!]!
+    uploadedBy: IdentityModel!
+    uploadedAt: String
+    reportDate: String
+    pinDate: String
+    pinned: Boolean
+    folder: FolderViewModel
+    type: String
+    canOwnerDelete: Boolean!
+    canUpdateCategory: Boolean!
+    canUpdateConfidentialityOnly: Boolean!
+    canUpdateTitle: Boolean!
+    canUpdateCreatedAt: Boolean!
+    covidCertificate: Boolean!
+}
+
+enum Category {
+    SYNTHESE
+    ORD_SOIN
+    RADIO_SC
+    BIOLOGIE
+    CPT_REND
+    DEPISTAG
+    CERT_MED
+    AUTR_DOC
+    DOC_ADM
+    SYNTH_PML
+    DIR_ANT
+    CAR_VAC
+    VDP
+    REMB
+    QUEST_SANTE
+}
+
+enum Confidentiality {
+    MASQUE_PS
+    N
+    INVISIBLE_REPRESENTANTS_LEGAUX
+}
+
+type AdvanceDirectivesModel {
+    document: DocumentModel!
+    mimeType: String
+    attachment: String
+    attachmentSize: Float
+}
+
+type EmergencyContactModel {
+    idContact: String!
+    prefix: String
+    fullName: String
+    firstName: String
+    lastName: String
+    contactType: ContactType!
+    relation: EntourageRelation
+    fixedLineNumber: String
+    mobileNumber: String
+    emailAddress: String
+    streetAddressLine: String
+    postalCode: String
+    city: String
+    country: String
+}
+
+enum ContactType {
+    EMERGENCY_CONTACT
+    TRUSTED_CONTACT
+    CAREGIVER_CONTACT
+    HELP_CONTACT
+}
+
+enum EntourageRelation {
+    MOTHER
+    FATHER
+    CHILD
+    SPOUSE
+    TUTEUR
+    OTHER
+}
+
+type CaregiverPersonsModel {
+    idContact: String!
+    prefix: String
+    fullName: String
+    firstName: String
+    lastName: String
+    contactType: ContactType!
+    relation: EntourageRelation
+    fixedLineNumber: String
+    mobileNumber: String
+    emailAddress: String
+    streetAddressLine: String
+    postalCode: String
+    city: String
+    country: String
+}
+
+type HelpedPersonsModel {
+    idContact: String!
+    prefix: String
+    fullName: String
+    firstName: String
+    lastName: String
+    contactType: ContactType!
+    relation: EntourageRelation
+    fixedLineNumber: String
+    mobileNumber: String
+    emailAddress: String
+    streetAddressLine: String
+    postalCode: String
+    city: String
+    country: String
+}
+
+type TrustedPersonModel {
+    idContact: String!
+    prefix: String
+    fullName: String
+    firstName: String
+    lastName: String
+    contactType: ContactType!
+    relation: EntourageRelation
+    fixedLineNumber: String
+    mobileNumber: String
+    emailAddress: String
+    streetAddressLine: String
+    postalCode: String
+    city: String
+    country: String
+}
+
+type StructureModel {
+    informedAboutOrganDonation: Boolean
+    emergencyContacts: [EmergencyContactModel!]
+    trustedPerson: TrustedPersonModel
+    caregiverPersons: [CaregiverPersonsModel!]
+    helpedPersons: [HelpedPersonsModel!]
+}
+
+type WishesModel {
+    effectiveDate: String!
+    structure: StructureModel!
+}
+
+type DisciplineModel {
+    treCode: String!
+    label: String
+    shortLabel: String
+    longLabel: String
+    validDate: String
+    endDate: String
+    updateDate: String
+}
+
+type TreatmentIdModel {
+    id: ID
+}
+
+type TreatmentModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    dosage: String
+    linkedDiseases: [LinkedDiseaseModel!]
+    linkedAllergies: [LinkedAllergyModel!]
+}
+
+type LinkedAllergyModel {
+    linkId: String!
+    allergy: AllergyModel!
+}
+
+type TreatmentListModel {
+    treatments: [TreatmentModel!]!
+    unconcernedDeclarationDate: String
+}
+
+type TreatmentRefModel {
+    name: String!
+}
+
+type DiseaseModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    linkedDocuments: [LinkedDocumentModel!]
+    linkedTreatments: [LinkedTreatmentModel!]
+}
+
+type DiseaseWithoutLinkTreatmentModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    linkedDocuments: [LinkedDocumentModel!]
+}
+
+type DiseaseListModel {
+    diseases: [DiseaseModel!]!
+    unconcernedDeclarationDate: String
+}
+
+type LinkModel {
+    linkId: String!
+    sourceId: String!
+    sourceType: LinkType!
+    targetId: String!
+    targetType: LinkType!
+}
+
+enum LinkType {
+    DOCUMENT
+    DISEASE
+    HOSPITALIZATION
+    FOLDER
+    TREATMENT
+    MEASURE
+    ALLERGY
+}
+
+type DeletedLinkModel {
+    linkId: String!
+}
+
+type LinkedDocumentModel {
+    linkId: String!
+    document: DocumentModel!
+}
+
+type LinkedTreatmentModel {
+    linkId: String!
+    treatment: TreatmentModel!
+}
+
+type LinkedDiseaseModel {
+    linkId: String!
+    disease: DiseaseWithoutLinkTreatmentModel!
+}
+
+type UpdatedDocumentLinkModel {
+    success: Boolean!
+    documentLinkList: [LinkedDocumentModel!]!
+}
+
+type UpdatedTreatmentLinkModel {
+    success: Boolean!
+    treatmentLinkList: [LinkedTreatmentModel!]!
+}
+
+type AllergyModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    linkedTreatments: [LinkedTreatmentModel!]
+}
+
+type AllergyListModel {
+    allergies: [AllergyModel!]!
+    unconcernedDeclarationDate: String
+}
+
+type Editor {
+    name: String!
+}
+
+type ServiceImage {
+    id: String!
+    type: String
+    file: String
+}
+
+type CatalogFinalityModel {
+    id: Float!
+    icone: String!
+    iconFile: String!
+    codeFinalite: String!
+    libelle: String!
+    description: String!
+}
+
+type SynchronizationInformation {
+    isSynchronized: Boolean!
+    oid: String
+    isAcknowledged: Boolean
+    reapprovalLimitDate: String
+}
+
+type Region {
+    code: String!
+    label: String!
+}
+
+type Thematics {
+    code: String!
+    label: String!
+}
+
+type ThematicsUsager {
+    code: [String!]!
+    label: String!
+}
+
+type Service {
+    name: String!
+    description: String
+    longDescription: String
+    editor: Editor!
+    id: String!
+    logo: ServiceImage
+    iOsUrl: String
+    androidUrl: String
+    webUrl: String
+    consumerDevice: Boolean
+    medicalDevice: Boolean
+    economicalModel: String
+    screenshots: [ServiceImage!]
+    cguUrl: String
+    hasEchangeDonnees: Boolean!
+    finalities: [CatalogFinalityModel!]
+    oid: String
+    urlSynchronisation: String
+    codesRegions: [String!]!
+    thematics: [String!]!
+    thematicsTags: [ThematicsUsager!]!
+    status: ServiceStatusEnum
+    synchronization(patientId: String): SynchronizationInformation!
+}
+
+enum ServiceStatusEnum {
+    EN_LIGNE
+    HORS_LIGNE
+    DEREFERENCEE
+    PRESERIE
+    SUSPENDUE
+}
+
+type CatalogueServices {
+    services: [Service!]!
+    regions: [Region!]!
+    thematics: [Thematics!]!
+    thematicsUsager: [ThematicsUsager!]!
+}
+
+type DisabilityModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    types: [DisabilitiesTypesEnum!]!
+    disabilityRate: DisabilityRateEnum
+    technicalHelp: String
+    humanHelp: HumanHelpEnum!
+}
+
+enum DisabilitiesTypesEnum {
+    SENSORY
+    NEURO_DEVELOPMENTAL_DISORDER
+    PSYCHIC
+    ENGINE
+    POLY_DISABILITY
+    DISABLING_DISEASES
+    OTHERS
+}
+
+enum DisabilityRateEnum {
+    LESS_THAN_50
+    BETWEEN_50_AND_79
+    BIGGER_THAN_80_OR_EQUAL
+    UNKNOWN
+}
+
+enum HumanHelpEnum {
+    YES
+    NO
+    NONE
+}
+
+type DisabilityListModel {
+    disabilities: [DisabilityModel!]!
+    unconcernedDeclarationDate: String
+}
+
+type CreatedFolder {
+    id: String!
+}
+
+type DocumentCreated {
+    id: String!
+}
+
+type ContactModel {
+    email: String
+    mobileNumber: String
+}
+
+type Dmp {
+    status: ID!
+    statusDate: String!
+    createReactive: String!
+}
+
+type DmpModel {
+    dmp: Dmp
+}
+
+type OuvrantDroitModel {
+    nir: String
+    firstName: String!
+    lastName: String!
+    compte: ExistenceCompteEnsModel
+}
+
+type AyantDroitModel {
+    nir: String
+    firstName: String!
+    lastName: String!
+    isOuvrantDroit: Boolean!
+    dateOfBirth: String!
+    dmp: Dmp
+    ens: EnsModel
+}
+
+type ListeRattachement {
+    nir: String
+    firstName: String!
+    lastName: String!
+    dateOfBirth: String!
+}
+
+type EnrolmentModel {
+    ouvrantDroit: OuvrantDroitModel
+    ayantDroit: AyantDroitModel
+    listeRattachement: [ListeRattachement!]
+    contact: ContactModel
+}
+
+type EnsModel {
+    status: String!
+    originalStatus: String!
+    motif: String!
+    statusModifiedAt: String!
+    createdAt: String!
+    deleteRequestStatus: String!
+}
+
+type GenerateNewEnrolmentCodeModel {
+    nir: ID
+    vitalCardNumber: String
+    lastName: String
+    firstName: String
+    dateOfBirth: String
+    userContact: ContactModel
+    listeRattachement: [ListeRattachement!]
+}
+
+type InfoFamilleDeDroitEnrichi {
+    nir: String!
+    lastName: String!
+    firstName: String!
+    birthDate: String
+    statutProfile: String!
+    dateCreationEns: Date
+    dateFermetureEns: Date
+    delegationActive: Boolean!
+    isAyantDroit: Boolean!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type InfoFamilleDeDroitEnrichiModel {
+    family: [InfoFamilleDeDroitEnrichi!]!
+}
+
+type OtpForResetPasswordModel {
+    canalValue: String!
+}
+
+type ProofOfOppositionModel {
+    pdf: String!
+}
+
+type SendLoginModel {
+    canalValue: String!
+}
+
+type SendNewCodeEnrolmentSuccess {
+    success: Boolean!
+}
+
+type VerifyOtpUpdateContactModel {
+    isOtpCodeValid: Boolean!
+}
+
+type ExistenceCompteEnsModel {
+    isAccountFound: Boolean!
+    isCguAccepted: Boolean!
+    userName: String
+    isEnsOpen: Boolean!
+}
+
+type UserNameAvailabilityModel {
+    isAvailable: Boolean!
+    suggestions: [String!]!
+}
+
+type ExportToPdfModel {
+    name: String!
+    mimeType: String!
+    binary: String!
+    size: Float!
+}
+
+type FamilyHistoryModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    familyRelationship: FamilyRelationshipEnum!
+}
+
+enum FamilyRelationshipEnum {
+    MOTHER
+    FATHER
+    GRANDMOTHER
+    GRANDFATHER
+    SISTER
+    BROTHER
+    GREAT_GRANDMOTHER
+    GREAT_GRANDFATHER
+    AUNT
+    UNCLE
+    OTHER
+}
+
+type FamilyHistoryListModel {
+    familyHistories: [FamilyHistoryModel!]!
+    unconcernedDeclarationDate: String
+}
+
+type EpisodePsAuthorViewModel {
+    id: String!
+    fullName: String!
+    profession: [String!]!
+    specialities: [String!]!
+}
+
+type EpisodeEsAuthorViewModel {
+    id: String!
+    name: String!
+}
+
+type DiseaseEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    startDate: String!
+    name: String!
+    eventType: DiseaseEpisodeType!
+    comment: String
+    endDate: String
+    diseaseId: String!
+    hasOnlyYearInStartDate: Boolean!
+    hasOnlyMonthAndYearInStartDate: Boolean!
+    hasOnlyYearInEndDate: Boolean!
+    hasOnlyMonthAndYearInEndDate: Boolean!
+}
+
+enum DiseaseEpisodeType {
+    START
+    END
+    FULL
+}
+
+type BiologyEpisodeItemsViewModel {
+    effectiveDate: String
+    category: String
+    deliveryDate: String!
+    name: String!
+    prescriberEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    prescriberId: String @deprecated(reason: "use episodePsAuthor.id")
+    code: String!
+    episodePsAuthor: EpisodePsAuthorViewModel
+    episodeEsAuthor: EpisodeEsAuthorViewModel
+}
+
+type BiologyEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    items: [BiologyEpisodeItemsViewModel!]!
+}
+
+type MedicineEpisodeItemsViewModel {
+    effectiveDate: String
+    category: String
+    deliveryDate: String!
+    name: String!
+    prescriberEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    prescriberId: String @deprecated(reason: "use episodePsAuthor.id")
+    therapeuticGroup: String
+    deliveredById: String
+    quantityDelivered: Float!
+    episodePsAuthor: EpisodePsAuthorViewModel
+    episodeDeliveredByPsAuthor: EpisodePsAuthorViewModel
+    episodeEsAuthor: EpisodeEsAuthorViewModel
+    episodeDeliveredByEsAuthor: EpisodeEsAuthorViewModel
+}
+
+type MedicineEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    items: [MedicineEpisodeItemsViewModel!]!
+}
+
+type MedicalDentalCareEpisodeItemViewModel {
+    code: String!
+    deliveryDate: String!
+    name: String!
+    prescriberEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    prescriberId: String @deprecated(reason: "use episodePsAuthor.id")
+    episodePsAuthor: EpisodePsAuthorViewModel
+    episodeEsAuthor: EpisodeEsAuthorViewModel
+}
+
+type MedicalDentalCareEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    items: [MedicalDentalCareEpisodeItemViewModel!]!
+}
+
+type HospitalizationEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    admissionDate: String!
+    releaseDate: String
+    nature: String!
+    placeEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    episodeEsAuthorHospitalization: EpisodeEsAuthorViewModel
+}
+
+type RadiologyEpisodeItemsViewModel {
+    effectiveDate: String
+    category: String
+    deliveryDate: String!
+    name: String!
+    prescriberEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    prescriberId: String @deprecated(reason: "use episodePsAuthor.id")
+    code: String!
+    episodePsAuthor: EpisodePsAuthorViewModel
+    episodeEsAuthor: EpisodeEsAuthorViewModel
+}
+
+type RadiologyEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    items: [RadiologyEpisodeItemsViewModel!]!
+}
+
+type MedicalDeviceEpisodeItemsViewModel {
+    effectiveDate: String
+    category: String
+    deliveryDate: String!
+    name: String!
+    prescriberEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    prescriberId: String @deprecated(reason: "use episodePsAuthor.id")
+    deliveredById: String
+    quantityDelivered: Float!
+    episodePsAuthor: EpisodePsAuthorViewModel
+    episodeEsAuthor: EpisodeEsAuthorViewModel
+    episodeDeliveredByEsAuthor: EpisodeEsAuthorViewModel
+}
+
+type MedicalDeviceEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    items: [MedicalDeviceEpisodeItemsViewModel!]!
+}
+
+type VaccineEpisodeItemsViewModel {
+    effectiveDate: String
+    category: String
+    deliveryDate: String!
+    name: String!
+    prescriberEstablishmentId: String @deprecated(reason: "use episodeEsAuthor.id")
+    prescriberId: String @deprecated(reason: "use episodePsAuthor.id")
+    deliveredById: String
+    vaccineValencia: String
+    typeCodage: Float
+    codeCIP: String
+    episodePsAuthor: EpisodePsAuthorViewModel
+    episodeDeliveredByPsAuthor: EpisodePsAuthorViewModel
+    episodeEsAuthor: EpisodeEsAuthorViewModel
+    episodeDeliveredByEsAuthor: EpisodeEsAuthorViewModel
+}
+
+type VaccineEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    items: [VaccineEpisodeItemsViewModel!]!
+}
+
+type CvaVaccineEpisodeViewModel implements EpisodeViewModel {
+    date: String!
+    category: EpisodeCategory!
+    categoryLabel: String!
+    isListOfActs: Boolean!
+    id: String!
+    name: String!
+    siteOfAdministration: String
+    typeOfAdministration: VaccineTypeOfAdministrationEnum
+    routeOfAdministration: String
+    lotNumber: String
+    performer: String
+    isValidatedByPs: Boolean
+    cisCode: String
+    author: String
+    pathologies: String!
+}
+
+enum VaccineTypeOfAdministrationEnum {
+    INITIMMUNIZ
+    BOOSTER
+    IMMUNIZ
+}
+
+type EpisodeListResponse {
+    episodes: [EpisodeViewModel!]!
+    numberOfEpisodes: Float!
+}
+
+type EpisodeByMonthAndCategoryViewModel {
+    category: String!
+    categoryLabel: String!
+    episodes: [EpisodeViewModel!]!
+    month: String!
+}
+
+type EpisodeByYearAndCategoryViewModel {
+    category: String!
+    categoryLabel: String!
+    episodes: [EpisodeViewModel!]!
+    year: Float!
+    numberOfEpisodes: Float!
+}
+
+type HealthHistoryConfidentialityModel {
+    confidentiality: Confidentiality!
+}
+
+type TraceHistoryModel {
+    date: String!
+    name: String
+    author: String
+}
+
+type HealthProfessionalReferentialModel {
+    idNat: String!
+    firstName: String!
+    lastName: String!
+    isContactable: Boolean!
+    isPSinListPS: Boolean!
+    contactId: String
+    profession: String
+    specialities: String
+    shortLabelSpecialities: String
+    adresses: [HealthProfessionalAddressModel!]
+    documents: [DocumentModel!]
+    role: HealthProfessionalRoleEnum
+    active: Boolean!
+}
+
+type SimpleHealthProfessionalReferentialModel {
+    idNat: String!
+    firstName: String!
+    lastName: String!
+    specialities: String
+    profession: String
+    adresses: [HealthProfessionalAddressModel!]
+}
+
+type HealthStructureReferentialModel {
+    id: String!
+    name: String!
+    isContactable: Boolean!
+    isESinListES: Boolean!
+    alias: String
+    activity: String
+    organizationId: String
+    mail: String
+    addresses: HealthProfessionalAddressModel
+    documents: [DocumentModel!]
+    listTraceHistoryES: [TraceHistoryModel!]
+    active: Boolean!
+}
+
+type SimpleHealthStructureReferentialModel {
+    id: String!
+    name: String!
+}
+
+type HealthProfessionalsInfosModel {
+    email: String!
+    idNat: String!
+    typeBal: String!
+}
+
+type ContactListModel {
+    contacts: [MessagingContactModel!]!
+}
+
+type InactiveContactListModel {
+    inactiveContacts: [InactiveContactModel!]!
+}
+
+type CreateTicket {
+    success: Boolean!
+    errorCode: String
+}
+
+type LastCommentViewModel {
+    message: String!
+    hasDocuments: Boolean!
+}
+
+type TicketSummaryViewModel {
+    id: String!
+    reasonLabel: String!
+    lastUpdate: String!
+    lastComment: LastCommentViewModel!
+}
+
+type CommentDocumentModel {
+    id: String!
+    name: String!
+}
+
+type CommentViewModel {
+    id: String!
+    from: String!
+    message: String!
+    createdAt: String!
+    documents: [CommentDocumentModel!]!
+}
+
+type TicketDetailsViewModel {
+    id: String!
+    reasonLabel: String!
+    comments: [CommentViewModel!]!
+}
+
+type CommentDocumentViewModel {
+    id: String!
+    data: String!
+}
+
+type ReasonsViewModel {
+    value: String!
+    label: String!
+}
+
+type ReportInformationModel {
+    lastReport: String
+    isReportLimitExceeded: Boolean!
+}
+
+type MeasureTileModel {
+    type: MeasureCode!
+    visible: Boolean!
+}
+
+enum MeasureCode {
+    WEIGHT
+    HEIGHT
+    WAIST_CIRCUMFERENCE
+    BODY_TEMPERATURE
+    GLUCOSE
+    SYSTOLIC_BLOOD_PRESSURE
+    DIASTOLIC_BLOOD_PRESSURE
+    BLOOD_PRESSURE
+    BODY_MASS_INDEX
+    PAIN_SEVERITY
+    HEART_RATE
+    HEAD_CIRCUMFERENCE
+    STEPS_BY_DAY
+    INTERSTITIAL_GLUCOSE
+    GLYCATED_HEMOGLOBIN
+    HEMOGLOBIN_GLYCATION_INDEX
+}
+
+type MeasureTileListModel {
+    tiles: [MeasureTileModel!]!
+}
+
+type MeasureTargetModel {
+    id: String!
+    type: MeasureCode!
+    value: Float!
+}
+
+type MeasureTargetsListModel {
+    targets: [MeasureTargetModel!]!
+}
+
+type CurvesCategoryModel {
+    date: String!
+    measure: Float!
+}
+
+type CurvesListModel {
+    name: MeasureCategory!
+    data: [CurvesCategoryModel!]!
+}
+
+enum MeasureCategory {
+    BMI16
+    BMI17
+    BMI18_5
+    BMI23
+    BMI25
+    BMI27
+    BMI30
+    BMI35
+    SDMED
+    SDNEG1
+    SDNEG2
+    SDNEG3
+    SDPOS1
+    SDPOS2
+    SDPOS3
+    C1
+    C3
+    C10
+    C25
+    C50
+    C75
+    C90
+    C97
+    C99
+}
+
+type MeasureGrowthMetricsModel {
+    code: MeasureCode!
+    gender: MeasureGender!
+    categories: [CurvesListModel!]!
+}
+
+enum MeasureGender {
+    MALE
+    FEMALE
+}
+
+type MetricModel {
+    code: MeasureCode
+    value: Float!
+    unit: String!
+    label: String!
+    format: String!
+}
+
+type MetricMetaDataModel {
+    code: MeasureCode!
+    unit: String!
+    label: String!
+    placeholder: String!
+    hint: String
+    constraints: [ConstraintMetaDataModel!]!
+    maxlength: String
+    format: String
+    labelAndDescription: String
+}
+
+type RangeModel {
+    min: Float
+    max: Float
+}
+
+type ConstraintMetaDataModel {
+    regexp: String
+    range: RangeModel
+    message: String!
+}
+
+type OptionMetaDataModel {
+    code: String!
+    label: String!
+    extraValueMetadata: OptionExtraValueMetaDataModel
+}
+
+type OptionExtraValueMetaDataModel {
+    fieldLabel: String!
+    maxLength: Float!
+    constraints: [ConstraintMetaDataModel!]!
+}
+
+type CommentModel {
+    code: String!
+    value: String!
+    extra: String
+    measureCode: MeasureCode!
+    label: String!
+}
+
+type CommentMetaDataModel {
+    code: String!
+    options: [OptionMetaDataModel!]
+    measureCode: MeasureCode!
+    label: String!
+    placeholder: String!
+    required: Boolean!
+    constraints: [ConstraintMetaDataModel!]!
+}
+
+type AuthorModel {
+    firstName: String
+    lastName: String
+    type: AuthorType!
+}
+
+enum AuthorType {
+    PATIENT
+    EDITOR_SOLUTION
+}
+
+type MeasureModel {
+    id: ID!
+    code: MeasureCode!
+    patientId: String
+    effectiveDate: String
+    metrics: [MetricModel!]
+    comments: [CommentModel!]
+    template: String!
+    author: AuthorModel
+    growthMetricsIntervalText: String
+    idDocument: String
+    nameDocument: String
+    label: String!
+    permissions: PermissionsModel!
+    formattedMetricValue: String!
+}
+
+type MeasureMetaDataModel {
+    code: MeasureCode!
+    metrics: [MetricMetaDataModel!]
+    comments: [CommentMetaDataModel!]
+    label: String!
+    template: String!
+}
+
+type MeasuresHistoryModel {
+    code: String!
+    measures: [MeasureModel!]!
+    totalElements: Int!
+    totalPages: Int!
+    metaData: MeasureMetaDataModel!
+}
+
+type PermissionsModel {
+    add: Boolean!
+    delete: Boolean!
+    update: Boolean!
+    history: Boolean!
+}
+
+type UnconcernedModel {
+    declarationDate: String
+}
+
+type HealthStructureListModel {
+    healthStructures: [HealthStructureReferentialModel!]!
+}
+
+type LifestyleDetailValueMetadataModel {
+    value: String!
+    label: String!
+}
+
+type LifestyleConstraintRangeModel {
+    min: Float
+    max: Float
+}
+
+type LifestyleDetailDisplayMetadataModel {
+    name: String!
+    value: String
+    range: LifestyleConstraintRangeModel
+}
+
+type LifestyleConstraintModel {
+    regexp: String
+    range: LifestyleConstraintRangeModel
+    message: String!
+}
+
+type LifestyleDetailMetadataModel {
+    name: String!
+    label: String!
+    detailTag: String!
+    description: String
+    example: String
+    type: LifestyleItemDisplayEnum!
+    options: [LifestyleDetailValueMetadataModel!]
+    displayOn: LifestyleDetailDisplayMetadataModel
+    maxLength: Float
+    constraints: [LifestyleConstraintModel!]
+}
+
+enum LifestyleItemDisplayEnum {
+    RADIO
+    TEXT
+}
+
+type LifestyleItemMetadataModel {
+    name: String!
+    itemTag: String!
+    details: [LifestyleDetailMetadataModel!]!
+}
+
+type LifestyleSectionMetadataModel {
+    name: LifestyleSectionEnum!
+    label: String!
+    sectionTag: String!
+    items: [LifestyleItemMetadataModel!]!
+}
+
+enum LifestyleSectionEnum {
+    FOOD
+    PHYSICAL_ACTIVITY
+    SLEEP
+    SCREEN
+    ALCOHOL
+    TOBACCO
+}
+
+type LifestyleMetadataModel {
+    sections: [LifestyleSectionMetadataModel!]!
+}
+
+type LifestyleAnswerModel {
+    name: String!
+    label: String!
+    value: String!
+}
+
+type LifestyleDetailModel {
+    id: String!
+    createdType: LifestyleCreationTypeEnum!
+    lastModifiedType: LifestyleCreationTypeEnum!
+    effectiveDate: String!
+    authorFirstName: String
+    authorLastName: String
+    answers: [LifestyleAnswerModel!]!
+}
+
+enum LifestyleCreationTypeEnum {
+    PATIENT
+    QUIZ
+    MIGRATION
+}
+
+type LifestyleItemModel {
+    name: String!
+    details: LifestyleDetailModel!
+}
+
+type LifestyleSectionModel {
+    name: LifestyleSectionEnum!
+    items: [LifestyleItemModel!]!
+}
+
+type LifestyleStatusModel {
+    name: LifestyleSectionEnum!
+    lastModifiedDate: String
+}
+
+type LifestylesModel {
+    sections: [LifestyleStatusModel!]!
+}
+
+type LifestyleItemHistoryModel {
+    name: String!
+    details: [LifestyleDetailModel!]!
+}
+
+type LifestyleSectionAnswersHistoryModel {
+    name: LifestyleSectionEnum!
+    items: [LifestyleItemHistoryModel!]!
+}
+
+type SearchStructureModel {
+    idFineg: String
+    name: String
+    active: Boolean!
+    address: Address
+    activity: String
+    phoneNumber: String
+    mail: String
+    alias: String
+}
+
+type SearchStructureListModel {
+    searchStructures: [SearchStructureModel!]!
+}
+
+type HealthActorsSuggestionsModel {
+    nationalId: String!
+    name: String
+    type: String!
+    address: String
+    email: String
+    commune: String
+    profession: String
+}
+
+type HealthActorsSuggestionsListModel {
+    healthActorsSuggestions: [HealthActorsSuggestionsModel!]!
+}
+
+type PathologyModel {
+    id: String!
+    label: String!
+}
+
+type VaccineRangeModel {
+    min: Float!
+    max: Float!
+}
+
+type PathologyInformationsModel {
+    title: String!
+    description: [String!]!
+}
+
+type VaccineCalendarItemModel {
+    vaccineRefId: String!
+    label: String!
+    pathologies: [PathologyModel!]!
+    injectionCount: Float!
+    isMandatory: Boolean
+    displayAge: VaccineRangeModel!
+    vaccineAge: VaccineRangeModel!
+    isRepeatable: Boolean!
+    minimalMonthRepeatition: Float!
+    specificMessage: String
+    injectionDate: String!
+}
+
+type GroupVaccineCalendarBySectionModel {
+    label: String!
+    injectionDate: String!
+    items: [VaccineCalendarItemModel!]!
+}
+
+type GroupVaccineCalendarByYearModel {
+    label: String!
+    sections: [GroupVaccineCalendarBySectionModel!]!
+}
+
+type GroupVaccineCalendarModel {
+    years: [GroupVaccineCalendarByYearModel!]!
+}
+
+type IncomingVaccineCalendarModel {
+    title: String!
+    items: [VaccineCalendarItemModel!]!
+}
+
+type ServiceLogoModel {
+    id: String!
+    type: String
+    file: String
+}
+
+type SynchronizationServiceModel {
+    name: String!
+    logo: ServiceLogoModel
+    redirectUrl: String!
+    cguUrl: String!
+    status: String!
+}
+
+type ExternalUserModel {
+    firstName: String!
+    lastName: String!
+    email: String!
+    login: String!
+}
+
+type PairingStatusModel {
+    pairingStatus: String!
+}
+
+type LastPairingIdModel {
+    pairingId: String!
+}
+
+type DonneeViewModel {
+    description: String!
+}
+
+type CategorieViewModel {
+    titre: String!
+    code: String!
+    description: String!
+    donnees: [DonneeViewModel!]!
+}
+
+type EchangeDeDonneesViewModel {
+    perimetre: String!
+    action: String!
+    categories: [CategorieViewModel!]!
+}
+
+type FinalityModel {
+    id: Float!
+    libelle: String!
+    description: String!
+    codeFinalite: String!
+    consenti: Boolean!
+    echangesDeDonnees: [EchangeDeDonneesViewModel!]!
+}
+
+type EnrolledDeviceModel {
+    id: String!
+}
+
+type EnrolledDevicesModel {
+    enrolledDevices: [EnrolledDeviceModel!]
+    numberOfDevices: Int!
+}
+
+type VaccineItemModel {
+    vaccineId: String!
+    effectiveTime: String!
+    name: String!
+    lotNumber: String
+    typeOfAdministration: VaccineTypeOfAdministrationEnum!
+    routeOfAdministration: String
+    siteOfAdministration: String
+    performer: String
+    author: String!
+    cisCode: String!
+    atcName: String!
+    comment: String
+    pathologies: String!
+    mandatory: Boolean
+    authoredByPatient: Boolean!
+    vaccineRefId: String
+}
+
+type VaccinesListModel {
+    vaccines: [VaccineItemModel!]!
+}
+
+type VaccineRefModel {
+    vaccineRefId: String!
+    label: String!
+    cisCode: String!
+    atcCode: String!
+    atcName: String!
+    pathologies: String!
+    marketingStart: String
+    marketingEnd: String
+    cipCodes: [String!]!
+}
+
+type EnsProfileViewModel {
+    patientId: String!
+    firstname: String!
+    lastname: String!
+    profileType: ProfileType!
+}
+
+enum ProfileType {
+    OuvrantDroit
+    AyantDroit
+}
+
+type ActorViewModel {
+    id: String
+    type: ActorType
+    fullname: String
+}
+
+enum ActorType {
+    PS
+    ES
+}
+
+type ResourceViewModel {
+    type: ResourceType
+    id: String
+    title: String
+    date: String
+}
+
+enum ResourceType {
+    DOCUMENT
+    MESSAGERIE
+    PML_CVA
+    PML_DA
+    PML_VDP
+    AGENDA
+    COPIE_DOC_AJOUT_GLYCEMIE
+    RAPPEL_RDV_PREV
+    PML_MESURE
+}
+
+type NotificationViewModel {
+    id: String!
+    date: String!
+    elapsedTime: String!
+    label: String!
+    code: String!
+    read: Boolean!
+    urn: String
+    url: String
+    redirectionLabel: String
+    actor: ActorViewModel!
+    resource: ResourceViewModel
+}
+
+type NotificationCenterViewModel {
+    unreadNotificationsCount: Int!
+    profiles: [NotificationProfileViewModel!]!
+}
+
+type NotificationProfileViewModel {
+    ensProfil: EnsProfileViewModel!
+    unreadNotificationsCount: Int!
+    notifications: [NotificationViewModel!]!
+}
+
+type DelegationActor {
+    idp: ID!
+    givenNames: String!
+    familyName: String!
+    birthDate: String!
+    gender: Gender!
+}
+
+enum Gender {
+    MALE
+    FEMALE
+    UNKNOWN
+}
+
+type DelegationInvitation {
+    id: ID!
+    delegateIdp: String!
+    delegate: DelegationActor!
+    delegatorIdp: String!
+    delegator: DelegationActor!
+    status: DelegationInvitationStatus!
+    type: DelegationType!
+    direction: DelegationDirection
+    creationDate: String!
+    expirationDate: String!
+}
+
+enum DelegationInvitationStatus {
+    PENDING
+    ACCEPTED
+    REFUSED
+    EXPIRED
+}
+
+enum DelegationType {
+    LEGAL_REPRESENTATION
+    CAREGIVING
+    HEALTHCARE_PROFESSIONAL
+}
+
+enum DelegationDirection {
+    INCOMING
+    OUTGOING
+}
+
+type Delegation {
+    id: ID!
+    delegateIdp: String!
+    delegate: DelegationActor
+    delegatorIdp: String!
+    delegator: DelegationActor
+    type: DelegationType!
+    direction: DelegationDirection
+    startDate: String!
+    endDate: String!
+}
+
+type DelegationMatchPotentialDelegatePayload {
+    ins: String!
+    idp: String!
+    givenNames: String!
+    familyName: String!
+    birthDate: String!
+    transactionId: String!
+}
+
+type DelegationRevokePayload {
+    attestation: String
+    isSavedInDmp: Boolean
+    documentId: String
+}
+
+type DelegationAcceptInvitationPayload {
+    attestation: String
+    isSavedInDmp: Boolean!
+}
+
+type DelegationRefuseInvitationPayload {
+    attestation: String
+    isSavedInDmp: Boolean!
+}
+
+type ActivityTraceViewModel {
+    actorType: ActivityActorType!
+    actorDisplayName: String!
+    actionDate: String!
+    actionDescription: String!
+}
+
+enum ActivityActorType {
+    HEALTHCARE_PROFESSIONAL
+    HEALTHCARE_FACILITY
+    SUPPORT
+    PATIENT
+    SERVICE_TIERS
+    SYSTEM
+    ENROLMENT
+}
+
+type PageInfo {
+    totalPages: Int!
+    page: Int!
+    pageSize: Int!
+    hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+}
+
+type PaginatedActivityTraceListOutput {
+    items: [ActivityTraceViewModel!]!
+    pageInfo: PageInfo!
+}
+
+type CardInformationModel {
+    image: String!
+    text: String!
+    action: String
+}
+
+type MentionModel {
+    icon: String!
+    text: String!
+}
+
+type OtherActionsInformationModel {
+    isShareable: Boolean
+    isDownloadable: Boolean
+    isEditable: Boolean
+    isDeletable: Boolean
+}
+
+type InformationModel {
+    title: String
+    cards: [CardInformationModel!]!
+    action: String
+    mention: MentionModel
+    otherActions: OtherActionsInformationModel
+}
+
+type DescriptionLinkModel {
+    text: String!
+    href: String!
+}
+
+type MedicalAppointmentCardModel {
+    image: String!
+    description: [String!]!
+    link: DescriptionLinkModel
+    titleButton: String!
+}
+
+type MedicalAppointmentPopinModel {
+    image: String!
+    title: String!
+    description: [String!]!
+    link: DescriptionLinkModel
+    titleButton: String!
+}
+
+type MedicalAppointmentModel {
+    card: MedicalAppointmentCardModel!
+    popin: MedicalAppointmentPopinModel!
+}
+
+type PageInformationModel {
+    title: String!
+    description: [String!]!
+    descriptionLink: DescriptionLinkModel
+    medicalAppointment: MedicalAppointmentModel
+    information: InformationModel
+}
+
+type RowQuestionModel {
+    title: String!
+    description: String
+}
+
+type TextQuestionModel {
+    title: String!
+}
+
+type OptionModel {
+    value: String!
+    code: String!
+}
+
+type ChoiceQuestionModel {
+    title: String
+    options: [OptionModel!]!
+    type: ChoiceQuestionType!
+}
+
+enum ChoiceQuestionType {
+    RADIO
+    DROP_DOWN
+    CHECKBOX
+}
+
+type ConstraintRangeModel {
+    min: Float
+    max: Float
+}
+
+type ConstraintModel {
+    regexp: String
+    range: ConstraintRangeModel
+    message: String!
+}
+
+type QuestionModel {
+    code: String!
+    suggestionCode: String
+    rowQuestion: RowQuestionModel
+    textQuestion: TextQuestionModel
+    choiceQuestion: ChoiceQuestionModel
+    required: Boolean!
+    maxLength: Float
+    constraints: [ConstraintModel!]
+}
+
+type QuestionGroupItemModel {
+    title: String!
+    goToNext: Float
+    goToNextOn: [String!]
+    goToPrevious: Float
+    goToPreviousOn: [String!]
+    questions: [QuestionModel!]!
+}
+
+type ItemModel {
+    questionGroupItem: QuestionGroupItemModel!
+}
+
+type HealthQuizModel {
+    start: PageInformationModel!
+    end: PageInformationModel!
+    items: [ItemModel!]!
+    code: String!
+    ageMin: Float!
+    ageMax: Float!
+    version: String!
+}
+
+type ResponseModel {
+    questionCode: String!
+    value: [String!]!
+}
+
+type HealthQuizResponsesModel {
+    patientId: String!
+    quizCode: String!
+    quizVersion: String!
+    details: [ResponseModel!]!
+    status: HealthQuizCompletionStatus!
+    questionToDisplay: Float
+    responseId: String
+    lastUpdateUserDate: String!
+}
+
+enum HealthQuizCompletionStatus {
+    DRAFT
+    FINAL
+}
+
+type HealthQuizCodeVersionModel {
+    code: String!
+    savedVersion: String
+    newVersion: String
+    responseId: String
+    isEditable: Boolean!
+}
+
+type HealthQuizResponseStatusModel {
+    id: String!
+    version: String!
+    status: HealthQuizCompletionStatus!
+    lastUpdateUserDate: String!
+    lastUpdateUserDateFormatted: String
+    questionToDisplay: Float
+}
+
+type HealthQuizStatusModel {
+    response: HealthQuizResponseStatusModel
+    code: String!
+    lastVersion: String!
+    ageMin: Float!
+    ageMax: Float!
+    title: String!
+    availableLimitDate: String!
+    availableLimitDateFormatted: String!
+    isEditable: Boolean!
+}
+
+type HealthQuizListStatusModel {
+    isEmpty: Boolean!
+    healthQuizListToDo: [HealthQuizStatusModel!]!
+    healthQuizListDoing: [HealthQuizStatusModel!]!
+    healthQuizListDone: [HealthQuizStatusModel!]!
+}
+
+type HealthQuizPDFModel {
+    name: String!
+    mimeType: String!
+    binary: String!
+    responseId: String!
+    lastUpdateUserDate: String!
+    isDraftAndNotEditable: Boolean!
+    size: Float!
+}
+
+type IncentiveRecoViewModel {
+    code: String!
+    family: String!
+    priority: Float!
+    data: IncentiveRecoData!
+}
+
+type IncentiveRecoData {
+    count: String
+    questionToDisplay: String
+    quizCode: String
+    responseId: String
+    quizVersion: Float
+    lastVersion: Float
+    preference: IncentiveRecoDataPreference
+    enfants: [IncentiveRecoDataEnfant!]
+}
+
+type IncentiveRecoDataPreference {
+    dateRappel: String
+    doitEtreAffichee: Boolean
+}
+
+type IncentiveRecoDataEnfant {
+    nom: String!
+    prenom: String!
+}
+
+type DelayedRecommendationEnfant {
+    nom: String!
+    prenom: String!
+}
+
+type DelayedRecommendationPreference {
+    doitEtreAffichee: Boolean!
+}
+
+type DelayedRecommendationData {
+    enfants: [DelayedRecommendationEnfant!]
+}
+
+type DelayedRecommendationViewModel {
+    code: RecommendationCode!
+    priority: Float!
+    preference: DelayedRecommendationPreference!
+    data: DelayedRecommendationData
+}
+
+enum RecommendationCode {
+    INCITER_MES_ENFANT
+    DECOUVERTE_MES_ENFANT
+}
+
+type AgendaInfoViewModel {
+    appointments: [AppointmentViewModel!]!
+    reminders: [ReminderViewModel!]!
+    preventions: [PreventionViewModel!]!
+}
+
+type DecryptionModel {
+    decryptedValue: String!
+}
+
+type HospitalizationModel {
+    id: String!
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    duration: Float!
+    durationUnit: DurationUnitEnum!
+    linkedDocuments: [LinkedDocumentModel!]
+}
+
+enum DurationUnitEnum {
+    DAY
+    WEEK
+    MONTH
+    YEAR
+}
+
+type HospitalizationListModel {
+    hospitalizations: [HospitalizationModel!]!
+    unconcernedDeclarationDate: String
+}
+
+type ConsentFinalitiesViewModel {
+    consent: Boolean
+    isWhitelisted: Boolean
+}
+
+type AuthorBloodGroupModel {
+    firstName: String!
+    lastName: String!
+}
+
+type BloodGroupModel {
+    id: String!
+    bloodGroup: BloodGroupEnum!
+    author: AuthorBloodGroupModel!
+}
+
+enum BloodGroupEnum {
+    APOS
+    ANEG
+    ABPOS
+    ABNEG
+    BPOS
+    BNEG
+    OPOS
+    ONEG
+}
+
+type Query {
+    getOtpForResetPassword(getOtpForResetPassword: OtpForResetPasswordInput!): OtpForResetPasswordModel!
+    getProofOfOpposition: ProofOfOppositionModel!
+    sendLogin(sendLogin: SendLoginInput!): SendLoginModel!
+    getFamily: InfoFamilleDeDroitEnrichiModel!
+    getEns: EnsModel!
+    getDmp: DmpModel!
+    getExistenceCompteEns: ExistenceCompteEnsModel!
+    fetchSynchronizationService(pairingId: String!): SynchronizationServiceModel!
+    fetchFinalitiesForService(pairingId: String!): [FinalityModel!]!
+    fetchFinalitiesConsentsForServiceByOid(oid: String!, patientId: String!): [FinalityModel!]!
+    fetchExternalUserInformation(pairingId: String!): ExternalUserModel!
+    fetchPairingStatusByPairingId(pairingId: String!): PairingStatusModel!
+    getLastPairingId: LastPairingIdModel!
+    getPersonalInformation(getPersonalInformation: GetPersonalInformationInput!): PersonalInformationModel
+    getCompteInformation(getCompteInformation: GetCompteInformationInput!): CompteInformationModel!
+    getAyantsDroits(getAyantsDroits: GetAyantsDroitsInput!): [AyantsDroitsModel!]
+    ensActivityHistory(ensActivityHistory: EnsHistoryInput!): [ActivityHistoryModel!]!
+    synchronizedServicesActivityHistory(synchronizedServicesActivityHistory: SynchronizedServicesHistoryInput!): [ActivityHistoryModel!]!
+    dmpActivityHistory(dmpActivityHistory: TraceDocumentHistoryInput!): [DmpTraceHistoryModel!]!
+    getDmpConsentement(dmpConsentementInput: GetDmpConsentementInput!): [DmpConsentementModel!]!
+    getDmpConsentementForHealthcareStaff(dmpConsentementInput: GetDmpConsentementInput!): [DmpConsentementHealthcareStaffModel!]!
+    getHealthProfessionalConfidentialities(dmpConsentementInput: GetDmpConsentementInput!): DmpConsentementConfidentialityModel!
+    getPreferenceNotification(getPreferenceNotification: GetPersonalInformationInput!): PreferenceListNotificationModel!
+    getLegalRepresentatives(getLegalRepresentatives: GetLegalRepresentativesInput!): LegalRepresentativeModel!
+    getAccountFamily(accountGetAccountFamilyInput: AccountGetAccountFamilyInput!): AccountInfoFamilleDeDroitEnrichiModel!
+    getPendingInvitations(getPendingInvitations: GetPendingInvitationInput!): PendingInvitationsModel!
+    getDownloadRematInProgress(downloadRematInProgressInput: DownloadRematInProgressInput!): DownloadRematInProgressModel!
+    getProfessionelSante(researchPsInput: ResearchPsInput!): ResearchPSModel!
+    getProfessionelSanteGroupedCity(researchPsInput: ResearchPsInput!): ResearchPSModel!
+    getCityInformation(cityInput: GetCityInput!): [CityModel!]!
+    getGroupedCityInformation(cityInput: GetCityInput!): [GroupedCityModel!]!
+    fetchAllFuturesAppointmentsByPatientId(patientId: String!): [AppointmentViewModel!]!
+    fetchAllPastsAppointmentsByPatientId(patientId: String!): [AppointmentViewModel!]!
+    fetchAppointmentByIdAndPatientId(appointmentId: String!, patientId: String!): AppointmentViewModel!
+    fetchAllFuturesRemindersByPatientId(patientId: String!): [ReminderViewModel!]
+    fetchPastsRemindersByPatientId(patientId: String!): [ReminderViewModel!]
+    fetchReminderByIdAndPatientId(patientId: String!, reminderId: String!): ReminderViewModel
+    fetchPreventionsByPatientId(patientId: String!): [PreventionViewModel!]
+    fetchPreventionByPatientIdAndCodeAndDate(patientId: String!, code: String!, dateDebutPrevention: String!): PreventionViewModel
+    allergies(patientId: String!): AllergyListModel
+    fetchServiceById(serviceId: String!): Service!
+    fetchCatalogueServices: CatalogueServices!
+    fetchAllDisabilities(patientId: String!): DisabilityListModel!
+    diseases(patientId: String!): DiseaseListModel
+    documents(patientId: String!, categories: [Category!], uploadAuthorId: String): DocumentListModel
+    document(id: String!, patientId: String!): DocumentDetailModel!
+    allowedExtensionForDMP: DocumentAllowedForDmpModel!
+    getCovidCertificateQRCode(patientId: String!): CovidCertificateQRCodeModel!
+    getDefaultConfidentiality(patientId: String!): DefaultConfidentialityModel
+    getMedicalSynthesisPDF(patientId: String!, sectionsToDownload: [SectionToDownload!]): ExportToPdfModel!
+    exportDAFormToPdf(patientId: String!, isHealthy: Boolean!, advanceDirectivesFormEndOfLifeInput: AdvanceDirectivesFormEndOfLifeInput, advanceDirectivesFormGoodHealthInput: AdvanceDirectivesFormGoodHealthInput): ExportToPdfModel!
+    getHealthProfessionals(patientId: String!): HealthProfessionalListModel!
+    getHealthProfessionalsAndSynchroMt(patientId: String!): HealthProfessionalListModel!
+    familyHistories(patientId: String!): FamilyHistoryListModel!
+    fetchAllFolders(patientId: String!): [FolderViewModel!]
+    fetchDocumentLinkedFolder(patientId: String!, documentId: String!): LinkedFolderViewModel!
+
+    """Get input.count latest episodes by patient id grouped by day"""
+    getNthDailyEpisodesByPatientIdAndCategory(getNthDailyEpisodesByPatientIdAndCategory: EpisodeInputWithCount!): [EpisodeViewModel!]
+
+    """Get all episodes by patient id grouped by month and category"""
+    getMonthlyEpisodesByPatientIdAndCategory(episodeQueryInput: EpisodeInput!): [EpisodeByMonthAndCategoryViewModel!]!
+
+    """Get all episodes by patient id grouped by year and category"""
+    getYearlyEpisodesByPatientIdAndCategory(episodeQueryInput: EpisodeInput!): [EpisodeByYearAndCategoryViewModel!]!
+
+    """get all disease episode in progress"""
+    getDiseaseEpisodeInProgress(patientId: String!): [DiseaseEpisodeViewModel!]
+    dailyEpisodes(getCompleteNthDailyEpisodesByPatientIdAndCategory: EpisodeInputWithPagination!): EpisodeListResponse
+    getHealthHistoryConfidentiality(patientId: String!): HealthHistoryConfidentialityModel!
+    getSimpleHealthProfessionalReferentialByIdNat(idNat: String!): SimpleHealthProfessionalReferentialModel!
+    getHealthProfessionalReferentialByIdNat(idNat: String!, patientId: String): HealthProfessionalReferentialModel!
+    getHealthStructureReferential(healthStructureId: String!, patientId: String): HealthStructureReferentialModel!
+    getSimpleHealthStructureReferential(healthStructureId: String!): SimpleHealthStructureReferentialModel!
+    getInbox(messagingPageableInput: MessagingPageableInput!): MailBoxModel!
+    getMessageById(messageInput: MessageInput!): MessageModel!
+    getMessages(messagingInput: MessagingInput!): MessageResponseModel!
+    checkContactsStatus(contactDetailsInput: [ContactDetailsInput!]!): InactiveContactListModel!
+    fetchHealthProfessionalsInfosByEmails(healthProfessionalEmailsInput: HealthProfessionalEmailsInput!): [HealthProfessionalsInfosModel!]!
+    fetchContactList(patientId: String!): ContactListModel!
+    fetchHelpdeskTickets(patientId: String!): [TicketSummaryViewModel!]!
+    fetchHelpdeskTicketDetails(ticketId: String!): TicketDetailsViewModel!
+    fetchHelpdeskCommentDocument(ticketId: String!, commentId: String!, documentId: String!): CommentDocumentViewModel!
+    fetchAllReasons: [ReasonsViewModel!]!
+    fetchLastReportsInformation(patientId: String!, typeDemande: TypeDemande, idSignale: String): ReportInformationModel!
+    fetchLifestylesMetadata(patientId: String): LifestyleMetadataModel!
+    fetchLifestylesStatus(patientId: String!): LifestylesModel!
+    fetchLifestylesSection(patientId: String!, sectionType: LifestyleSectionEnum!): LifestyleSectionModel!
+    fetchLifestyleAnswersForGivenSection(patientId: String!, sectionType: LifestyleSectionEnum!): LifestyleSectionAnswersHistoryModel!
+    hospitalizations(patientId: String!): HospitalizationListModel!
+    measuresTiles(patientId: String!): MeasureTileListModel!
+    measuresTargets(patientId: String!): MeasureTargetsListModel!
+    measureGrowthMetrics(params: MeasureGrowthMetricsParams!): MeasureGrowthMetricsModel!
+    measuresByCode(measurePageableInput: MeasurePageableInput!): MeasuresHistoryModel!
+    measuresByCodeList(measurePageableInputs: [MeasurePageableInput!]!): [MeasuresHistoryModel!]!
+    measureMetaData(code: String!): MeasureMetaDataModel!
+    lastMeasures(patientId: String!): [MeasureModel!]
+    getHealthStructures(patientId: String!): HealthStructureListModel!
+    getPsTracesHistory(traceHistory: HealthProfessionalTraceInput!): [TraceHistoryModel!]!
+    advanceDirectives(patientId: String!): AdvanceDirectivesModel!
+    unconcerned(patientId: String!, section: SectionUriEnum!): UnconcernedModel!
+    getWishes(patientId: String!): WishesModel!
+    professions: [DisciplineModel!]!
+    specialities: [DisciplineModel!]!
+    searchStructure(searchStructureInput: SearchStructureInputModel!): SearchStructureListModel!
+    getHealthActorsSuggestions(patientId: String!, typeSuggestion: TypeSuggestion, maxSuggestion: Float): HealthActorsSuggestionsListModel!
+    getMessageFile(fileGetInput: FileGetInput!): FileModel!
+    fetchNotificationCenter: NotificationCenterViewModel
+    getVaccineCalendar(patientId: String!): GroupVaccineCalendarModel!
+    getIncomingVaccineCalendarItems(patientId: String!): IncomingVaccineCalendarModel!
+    getPathologyInformations(vaccineLabel: String!): PathologyInformationsModel!
+    treatments(patientId: String!): TreatmentListModel
+    getByCip(codeCip: String!): TreatmentRefModel!
+    getEnrolledDevices: EnrolledDevicesModel!
+    getIncentiveReco(patientId: String!): [IncentiveRecoViewModel!]
+    getAgendaInfo(patientId: String!): AgendaInfoViewModel!
+    vaccines(patientId: String!): VaccinesListModel!
+    vaccinesRef: [VaccineRefModel!]!
+    vaccinesReferentialByLabelAndCisCode(cisCode: String!, name: String!): VaccineRefModel!
+    vaccineRefByCipCode(cipCode: String!): VaccineRefModel!
+    delegationInvitations(filter: DelegationInvitationFilter): [DelegationInvitation!]!
+    delegations(filter: DelegationFilter): [Delegation!]!
+    activityTraces(
+        page: Int! = 1
+        pageSize: Int! = 100
+        idp: ID!
+        group: ActivityTraceGroup!
+
+        """Sort by Action Date"""
+        sort: ActivityTraceSort! = ACTION_DATE_DESC
+        filter: ActivityTraceFilterInput
+    ): PaginatedActivityTraceListOutput!
+    fetchHealthQuiz(patientId: String!, code: String!, version: String!): HealthQuizModel!
+    getHealthQuizPDF(patientId: String!, code: String!, version: String!): HealthQuizPDFModel!
+    getHealthQuizResponses(patientId: String!, code: String!, version: String!): HealthQuizResponsesModel
+    getHealthQuizCodeVersion(patientId: String!, fileNamePrefix: String!): HealthQuizCodeVersionModel
+    fetchAllHealthQuizStatus(patientId: String!): HealthQuizListStatusModel!
+    decrypt(encryptValue: String!): DecryptionModel!
+    fetchTreatmentDocAutoFinalityByPatientId(patientId: String!): ConsentFinalitiesViewModel!
+    getDelayedRecommendations(patientId: String!): [DelayedRecommendationViewModel!]
+    enrolmentUserNameAvailability(userName: String!): UserNameAvailabilityModel!
+    fetchBloodGroup(patientId: String!): BloodGroupModel
+}
+
+input OtpForResetPasswordInput {
+    nir: String!
+    vitalCardNumber: String!
+    dateOfBirth: String!
+    canalType: CanalType!
+}
+
+enum CanalType {
+    mail
+    sms
+}
+
+input SendLoginInput {
+    nir: String!
+    dateOfBirth: String!
+    canalType: CanalType!
+}
+
+input GetPersonalInformationInput {
+    patientId: String!
+}
+
+input GetCompteInformationInput {
+    loggedInUserId: String!
+}
+
+input GetAyantsDroitsInput {
+    patientId: String!
+}
+
+input EnsHistoryInput {
+    patientId: String!
+}
+
+input SynchronizedServicesHistoryInput {
+    patientId: String!
+}
+
+input TraceDocumentHistoryInput {
+    patientId: String!
+}
+
+input GetDmpConsentementInput {
+    patientId: String!
+}
+
+input GetLegalRepresentativesInput {
+    patientId: String!
+    type: DelegationTypeEnum!
+}
+
+enum DelegationTypeEnum {
+    LEGAL_REPRESENTATIVE
+    HEALTH_CARE
+    AIDANT_AIDE
+}
+
+input AccountGetAccountFamilyInput {
+    patientId: String!
+    profilsListIndex: [Int!]
+}
+
+input GetPendingInvitationInput {
+    idEnsOD: String!
+    type: DelegationTypeEnum!
+}
+
+input DownloadRematInProgressInput {
+    patientId: String!
+    loggedInUserId: String!
+}
+
+input ResearchPsInput {
+    lastName: String
+    firstName: String
+    cityCode: String
+    zipCode: String
+    departmentCode: String
+    professionCode: String
+    experticeCode: String
+}
+
+input GetCityInput {
+    cityName: String
+    zipCode: String
+    matchingRule: String!
+}
+
+enum SectionToDownload {
+    VACCINES
+    ALLERGIES
+    DISEASES
+    TREATMENTS
+    MEASURES
+    HOSPITALIZATIONS
+    FAMILY_HISTORY
+    LIFESTYLES
+    ENTOURAGE_CONTACT
+    WISHES
+    HEALTH_PROFESSIONALS
+    ADMINISTRATIVE_DOCUMENTS
+    DISABILITIES
+    BLOOD_GROUP
+}
+
+input AdvanceDirectivesFormEndOfLifeInput {
+    contexte: String!
+    maintientArtificiel: String!
+    sedation: String!
+    actesEtTraitementsEntrepris: ActsAndTreatmentsInput!
+    actesEtTraitementsArretes: ActsAndTreatmentsInput!
+    actesEtTraitementsSpecifiques: ActsAndTreatmentsInput!
+}
+
+input ActsAndTreatmentsInput {
+    reanimationCardiaque: String
+    branchement: String
+    interventionChirurgicale: String
+    autres: String
+}
+
+input AdvanceDirectivesFormGoodHealthInput {
+    contexte: String!
+    maintientArtificiel: String!
+    sedation: String!
+    actesEtTraitements: String!
+}
+
+input EpisodeInputWithCount {
+    patientId: String!
+    category: EpisodeCategory = ALL
+    count: Float = -1
+}
+
+input EpisodeInput {
+    patientId: String!
+    category: EpisodeCategory = ALL
+}
+
+input EpisodeInputWithPagination {
+    patientId: String!
+    category: EpisodeCategory = ALL
+    currentPage: Float = 0
+    episodesPerPage: Float = 0
+}
+
+input MessagingPageableInput {
+    pageable: PageableInput!
+    patientId: String!
+    filters: FiltersInput = {withNewMessage: false}
+}
+
+input PageableInput {
+    itemsPerPage: Int = 50
+    page: Int = 0
+}
+
+input FiltersInput {
+    withNewMessage: Boolean = false
+}
+
+input MessageInput {
+    patientId: String!
+    messageId: String!
+}
+
+input MessagingInput {
+    patientId: String!
+    conversationId: String!
+}
+
+input HealthProfessionalEmailsInput {
+    emails: [String!] = []
+}
+
+input ContactDetailsInput {
+    name: String!
+    type: String!
+    idNat: String!
+    typeBal: String!
+}
+
+enum TypeDemande {
+    SIGNALEMENT_DOC
+    SIGNALEMENT_SNR
+    SIGNALEMENT_PS
+}
+
+input MeasureGrowthMetricsParams {
+    code: MeasureCode!
+    gender: MeasureGender!
+    birthdate: String!
+    categories: [MeasureCategory!]
+    startPeriod: String!
+    endPeriod: String!
+    isReducedDataForChart: Boolean
+}
+
+input MeasurePageableInput {
+    pageable: PageableInput!
+    code: MeasureCode!
+    patientId: String!
+    startPeriod: String
+    endPeriod: String
+}
+
+input HealthProfessionalTraceInput {
+    patientId: String!
+    rppsId: String!
+}
+
+enum SectionUriEnum {
+    ALLERGIES
+    TREATMENTS
+    FAMILY_HISTORIES
+    HOSPITALIZATIONS
+    DISEASES
+    DISABILITIES
+}
+
+input SearchStructureInputModel {
+    type: String
+    name: String
+    codeCommune: String
+    codeDepartement: String
+    codePostal: String
+}
+
+enum TypeSuggestion {
+    PHARMACIE
+    AS
+}
+
+input FileGetInput {
+    patientId: String!
+    fileId: String!
+}
+
+input DelegationInvitationFilter {
+    status: DelegationInvitationStatus
+    type: DelegationType
+    direction: DelegationDirection
+}
+
+input DelegationFilter {
+    onlyActive: Boolean
+    withDetails: Boolean
+    type: DelegationType
+    direction: DelegationDirection
+}
+
+enum ActivityTraceGroup {
+    GENERAL
+    SERVICE_TIERS
+    MEDICAL_DOCUMENT
+}
+
+enum ActivityTraceSort {
+    ACTION_DATE_ASC
+    ACTION_DATE_DESC
+}
+
+input ActivityTraceFilterInput {
+    startDate: String
+    endDate: String
+}
+
+type Mutation {
+    sendOtpUpdateContact(sendOtpUpdateContact: SendOtpUpdateContactInput!): SendNewCodeEnrolmentSuccess!
+    verifyOtpUpdateContact(verifyOtpUpdateContact: VerifyOtpUpdateContactInput!): VerifyOtpUpdateContactModel!
+    updateContact: Success!
+    generateNewEnrolmentCode(generateNewEnrolmentCode: GenerateNewEnrolmentCodeInput!): GenerateNewEnrolmentCodeModel!
+    sendNewEnrolmentCode(sendNewEnrolmentCode: SendNewEnrolmentCodeInput!): SendNewCodeEnrolmentSuccess!
+    validateOtpForResetPassword(codeOTP: String!): Success!
+    vitalCardAuthentication(vitalCardAuthentication: VitalCardAuthenticationInput!): EnrolmentModel!
+    createEns(createEns: String!): Success!
+    createAccountEns(createAccountEns: CreateAccountEnsInput!): Success!
+    setPassword(newPassword: String!): Success!
+    closeEnsEnrolment: Success!
+    disconnectUser: Success!
+    enrolmentDeleteEnsData: Success!
+    blockAutomaticCreationIfNotRL: Success!
+    setNewPasswordFromEnloment(newPassword: String!): Success!
+    confirmUpdateServiceVersionInformation(oid: String!, patientId: String!): Success!
+    updateFinalitiesConsents(finalities: FinalitiesConsentsToUpdateInput!): Success!
+    deleteSynchronizedService(serviceOid: String!): Success!
+    addFinalityConsentByServiceOid(addFinalityConsentByServiceOid: ChangeFinalityConsentByServiceOidInput!): Success!
+    removeFinalityConsentByServiceOid(removeFinalityConsentByServiceOid: ChangeFinalityConsentByServiceOidInput!): Success!
+    deleteConsentReapprovalRequirement(
+        serviceOid: String!
+        """
+        Si patientId n'est pas fourni, l'utilisateur connecté est utilisé par défaut
+        """
+        patientId: String
+    ): Success!
+    changePassword(changePassword: ChangePasswordInput!): Success!
+    changeContact(changeContact: ChangeContactInput!): Success!
+    validateOtp(validateOtp: ValidateOtpInput!): Success!
+    setOnboarding(patientId: String!, onboardingDate: String!): Success!
+    setCGU(patientId: String!): Success!
+    setDmpConsentement(patientId: String!, consentementId: String!, purpose: String!, newValue: Boolean!): Success!
+    setHealthCareStaffAsAdministrator(patientId: String!, rpps: String!): Success!
+    removeHealthCareStaffAsAdministrator(consentementId: String!, patientId: String!, rpps: String!): Success!
+    setPreferenceNotification(changePreferenceNotificationInput: ChangePreferenceNotificationInput!): Success!
+    sendInvitationSecondRL(input: InvitationSecondRLInput!): Success!
+    activeProfils(accountActiveProfilsInput: AccountActiveProfilsInput!): Success!
+    setAccessValidatedOrRejected(accessValidatedOrRejectedInput: AccessValidatedOrRejectedInput!): Success!
+    askDownloadPersonalData(idEnsConcerne: String!): Success!
+    askDeletePersonalData(askDeletePersonalDataInput: AskDeletePersonalDataInput!): Success!
+    setAllDocumentsConfidentiality(patientId: String!, documentsMaskedByDefault: Boolean!): Success!
+    blockPS(patientId: String!, rppsId: String!): Success!
+    unblockPS(patientId: String!, rppsId: String!, consentementId: String!): Success!
+    createAppointment(appointment: AppointmentToCreateInput!): AppointmentViewModel!
+    updateAppointmentByIdAndPatientId(appointment: AppointmentToUpdateInput!): AppointmentViewModel!
+    removeAppointmentByIdAndPatientId(id: String!, patientId: String!): Success!
+    createReminder(reminder: ReminderToCreateInput!): ReminderViewModel!
+    updateReminder(reminder: ReminderToUpdateInput!): ReminderViewModel!
+    removeReminderByIdAndPatientId(id: String!, patientId: String!): Success!
+    updatePreventionStatus(updatePreventionStatusViewModel: UpdatePreventionStatusViewModel!): Success!
+    postAllergy(allergyInput: AllergyInput!): Success!
+    putAllergy(allergyUpdateInput: AllergyUpdateInput!): Success!
+    deleteAllergy(id: String!, patientId: String!): Success!
+    createDisability(disabilityInput: DisabilityInput!): Success!
+    updateDisability(disabilityUpdateInput: DisabilityUpdateInput!): Success!
+    removeDisability(id: String!, patientId: String!): Success!
+    postDisease(diseaseInput: DiseaseInput!): Success!
+    putDisease(diseaseUpdateInput: DiseaseUpdateInput!): Success!
+    deleteDisease(id: String!, patientId: String!): Success!
+    postDocument(documentInput: DocumentInput!): DocumentModel!
+    updateDocument(documentUpdateInput: DocumentUpdateInput!): Success!
+    updateDocumentProperties(documentPropertiesUpdateInput: DocumentPropertiesUpdateInput!): Success!
+    deleteDocument(documentDeleteInput: DocumentDeleteInput!): Success!
+    updateConfidentialityDocument(documentUpdateConfidentialityInput: DocumentUpdateConfidentialityInput!): Success!
+    updateCovidCertificate(patientId: String!): Success!
+    updateCovidCertificateDocument(patientId: String!, documentId: String!): DocumentModel!
+    deleteDocuments(documentsDeletionInput: DocumentsDeletionInput!): Success!
+    markDocument(documentMarkInput: SingleDocumentMarkInput!): Success!
+    markDocuments(documentsMarkInput: MultipleDocumentsMarkInput!): Success!
+    markDocumentV2(documentMarkInput: SingleDocumentPatchInput!): Success!
+    markDocumentsV2(documentsMarkInput: MultipleDocumentsPatchInput!): Success!
+    createFolderV2(createFolderInputs: CreateFolderInputs!): CreatedFolder!
+    deleteFolder(deleteFolderInputs: DeleteFolderInputs!): Success!
+    renameFolderV2(renameFolderInputs: RenameFolderInputs!): Success!
+    postDocumentV2(documentInput: DocumentInput!): DocumentCreated!
+    moveDocument(documentMoveInput: SingleDocumentPatchInput!): Success!
+    moveDocumentsV2(documentsMoveInput: MultipleDocumentsPatchInput!): Success!
+    setPreferenceConfidentialityDate(patientId: String!): Success!
+    postFamilyHistory(familyHistoryInput: FamilyHistoryInput!): Success!
+    putFamilyHistory(familyHistoryUpdateInput: FamilyHistoryUpdateInput!): Success!
+    deleteFamilyHistory(id: String!, patientId: String!): Success!
+    postLinks(linksInput: [LinkInput!]!): [LinkModel!]!
+    deleteLinks(patientId: String!, deleteLinksInput: [DeleteLinkInput!]!): [DeletedLinkModel!]!
+    updateHealthHistoryConfidentiality(patientId: String!, confidentiality: Confidentiality!): Success!
+    deleteDraftFromConversation(deleteDraftFromConversationInput: DeleteDraftFromConversationInput!): DeleteDraftSuccess!
+    moveToTrashConversation(conversationTrashInput: ConversationTrashInput!): moveToTrashConversationSuccess!
+    acknowledge(acknowledgeInput: AcknowledgeInput!): Success!
+    createContactWithControl(createContactWithControlInput: CreateContactWithControlInput!): CreateContactModel!
+    createHelpdeskTicketV2(ticketToCreateInput: TicketToCreateInput!): CreateTicket!
+    sendReport(demandeRequest: ReportRequestForm!): CreateTicket!
+    createLifestyleItem(patientId: String!, lifestyleItemInput: LifestyleItemInput!): Success!
+    updateLifestyleItem(patientId: String!, lifestyleItemInput: LifestyleItemInput!): Success!
+    updateLifestyleItemHistory(patientId: String!, lifestyleItemUpdateInput: LifestyleItemUpdateInput!): Success!
+    deleteLifestyleItem(patientId: String!, lifestyleItemId: String!): Success!
+    deleteHospitalization(id: String!, patientId: String!): Success!
+    putHospitalization(hospitalizationUpdateInput: HospitalizationUpdateInput!): Success!
+    postHospitalization(hospitalizationInput: HospitalizationInput!): Success!
+    updateLinkedDocuments(patientId: String!, sourceId: String!, sourceType: LinkType!, linkedDocuments: [LinkedDocumentInput!]!): UpdatedDocumentLinkModel!
+    updateLinkedTreatments(patientId: String!, sourceId: String!, sourceType: LinkType!, linkedTreatments: [LinkedTreatmentInput!]!): UpdatedTreatmentLinkModel!
+    addMeasure(measure: MeasureInput!): MeasureModel!
+    updateMeasure(measure: MeasureInput!): MeasureModel!
+    removeMeasure(deleteMeasure: DeleteMeasureModel!): Success!
+    addMeasureTarget(patientId: String!, measureTargetInput: MeasureTargetInput!): MeasureTargetModel!
+    updateMeasureTarget(patientId: String!, editMeasureTargetInput: EditMeasureTargetInput!): MeasureTargetModel!
+    deleteMeasureTarget(patientId: String!, targetId: String!): Success!
+    updateMeasuresTiles(patientId: String!, tiles: [MeasureTileInput!]!): Success!
+    postAdvanceDirectives(advanceDirectiveInput: AdvanceDirectiveInput!): AdvanceDirectivesModel!
+    postHealthProfessional(healthProfessionalInput: HealthProfessionalInput!): Success!
+    deleteHealthProfessional(id: String!, patientId: String!): Success!
+    removeHealthProfessionalRole(healthProfessionalIdNat: String!, patientId: String!): Success!
+    updateHealthProfessionalRoleByIdNat(healthProfessionalIdNat: String!, patientId: String!, role: HealthProfessionalRoleEnum): Success!
+    deleteHealthStructure(id: String!, patientId: String!): Success!
+    unconcerned(patientId: String!, section: SectionUriEnum!): UnconcernedModel!
+    postEntourageContact(contactPostInput: ContactPostInput!): WishesModel!
+    putEntourageContact(contactUpdateInput: ContactUpdateInput!): WishesModel!
+    deleteEntourageContact(patientId: String!, idContact: String!): WishesModel!
+    putOrganDonation(patientId: String!, informedAboutOrganDonation: Boolean!): WishesModel!
+    postHealthStructure(healthStructureInput: HealthStructureInput!): Success!
+    sendMessage(sendResponseInput: SendResponseInput!): SendMessageResponseModel!
+    messagingLogout(patientId: String!): Success!
+    saveNotificationToken(input: SaveNotificationTokenInput!): Success!
+    deleteNotificationToken(patientId: String!): Success!
+    markNotificationAsRead(notificationId: String!, patientId: String!): Success!
+    markNotificationAsUnread(notificationId: String!, patientId: String!): Success!
+    deleteNotification(notificationId: String!, patientId: String!): Success!
+    markAllNotificationsAsRead(patientId: String!): Success!
+    sendUserAction(userAction: UserActionInput!): Success!
+    postTreatment(treatmentInput: TreatmentInput!): TreatmentIdModel!
+    putTreatment(treatmentUpdateInput: TreatmentUpdateInput!): Success!
+    deleteTreatment(id: String!, patientId: String!): Success!
+    deleteAllEnrolledDevices: Success!
+    postVaccine(vaccineInput: VaccineInput!): VaccinesListModel!
+    putVaccine(vaccineUpdateInput: VaccineUpdateInput!): VaccinesListModel!
+    deleteVaccine(id: String!, patientId: String!): VaccinesListModel!
+    closeEns(closeEns: CloseEnsInput!): CloseEnsModel!
+    delegationMatchPotentialDelegate(input: DelegationMatchPotentialDelegateInput!): DelegationMatchPotentialDelegatePayload!
+    delegationInviteToCaregiving(input: DelegationInviteToCaregivingInput!): Success!
+    delegationAcceptInvitation(input: DelegationAcceptInvitationInput!): DelegationAcceptInvitationPayload!
+    delegationRefuseInvitation(input: DelegationRefuseInvitationInput!): DelegationRefuseInvitationPayload!
+    delegationRevoke(input: DelegationRevokeInput!): DelegationRevokePayload!
+    postHealthQuizResponses(healthQuizResponseInput: HealthQuizResponseInput!): Success!
+    updateHealthQuizResponses(healthQuizResponseInput: HealthQuizResponseInput!, responseId: String!): Success!
+    deleteHealthQuizResponses(responseId: String!, patientId: String!): Success!
+    updateFinalityConsentByCodeAndPatientId(finalityToUpdate: FinalityConsentToUpdateInput!): Success!
+    postponeRecommendationDisplay(patientId: String!, recommendationCode: RecommendationCode!): Success!
+    createBloodGroup(bloodGroupInput: BloodGroupInput!): Success!
+    updateBloodGroup(bloodGroupUpdateInput: BloodGroupUpdateInput!): Success!
+    removeBloodGroup(id: String!, patientId: String!): Success!
+}
+
+input SendOtpUpdateContactInput {
+    canalType: CanalType!
+    canalValue: String!
+}
+
+input VerifyOtpUpdateContactInput {
+    canalType: CanalType!
+    otpCode: String!
+}
+
+input GenerateNewEnrolmentCodeInput {
+    nir: String!
+    vitalCardNumber: String!
+    dateOfBirth: String!
+    nirFutureUser: String
+}
+
+input SendNewEnrolmentCodeInput {
+    canalType: CanalType!
+}
+
+input VitalCardAuthenticationInput {
+    nir: String
+    vitalCardNumber: String
+    enrolmentCode: String!
+}
+
+input CreateAccountEnsInput {
+    password: String!
+    loginId: String!
+}
+
+input FinalitiesConsentsToUpdateInput {
+    pairingId: String!
+    finalities: [FinalityInput!]!
+}
+
+input FinalityInput {
+    id: Float!
+    libelle: String!
+    description: String!
+    codeFinalite: String!
+    consenti: Boolean = false
+}
+
+input ChangeFinalityConsentByServiceOidInput {
+    oid: String!
+    contexte: String!
+}
+
+input ChangePasswordInput {
+    patientId: String!
+    currentPassword: String!
+    newPassword: String!
+}
+
+input ChangeContactInput {
+    patientId: String!
+    value: String!
+    type: ChangeContactInputCanalType!
+}
+
+enum ChangeContactInputCanalType {
+    PHONE
+    MAIL
+}
+
+input ValidateOtpInput {
+    patientId: String!
+    code: String!
+    type: String!
+    value: String!
+}
+
+input ChangePreferenceNotificationInput {
+    patientId: String!
+    typeNotification: PreferenceNotificationEnum!
+    isActive: Boolean!
+}
+
+input InvitationSecondRLInput {
+    loggedInUserId: String!
+    selectedEnsProfileId: String!
+    newRepresentativeLegal: SecondRLInformationInput!
+}
+
+input SecondRLInformationInput {
+    nir: String!
+    lastName: String!
+    firstName: String!
+    birthDate: String!
+}
+
+input AccountActiveProfilsInput {
+    profilsListIndex: [Int!]!
+}
+
+input AccessValidatedOrRejectedInput {
+    idEnsOD: String!
+    idEnsAD: String!
+    type: DemandeAccesStatutEnum!
+    birthDate: String!
+    firstNameAD: String!
+    lastNameAD: String!
+}
+
+input AskDeletePersonalDataInput {
+    ensIdConcerne: String!
+}
+
+input AppointmentToCreateInput {
+    patientId: String!
+    name: String
+    type: AppointmentType!
+    professionalOrEstablishmentName: String!
+    date: String!
+    comment: String
+    speciality: String
+    address: String
+    status: String
+    idProfessionnelSante: String
+    idEtablissementSante: String
+}
+
+input AppointmentToUpdateInput {
+    patientId: String!
+    name: String
+    type: AppointmentType!
+    professionalOrEstablishmentName: String!
+    date: String!
+    comment: String
+    speciality: String
+    address: String
+    status: String
+    idProfessionnelSante: String
+    idEtablissementSante: String
+    id: String!
+}
+
+input ReminderToCreateInput {
+    patientId: String!
+    title: String!
+    date: String!
+    comment: String!
+}
+
+input ReminderToUpdateInput {
+    id: String!
+    patientId: String!
+    title: String!
+    date: String!
+    comment: String!
+}
+
+input UpdatePreventionStatusViewModel {
+    code: String!
+    patientId: String!
+    statut: PreventionTypeEnum!
+    dateDebutPrevention: String!
+    executionDate: String
+    previousStatus: PreventionTypeEnum
+}
+
+input AllergyInput {
+    patientId: String!
+    name: String!
+    comment: String
+    linkedTreatmentsId: [String!]
+}
+
+input AllergyUpdateInput {
+    patientId: String!
+    name: String!
+    comment: String
+    id: String!
+    linkedTreatmentUpdate: [LinkUpdateInput!]
+}
+
+input LinkIdInput {
+    id: String!
+    type: LinkType!
+}
+
+input DisabilityInput {
+    patientId: String!
+    name: String!
+    comment: String
+    types: [DisabilitiesTypesEnum!]!
+    disabilityRate: DisabilityRateEnum
+    technicalHelp: String
+    humanHelp: HumanHelpEnum!
+}
+
+input DisabilityUpdateInput {
+    patientId: String!
+    name: String!
+    comment: String
+    types: [DisabilitiesTypesEnum!]!
+    disabilityRate: DisabilityRateEnum
+    technicalHelp: String
+    humanHelp: HumanHelpEnum!
+    id: String!
+}
+
+input DiseaseInput {
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    linkedDocumentsId: [String!]
+    linkedTreatmentsId: [String!]
+}
+
+input DiseaseUpdateInput {
+    patientId: String!
+    name: String!
+    comment: String
+    id: String!
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    linkedTreatmentUpdate: [LinkUpdateInput!]
+    linkedDocumentUpdate: [LinkUpdateInput!]
+    linkedDocumentsId: [String!]
+    linkedTreatmentsId: [String!]
+}
+
+input LinkUpdateInput {
+    linkId: String!
+    source: LinkIdInput!
+    target: LinkIdInput!
+}
+
+input DocumentInput {
+    patientId: String!
+    title: String!
+    confidentialities: [Confidentiality!]
+    category: Category!
+    createdAt: String = "2024-05-30T08:37:04.475Z"
+    uploadedAt: String
+    attachment: String!
+    mimeType: String!
+    uploadedBy: String!
+    author: String!
+    folderId: String
+}
+
+input DocumentUpdateInput {
+    id: String!
+    patientId: String!
+    title: String!
+    confidentialities: [Confidentiality!]
+    category: Category!
+    createdAt: String!
+    uploadedAt: String
+    attachment: String!
+    mimeType: String!
+    uploadedBy: String!
+    author: String!
+}
+
+input DocumentPropertiesUpdateInput {
+    id: String!
+    patientId: String!
+    title: String!
+    category: Category!
+    createdAt: String!
+    uploadedAt: String
+    confidentialities: [Confidentiality!]!
+    folderId: String
+}
+
+input DocumentDeleteInput {
+    documentId: String!
+    ensUserId: String!
+}
+
+input DocumentUpdateConfidentialityInput {
+    id: String!
+    patientId: String!
+    confidentialities: [Confidentiality!]
+}
+
+input DocumentsDeletionInput {
+    patientId: String
+    documentsIds: [String!]!
+}
+
+input SingleDocumentMarkInput {
+    patientId: String
+    document: DocumentMarkInput!
+}
+
+input DocumentMarkInput {
+    id: String!
+    reported: Boolean
+    pinned: Boolean
+}
+
+input MultipleDocumentsMarkInput {
+    patientId: String
+    documents: [DocumentMarkInput!]!
+}
+
+input SingleDocumentPatchInput {
+    patientId: String
+    document: DocumentPatchInput!
+}
+
+input DocumentPatchInput {
+    id: String!
+    reported: Boolean
+    pinned: Boolean
+    folderId: String
+}
+
+input MultipleDocumentsPatchInput {
+    patientId: String
+    documents: [DocumentPatchInput!]!
+}
+
+input CreateFolderInputs {
+    patientId: String
+    folderName: String!
+}
+
+input DeleteFolderInputs {
+    patientId: String
+    folderId: String!
+}
+
+input RenameFolderInputs {
+    patientId: String
+    folderId: String!
+    folderName: String!
+}
+
+input FamilyHistoryInput {
+    patientId: String!
+    name: String!
+    comment: String
+    familyRelationship: FamilyRelationshipEnum!
+}
+
+input FamilyHistoryUpdateInput {
+    patientId: String!
+    name: String!
+    comment: String
+    familyRelationship: FamilyRelationshipEnum!
+    id: String!
+}
+
+input DeleteLinkInput {
+    linkId: String!
+}
+
+input DeleteDraftFromConversationInput {
+    patientId: String!
+    conversationId: String!
+    filters: FiltersInput = {withNewMessage: false}
+}
+
+input ConversationTrashInput {
+    patientId: String!
+    conversationId: String!
+}
+
+input AcknowledgeInput {
+    patientId: String!
+    conversationId: String!
+}
+
+input CreateContactWithControlInput {
+    patientId: String!
+    email: String!
+    fullName: String!
+    idFineg: String!
+}
+
+input TicketToCreateInput {
+    patientId: String!
+    reason: String!
+    message: String!
+    hasConsent: Boolean!
+    idDocument: String
+    documents: [TicketDocumentInput!]
+}
+
+input TicketDocumentInput {
+    name: String!
+    data: String!
+    typeMime: String!
+}
+
+input ReportRequestForm {
+    idEns: String!
+    typeDemande: TypeDemande!
+    idSignale: String!
+    description: String!
+    nom: String!
+    hasConsent: Boolean
+    documents: [ReportDocumentModel!]!
+}
+
+input ReportDocumentModel {
+    name: String!
+    data: String!
+    typeMime: DocumentMimeTypeEnum!
+}
+
+enum DocumentMimeTypeEnum {
+    IMAGE_JPEG
+    IMAGE_JPG
+    IMAGE_TIFF
+    IMAGE_PNG
+    PDF
+    MSWORD
+    MSWORD_RTF
+    TEXT_PLAIN
+    TEXT_RTF
+}
+
+input LifestyleItemInput {
+    name: String!
+    details: LifestyleItemDetailInput!
+}
+
+input LifestyleItemDetailInput {
+    lastModificationDate: String!
+    answers: [LifestyleAnswerInput!]!
+}
+
+input LifestyleAnswerInput {
+    name: String!
+    value: String
+    countValue: String
+}
+
+input LifestyleItemUpdateInput {
+    id: String!
+    name: String!
+    details: LifestyleItemDetailInput!
+}
+
+input HospitalizationUpdateInput {
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    duration: Float!
+    durationUnit: DurationUnitEnum!
+    linkedDocumentsId: [String!]
+    id: String!
+}
+
+input HospitalizationInput {
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    duration: Float!
+    durationUnit: DurationUnitEnum!
+    linkedDocumentsId: [String!]
+}
+
+input LinkedDocumentInput {
+    linkId: String!
+    documentId: String!
+}
+
+input LinkedTreatmentInput {
+    linkId: String!
+    treatmentId: String!
+}
+
+input MeasureInput {
+    id: String
+    patientId: String!
+    code: MeasureCode!
+    effectiveDate: String
+    metrics: [MetricInput!]!
+    comments: [CommentInput!]
+}
+
+input MetricInput {
+    code: MeasureCode!
+    value: String!
+    unit: String!
+}
+
+input CommentInput {
+    code: String!
+    value: String!
+    extra: String
+}
+
+input DeleteMeasureModel {
+    id: ID!
+    patientId: String!
+}
+
+input MeasureTargetInput {
+    type: MeasureCode!
+    value: Float!
+}
+
+input EditMeasureTargetInput {
+    targetId: String!
+    value: Float!
+}
+
+input MeasureTileInput {
+    type: MeasureCode!
+    visible: Boolean!
+}
+
+input AdvanceDirectiveInput {
+    patientId: String!
+    filename: String!
+    attachment: String!
+    mimeType: String!
+    confidentialities: [Confidentiality!]
+}
+
+input HealthProfessionalInput {
+    patientId: String!
+    nationalId: String!
+    role: HealthProfessionalRoleEnum
+}
+
+input LinkInput {
+    patientId: String!
+    sourceId: String!
+    sourceType: LinkType!
+    targetId: String!
+    targetType: LinkType!
+}
+
+input ContactPostInput {
+    patientId: String!
+    prefix: String
+    fullName: String
+    firstName: String!
+    lastName: String!
+    relation: EntourageRelation!
+    mobileNumber: String!
+    fixedLineNumber: String
+    emailAddress: String
+    streetAddressLine: String
+    postalCode: String!
+    city: String!
+    country: String
+    contactsType: [ContactType!]!
+}
+
+input ContactUpdateInput {
+    patientId: String!
+    prefix: String
+    fullName: String
+    firstName: String!
+    lastName: String!
+    relation: EntourageRelation!
+    mobileNumber: String!
+    fixedLineNumber: String
+    emailAddress: String
+    streetAddressLine: String
+    postalCode: String!
+    city: String!
+    country: String
+    idContact: String!
+    contactType: ContactType!
+}
+
+input HealthStructureInput {
+    patientId: String!
+    nationalId: String!
+}
+
+input SendResponseInput {
+    draft: Boolean = null
+    patientId: String!
+    replyType: ReplyTypeEnum = null
+    conversationId: String!
+    messageId: String
+    content: String!
+    subject: String
+
+    """
+    name of medicalProfile file name
+    null if you doesn't want to share it
+    """
+    medicalProfileFilename: String
+    attachments: [FileInput!] = []
+    ensDocuments: [EnsDocumentInput!] = []
+    filesId: [String!] = []
+    recipientsId: RecipientsIdInput
+    filters: FiltersInput = {withNewMessage: false}
+}
+
+input FileInput {
+    name: String!
+    attachment: String!
+    mimeType: String!
+}
+
+input EnsDocumentInput {
+    documentId: String!
+    documentTitle: String!
+}
+
+input RecipientsIdInput {
+    to: [String!] = []
+}
+
+input SaveNotificationTokenInput {
+    token: String!
+    os: MobileOsEnum!
+}
+
+enum MobileOsEnum {
+    ANDROID
+    IOS
+}
+
+input UserActionInput {
+    actionNavigation: UserActionEnum
+    ensUserId: String!
+    params: [UserActionParams!]
+}
+
+enum UserActionEnum {
+    CONNEXION
+    CONSULT_DOC
+    TELECHARGEMENT_DOC
+    MODIF_PARAM_NOTIF
+    ACCEPTATION_CGU
+    INVIT_ACCES_SECOND_RL
+    MODIF_PARAM_ACCESS_URGENCE
+    CONSULT_MENU_AGENDA
+    CONSULT_RUBRIQUE_MHS
+    CONSULT_RUBRIQUE_PS
+    CONSULT_RUBRIQUE_VACCINATIONS
+    CONSULT_RUBRIQUE_MALADIES
+    CONSULT_RUBRIQUE_TRAITEMENTS
+    CONSULT_RUBRIQUE_HOSPITALISATIONS
+    CONSULT_RUBRIQUE_HANDICAPS
+    CONSULT_RUBRIQUE_ALLERGIES
+    CONSULT_RUBRIQUE_ANTECEDENTS_FAMILIAUX
+    CONSULT_RUBRIQUE_HABITUDES_VIE
+    CONSULT_RUBRIQUE_MESURES
+    CONSULT_RUBRIQUE_ENTOURAGE_VOLONTES
+    CONSULT_RUBRIQUE_PIECES_ADMIN
+    CONSULT_MESURE
+    CONSULT_RUBRIQUE_INFOS_CONNEXION
+    CONSULT_RUBRIQUE_CONFIDENTIALITE
+    CONSULT_RUBRIQUE_NOTIFS_MAILS
+    CONSULT_RUBRIQUE_HISTORIQUE_DONNEES
+    CONSULT_RUBRIQUE_CLOTURE_PROFIL
+    CONSULT_RUBRIQUE_ACCES_PS
+    CONSULT_RUBRIQUE_CONFIDENTIALITE_INFOS
+    CONSULT_RUBRIQUE_ACCES_URGENCE
+    CONSULT_RUBRIQUE_HISTORIQUE_ACTIVITE
+    CONSULT_RUBRIQUE_TELECHARGEMENT_DONNEES
+    CONSULT_RUBRIQUE_ENTOURAGE
+    CONSULT_RUBRIQUE_DIRECTIVES_ANTICIPEES
+    CONSULT_RUBRIQUE_DON_ORGANE
+    ATTRIBUTION_STATUT_MEDECIN_ADMIN
+    RETRAIT_STATUT_MEDECIN_ADMIN
+    CONSULT_RUBRIQUE_DOCUMENTS
+    CONSULT_RUBRIQUE_MESSAGERIE
+    CONSULT_MESSAGE
+    ENVOI_MESSAGE
+    RECEPTION_MESSAGE
+    MODIF_ADRESSE_MAIL
+    MODIF_NUMERO_TELEPHONE
+    TELECHARGEMENT_COPIE_DONNEES
+    ACCES_MES_A_LA_DEMANDE
+    CONSULT_RUBRIQUE_NOUS_CONTACTER
+    CONSULT_MESSAGE_SUPPORT
+    ENVOI_MESSAGE_SUPPORT
+    RECEPTION_MESSAGE_SUPPORT
+    SUPP_MESSAGE_SUPPORT
+    ANNULATION_DEMANDE_SUPPRESSION_DONNEES
+    AJOUT_VACCINATION
+    MODIF_VACCINATION
+    SUPP_VACCINATION
+    MODIF_MEMBRE_ENTOURAGE
+    SUPP_MEMBRE_ENTOURAGE
+    CONSULT_RUBRIQUE_SERVICES_SYNCHRO
+    CONSULT_MENU_CATALOGUE_SERVICES
+    AJOUT_MEMBRE_ENTOURAGE
+    MODIF_DECLA_DON_ORGANE
+    CONSULT_ONGLET_CONFIDENTIALITE_FICHE_PS
+    CONSULT_RUBRIQUE_BILAN_DE_PREVENTION
+    CONSULT_ONGLET_COORDONNEES_FICHE_PS
+    CONSULT_ONGLET_DOCUMENTS_FICHE_PS
+    CONSULT_ONGLET_HISTORIQUE_ACTIVITES_FICHE_PS
+    CONSULT_RUBRIQUE_HABITUDES_VIE_DETAIL
+    CONSULT_RUBRIQUE_GROUPE_SANGUIN
+}
+
+input UserActionParams {
+    key: String!
+    value: String!
+}
+
+input TreatmentInput {
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    dosage: String
+}
+
+input TreatmentUpdateInput {
+    patientId: String!
+    name: String!
+    comment: String
+    startDay: String
+    startMonth: String
+    startYear: String!
+    endDay: String
+    endMonth: String
+    endYear: String
+    dosage: String
+    id: String!
+}
+
+input VaccineInput {
+    patientId: String!
+    vaccineRefId: String!
+    effectiveTime: String!
+    typeOfAdministration: VaccineTypeOfAdministrationEnum
+    lotNumber: String
+    performer: String
+    comment: String
+}
+
+input VaccineUpdateInput {
+    patientId: String!
+    vaccineRefId: String!
+    effectiveTime: String!
+    typeOfAdministration: VaccineTypeOfAdministrationEnum
+    lotNumber: String
+    performer: String
+    comment: String
+    vaccineId: String!
+}
+
+input CloseEnsInput {
+    patientId: String!
+    loggedInUserId: String!
+    password: String!
+    suppressionDemandee: Boolean!
+}
+
+input DelegationMatchPotentialDelegateInput {
+    ins: String!
+    firstGivenName: String!
+    familyName: String!
+    birthDate: String!
+}
+
+input DelegationInviteToCaregivingInput {
+    idp: String!
+    transactionId: String!
+}
+
+input DelegationAcceptInvitationInput {
+    invitationId: String!
+}
+
+input DelegationRefuseInvitationInput {
+    invitationId: String!
+}
+
+input DelegationRevokeInput {
+    delegationId: String!
+}
+
+input HealthQuizResponseInput {
+    patientId: String!
+    quizCode: String!
+    quizVersion: String!
+    details: [ResponseInput!]!
+    status: HealthQuizCompletionStatus!
+    questionToDisplay: Float
+}
+
+input ResponseInput {
+    questionCode: String!
+    value: [String!]!
+}
+
+input FinalityConsentToUpdateInput {
+    patientId: String!
+    consent: Boolean!
+    finalityCode: FinalityCode!
+}
+
+enum FinalityCode {
+    TRAITEMENT_AUTO_DOCS
+    DOCS
+}
+
+input BloodGroupInput {
+    patientId: String!
+    bloodGroup: BloodGroupEnum!
+}
+
+input BloodGroupUpdateInput {
+    patientId: String!
+    bloodGroup: BloodGroupEnum!
+    bloodGroupId: String!
+}

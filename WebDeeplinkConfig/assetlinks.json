@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.assurancemaladie.monespacesante",
+      "sha256_cert_fingerprints": [
+        "BC:7E:F6:D7:D7:06:32:52:E3:86:F3:49:7F:6A:28:F4:B0:05:8D:F1:EE:52:1D:6C:82:AB:E1:C9:F2:8C:C8:05"
+      ]
+    }
+  }
+]

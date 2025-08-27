@@ -1,0 +1,7 @@
+mutation update_mesure_target($patientId: String!, $editMesureTarget: EditMeasureTargetInput!) {
+    updateMeasureTarget(patientId: $patientId, editMeasureTargetInput: $editMesureTarget) {
+        id
+        type
+        value
+    }
+}

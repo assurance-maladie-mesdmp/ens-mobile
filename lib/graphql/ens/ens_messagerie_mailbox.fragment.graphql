@@ -1,0 +1,20 @@
+fragment mailBox on MailBoxModel {
+    userMail
+    totalElements
+    totalPages
+    oneOrMoreUnreadConversation
+    conversations {
+        id
+        date
+        hasAttachment
+        subject
+        healthProfessionalNames
+        read
+        hasDraft
+        isNewMessage
+    }
+    contacts {
+        id
+        fullName
+    }
+}

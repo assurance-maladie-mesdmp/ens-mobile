@@ -1,0 +1,5 @@
+mutation add_maladie($disease: DiseaseInput!) {
+    postDisease(diseaseInput: $disease) {
+        success
+    }
+}

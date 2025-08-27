@@ -1,0 +1,6 @@
+fragment profilRattache on ListeRattachement{
+    lastName
+    firstName
+    dateOfBirth
+    nir
+}

@@ -1,0 +1,13 @@
+query get_antecedents_familiaux($patientId: String!) {
+    familyHistories(patientId: $patientId) {
+        familyHistories {
+            id,
+            name,
+            comment,
+            familyRelationship
+        }
+    }
+    unconcerned(section: FAMILY_HISTORIES, patientId: $patientId) {
+        declarationDate
+    }
+}

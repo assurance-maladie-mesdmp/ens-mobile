@@ -1,0 +1,4 @@
+fragment dossier on FolderViewModel {
+    id
+    title
+}

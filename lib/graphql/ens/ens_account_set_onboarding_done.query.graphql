@@ -1,0 +1,8 @@
+mutation set_onboarding_done($onboardingDate: String!, $patientId: String!) {
+    setOnboarding(onboardingDate: $onboardingDate, patientId: $patientId) {
+        success
+    }
+    setPreferenceConfidentialityDate(patientId: $patientId) {
+        success
+    }
+}

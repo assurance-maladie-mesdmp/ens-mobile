@@ -1,0 +1,7 @@
+query get_synthese_pml($patientId: String!, $rubrique: [SectionToDownload!]) {
+    getMedicalSynthesisPDF(patientId: $patientId, sectionsToDownload: $rubrique) {
+        name
+        mimeType
+        binary
+    }
+}

@@ -1,0 +1,16 @@
+fragment lastMesure on MeasureModel {
+    id
+    code
+    effectiveDate
+    metrics {
+        unit
+    }
+    label
+    formattedMetricValue
+    permissions {
+        add
+        history
+        update
+        delete
+    }
+}

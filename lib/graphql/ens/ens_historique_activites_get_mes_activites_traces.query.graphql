@@ -1,0 +1,8 @@
+query get_mes_activites_traces($patientId: String!) {
+    ensActivityHistory(ensActivityHistory: {patientId: $patientId}) {
+        date
+        name
+        author
+        authorType
+    }
+}

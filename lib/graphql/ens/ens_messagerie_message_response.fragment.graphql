@@ -1,0 +1,59 @@
+fragment messageResponse on MessageResponseModel {
+    subject
+    acknowledge
+    messages {
+        contactDetails {
+            ...ContactDetailFragment
+        }
+        id
+        date
+        content
+        read
+        recipients
+        files {
+            id
+            name
+        }
+    }
+    draft {
+        id
+        parentId
+        contactDetails {
+            ...ContactDetailFragment
+        }
+        draftRecipients {
+            to {
+                id
+                fullName
+            }
+        }
+        date
+        content
+        subject
+        read
+        remainSizeFiles
+        recipients
+        files {
+            id
+            name
+            size
+        }
+    }
+    responseTemplate {
+        conversationFinalizedBy
+        messageId
+        replyOptions
+        conversationId
+        from
+        to
+        recipients
+        remainSizeFiles
+    }
+}
+
+fragment ContactDetailFragment on ContactDetails {
+    name
+    type
+    idNat
+    typeBal
+}

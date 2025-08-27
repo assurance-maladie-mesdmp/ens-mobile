@@ -1,0 +1,11 @@
+query get_tickets_support($patientId: String!) {
+    fetchHelpdeskTickets(patientId: $patientId) {
+        id
+        reasonLabel
+        lastUpdate
+        lastComment {
+            message
+            hasDocuments
+        }
+    }
+}

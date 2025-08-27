@@ -1,0 +1,7 @@
+# import './ens_messagerie_mailbox.fragment.graphql'
+
+query get_inbox($input: MessagingPageableInput!){
+    getInbox(messagingPageableInput: $input) {
+        ...mailBox
+    }
+}

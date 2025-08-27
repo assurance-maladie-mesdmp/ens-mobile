@@ -1,0 +1,22 @@
+# import './ens_questionnaire_ages_cles.fragment.graphql'
+
+query get_questionnaire($patientId: String!, $code: String!, $version: String!) {
+    fetchHealthQuiz(patientId: $patientId, code: $code, version: $version) {
+        ...startQuestionnaire,
+        ...endQuestionnaire,
+        items {
+            questionGroupItem {
+                title,
+                questions {
+                    ...question,
+                }
+                goToNext,
+                goToNextOn,
+                goToPrevious,
+                goToPreviousOn,
+            }
+        },
+        code,
+        version,
+    }
+}

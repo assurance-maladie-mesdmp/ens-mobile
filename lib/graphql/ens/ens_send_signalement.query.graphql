@@ -1,0 +1,6 @@
+mutation send_signalement($demandeRequest: ReportRequestForm!) {
+    sendReport(demandeRequest: $demandeRequest){
+        success
+        errorCode
+    }
+}

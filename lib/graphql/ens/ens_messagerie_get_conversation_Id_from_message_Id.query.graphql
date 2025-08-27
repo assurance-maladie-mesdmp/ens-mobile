@@ -1,0 +1,5 @@
+query get_conversation_id_from_message_id($input: MessageInput!){
+    getMessageById(messageInput: $input){
+        conversationId
+    }
+}

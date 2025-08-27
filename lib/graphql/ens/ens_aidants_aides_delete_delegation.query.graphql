@@ -1,0 +1,8 @@
+mutation delete_delegation($input: DelegationRevokeInput!) {
+    delegationRevoke(input: $input) {
+        attestation
+        documentId
+        isSavedInDmp
+    }
+}
+

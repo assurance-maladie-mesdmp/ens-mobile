@@ -1,0 +1,5 @@
+mutation move_documents($documentsMoveInput: MultipleDocumentsPatchInput!) {
+  moveDocumentsV2(documentsMoveInput: $documentsMoveInput) {
+    success
+  }
+}

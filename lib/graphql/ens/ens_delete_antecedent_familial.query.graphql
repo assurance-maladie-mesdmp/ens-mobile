@@ -1,0 +1,5 @@
+mutation delete_antecedent_familial($patientId: String!, $id: String!) {
+    deleteFamilyHistory(patientId: $patientId, id: $id) {
+        success
+    }
+}

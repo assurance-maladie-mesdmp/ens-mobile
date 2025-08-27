@@ -1,0 +1,5 @@
+mutation refuse_invitation_from_aide($input: DelegationRefuseInvitationInput!) {
+    delegationRefuseInvitation(input: $input){
+        attestation
+    }
+}

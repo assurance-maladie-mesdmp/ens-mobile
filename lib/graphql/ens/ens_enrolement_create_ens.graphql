@@ -1,0 +1,5 @@
+mutation create_ens($input: String!){
+    createEns(createEns: $input) {
+        success
+    }
+}

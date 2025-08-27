@@ -1,0 +1,13 @@
+# import './ens_documents.fragment.graphql'
+# import './ens_document_dossier_fragment.graphql'
+
+query get_documents($patientId: String!) {
+    documents(patientId: $patientId) {
+        documents {
+            ...ensDocument
+        }
+    }
+    fetchAllFolders(patientId: $patientId) {
+        ...dossier
+    }
+}

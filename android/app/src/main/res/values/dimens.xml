@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="qr_code_size">220dp</dimen>
+    <dimen name="qr_code_logo">40dp</dimen>
+    <dimen name="qr_code_logo_padding">10dp</dimen>
+    <dimen name="scanPadding">32dp</dimen>
+    <dimen name="polygonViewCircleWidth">28dp</dimen>
+    <dimen name="polygonViewStrokeWidth">2dp</dimen>
+</resources>

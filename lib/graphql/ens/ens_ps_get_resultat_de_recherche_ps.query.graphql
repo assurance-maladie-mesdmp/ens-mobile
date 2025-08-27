@@ -1,0 +1,19 @@
+query get_resultat_de_recherche_professionnels_de_sante($name: String!, $firstName: String!, $cityCode: String, $departmentCode: String, $zipCode: String, $professionCode: String, $experticeCode: String) {
+    getProfessionelSanteGroupedCity(researchPsInput: {firstName: $firstName, lastName: $name, zipCode: $zipCode, departmentCode: $departmentCode, cityCode: $cityCode, professionCode: $professionCode, experticeCode: $experticeCode}) {
+        ps {
+            identifiant
+            lastName
+            firstName
+            profession
+            structureAddress {
+                cityZipCode
+                roadNumber
+                labelRoadType
+                road
+                commune
+            }
+            specialities
+            active
+        }
+    }
+}

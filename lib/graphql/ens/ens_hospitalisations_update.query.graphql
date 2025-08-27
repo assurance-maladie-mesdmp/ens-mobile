@@ -1,0 +1,11 @@
+mutation update_hospitalisation($hospitalization: HospitalizationUpdateInput!, $linksInput: [LinkInput!]!,$patientId: String!, $deleteLinksInput: [DeleteLinkInput!]!) {
+    putHospitalization(hospitalizationUpdateInput: $hospitalization) {
+        success
+    }
+    postLinks(linksInput: $linksInput) {
+        linkId
+    }
+    deleteLinks(deleteLinksInput: $deleteLinksInput, patientId: $patientId) {
+        linkId
+    }
+}

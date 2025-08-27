@@ -1,0 +1,5 @@
+query get_document_default_confidentiality($patientId: String!) {
+    getDefaultConfidentiality(patientId: $patientId) {
+        masked
+    }
+}

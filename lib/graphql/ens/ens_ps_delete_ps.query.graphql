@@ -1,0 +1,5 @@
+mutation delete_professionnel_sante($patientId: String!, $psId: String!) {
+    deleteHealthProfessional(patientId: $patientId, id: $psId) {
+        success
+    }
+}

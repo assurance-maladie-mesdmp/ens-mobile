@@ -1,0 +1,16 @@
+query get_consents_for_service_by_oid($oid: String!, $patientId: String!) {
+    fetchFinalitiesConsentsForServiceByOid(oid: $oid, patientId: $patientId) {
+        libelle
+        description
+        codeFinalite
+        consenti
+        echangesDeDonnees {
+            perimetre
+            action
+            categories {
+                titre
+                description
+            }
+        }
+    }
+}

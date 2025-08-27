@@ -1,0 +1,5 @@
+mutation update_finality_consent_status($finalityToUpdate: FinalityConsentToUpdateInput!) {
+	updateFinalityConsentByCodeAndPatientId(finalityToUpdate: $finalityToUpdate) {
+		success
+	}
+}

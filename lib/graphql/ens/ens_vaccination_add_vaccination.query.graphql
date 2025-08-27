@@ -1,0 +1,7 @@
+mutation add_vaccination($vaccine: VaccineInput!) {
+    postVaccine(vaccineInput: $vaccine) {
+        vaccines {
+            vaccineId
+        }
+    }
+}

@@ -1,0 +1,5 @@
+mutation delete_professionnel_sante_role($patientId: String!, $psIdNat: String!){
+    removeHealthProfessionalRole(patientId: $patientId, healthProfessionalIdNat : $psIdNat ) {
+        success
+    }
+}

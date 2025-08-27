@@ -1,0 +1,7 @@
+# import './ens_entourage_structure.fragment.graphql'
+
+query get_entourage_contact($patientId: String!) {
+    getWishes(patientId: $patientId) {
+        ...entourageStructure
+    }
+}

@@ -1,0 +1,5 @@
+mutation delete_entourage_contact($contactId: String!, $patientId: String!) {
+    deleteEntourageContact(idContact: $contactId, patientId: $patientId) {
+        effectiveDate
+    }
+}

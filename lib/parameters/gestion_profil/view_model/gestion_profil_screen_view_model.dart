@@ -1,0 +1,60 @@
+/*
+  Copyright (c) 2020-2025 Caisse Nationale d’Assurance Maladie et Ministère de la Santé et de l’Accès aux Soins. All rights reserved.
+  Use of this source code is governed by a CeCILL v2.1 license that can be found in the LICENSE file.
+*/
+
+import 'dart:ui';
+
+import 'package:equatable/equatable.dart';
+import 'package:fr_cnamts_ens/infra/redux/ens_state.dart';
+import 'package:fr_cnamts_ens/infra/remote_config_wrapper.dart';
+import 'package:fr_cnamts_ens/profils_rattaches/screens/profils_utils.dart';
+import 'package:fr_cnamts_ens/ui/ens_colors.dart';
+import 'package:fr_cnamts_ens/user/domain/model/ens_profil.dart';
+import 'package:fr_cnamts_ens/utils/extensions/profil_extension.dart';
+import 'package:redux/redux.dart';
+
+class GestionProfilScreenViewModel extends Equatable {
+  final ProfilType profilType;
+  final String profileName;
+  final Color profileColor;
+  final bool showDonnerAccesMonProfilItem;
+  final bool showConsentementExtractionDonnees;
+
+  const GestionProfilScreenViewModel._internal({
+    required this.profilType,
+    required this.profileName,
+    required this.profileColor,
+    required this.showDonnerAccesMonProfilItem,
+    this.showConsentementExtractionDonnees = false,
+  });
+
+  factory GestionProfilScreenViewModel.from(
+    Store<EnsState> store,
+    RemoteConfigWrapper remoteConfigWrapper, {
+    required bool isAidantsAidesEnabled,
+  }) {
+    final EnsProfil? currentProfile = store.state.userState.currentProfile;
+    final String profileName = currentProfile.nomComplet;
+    final Color profileColor = currentProfile?.couleur ?? EnsColors.primary;
+    final profilType = ProfilsUtils.getCurrentProfilType(store.state);
+
+    return GestionProfilScreenViewModel._internal(
+      profilType: profilType,
+      profileName: profileName,
+      profileColor: profileColor,
+      showDonnerAccesMonProfilItem: isAidantsAidesEnabled && profilType.isProfilPrincipal,
+      showConsentementExtractionDonnees: remoteConfigWrapper.isEnabled(Feature.consentementExtractionDonnees) &&
+          store.state.consentementExtractionDonneesSanteState.isWhitelisted,
+    );
+  }
+
+  @override
+  List<Object?> get props => [
+        profilType,
+        profileName,
+        profileColor,
+        showDonnerAccesMonProfilItem,
+        showConsentementExtractionDonnees,
+      ];
+}

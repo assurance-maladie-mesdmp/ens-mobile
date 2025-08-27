@@ -1,0 +1,7 @@
+# import './ens_agenda_rappel.fragment.graphql'
+
+mutation update_rappel($rappel: ReminderToUpdateInput!){
+    updateReminder(reminder: $rappel){
+        ...rappel
+    }
+}

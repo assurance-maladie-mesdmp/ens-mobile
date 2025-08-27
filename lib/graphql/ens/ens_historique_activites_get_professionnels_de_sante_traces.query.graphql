@@ -1,0 +1,20 @@
+query get_professionnels_de_sante_traces(
+    $patientId: ID!
+    $page: Int!
+    $pageSize: Int!
+    $filter: ActivityTraceFilterInput,
+) {
+    activityTraces(idp: $patientId, page: $page, pageSize: $pageSize, group: MEDICAL_DOCUMENT, filter: $filter) {
+        items {
+            actorType
+            actorDisplayName
+            actionDate
+            actionDescription
+        }
+        pageInfo {
+            page
+            hasNextPage
+        }
+    }
+
+}

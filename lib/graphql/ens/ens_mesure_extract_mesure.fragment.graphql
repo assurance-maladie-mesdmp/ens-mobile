@@ -1,0 +1,12 @@
+# import './ens_mesures_mesure_fields.fragment.graphql'
+# import './ens_mesures_metadata_fields.fragment.graphql'
+
+fragment extractMesure on MeasuresHistoryModel {
+    code
+    measures {
+        ...mesureFields
+    }
+    metaData {
+        ...metadataFields
+    }
+}

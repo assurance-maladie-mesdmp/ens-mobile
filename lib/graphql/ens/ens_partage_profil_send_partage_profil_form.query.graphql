@@ -1,0 +1,5 @@
+mutation send_partage_profil_form($invitationSecondRLInput: InvitationSecondRLInput!) {
+    sendInvitationSecondRL(input: $invitationSecondRLInput) {
+        success
+    }
+}

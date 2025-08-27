@@ -1,0 +1,5 @@
+mutation update_organ_consent($patientId: String!, $informedAboutOrganDonation: Boolean!) {
+    putOrganDonation(patientId: $patientId, informedAboutOrganDonation: $informedAboutOrganDonation) {
+        effectiveDate
+    }
+}

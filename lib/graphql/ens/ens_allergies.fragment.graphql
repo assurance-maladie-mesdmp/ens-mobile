@@ -1,0 +1,20 @@
+fragment allergie on AllergyModel {
+    name
+    comment
+    id
+    linkedTreatments {
+        linkId
+        treatment {
+            id
+            name
+            comment
+            dosage
+            startDay
+            startMonth
+            startYear
+            endDay
+            endMonth
+            endYear
+        }
+    }
+}

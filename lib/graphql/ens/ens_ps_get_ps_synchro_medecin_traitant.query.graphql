@@ -1,0 +1,9 @@
+# import './ens_ps.fragment.graphql'
+
+query get_pml_professionnels_sante_synchro_medecin_traitant($patientId: String!) {
+    getHealthProfessionalsAndSynchroMt(patientId: $patientId) {
+        healthProfessionals {
+            ...ps
+        }
+    }
+}

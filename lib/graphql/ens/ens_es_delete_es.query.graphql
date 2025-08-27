@@ -1,0 +1,5 @@
+mutation delete_etablissement_de_sante($patientId: String!, $esOrganizationId: String!) {
+    deleteHealthStructure(patientId: $patientId, id: $esOrganizationId) {
+        success
+    }
+}

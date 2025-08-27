@@ -1,0 +1,7 @@
+mutation add_mesure_target($patientId: String!, $mesureTarget: MeasureTargetInput!) {
+    addMeasureTarget(patientId: $patientId, measureTargetInput: $mesureTarget) {
+        id
+        type
+        value
+    }
+}

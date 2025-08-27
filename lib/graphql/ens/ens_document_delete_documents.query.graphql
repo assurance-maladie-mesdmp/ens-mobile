@@ -1,0 +1,5 @@
+mutation delete_documents($input: DocumentsDeletionInput!) {
+    deleteDocuments(documentsDeletionInput: $input) {
+        success
+    }
+}

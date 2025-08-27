@@ -1,0 +1,16 @@
+fragment habitudesDeVie on LifestyleSectionAnswersHistoryModel {
+    name
+    items {
+        name
+        details {
+            id
+            lastModifiedType
+            effectiveDate
+            answers {
+                name
+                label
+                value
+            }
+        }
+    }
+}

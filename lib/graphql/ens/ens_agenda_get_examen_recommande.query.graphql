@@ -1,0 +1,7 @@
+# import './ens_agenda_examen_recommande.fragment.graphql'
+
+query get_examen_recommande($patientId: String!, $code: String!, $dateDebutPrevention: String!) {
+    fetchPreventionByPatientIdAndCodeAndDate(patientId: $patientId, code: $code, dateDebutPrevention: $dateDebutPrevention) {
+        ...examenRecommande
+    }
+}

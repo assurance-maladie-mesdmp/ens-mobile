@@ -1,0 +1,15 @@
+query get_delayed_recommendations($patientId: String!) {
+    getDelayedRecommendations(patientId: $patientId) {
+        code,
+        priority,
+        preference {
+            doitEtreAffichee,
+        }
+        data {
+            enfants {
+                nom,
+                prenom,
+            }
+        }
+    }
+}

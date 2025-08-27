@@ -1,0 +1,7 @@
+# import './ens_personal_information.fragment.graphql'
+
+query get_personal_information($patientId: String!){
+    getPersonalInformation(getPersonalInformation: {patientId: $patientId}){
+        ...personalInformation
+    }
+}

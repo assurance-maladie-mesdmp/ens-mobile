@@ -1,0 +1,5 @@
+mutation update_handicap($disabilityUpdateInput: DisabilityUpdateInput!) {
+    updateDisability(disabilityUpdateInput: $disabilityUpdateInput) {
+        success
+    }
+}

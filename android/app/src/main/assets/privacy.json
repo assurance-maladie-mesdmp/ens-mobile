@@ -1,0 +1,107 @@
+{
+  "information": {
+    "update": "2022-01-17",
+    "version": "5",
+    "vendors": "",
+    "google_vendors": "",
+    "consentDurationInMonths": 12,
+    "significantChanges": "",
+    "resetSave": ""
+  },
+  "components": {
+    "firstLayerButton": [
+      "Detail",
+      "RefuseAll",
+      "AcceptAll"
+    ],
+    "secondLayerButton": [
+      "Save"
+    ]
+  },
+  "customisation": {
+    "content": {
+      "fontcolor": "#0C419A",
+      "backgroundcolor": "#ffffff",
+      "bordercolor": "#806423"
+    },
+    "button": {
+      "fontcolor": "#ffffff",
+      "backgroundcolor": "#0C419A",
+      "disabledBackground": "#E1E1E1",
+      "linkcolor": "#0907F7"
+    },
+    "order": [
+      "Custom"
+    ]
+  },
+  "texts": {
+    "generic": {
+      "mandatoryDef": "Obligatoire",
+      "saveButton": "Sauvegarder",
+      "detailButton": "Paramétrer les cookies",
+      "acceptAllButton": "Tout accepter",
+      "refuseAllButton": "Tout refuser",
+      "vendorButton": "Vendeurs",
+      "purposeButton": "Voir les finalités",
+      "legalButton": "Juridique",
+      "backButton": "Retour",
+      "purposeDef": "Finalités",
+      "consentDef": "Accepter",
+      "legIntPurposeDef": "Intérêts légitimes",
+      "flexiblePurposeDef": "Finalités flexibles",
+      "specialPurposeDef": "Finalités spéciales",
+      "featureDef": "Fonctionnalités",
+      "specialFeatureDef": "Fonctionnalités spéciales",
+      "partnersLinkText": "nos partenaires",
+      "relatedVendorsButton": "Voir les partenaires",
+      "month": "mois",
+      "day": "jours",
+      "seconds": "secondes",
+      "hours": "heures"
+    },
+    "popup": {
+      "title": "",
+      "content": "",
+      "purposeTitle": "",
+      "specialPurposeTitle": "",
+      "featureTitle": "",
+      "specialFeatureTitle": ""
+    },
+    "purposes": {
+      "title": "Données de navigations",
+      "content": "Un cookie est un fichier texte stocké sur votre téléphone lors de votre visite sur le site. Il permet de conserver vos données de navigation. Cette page vous permet de donner ou de retirer votre consentement à tout moment, soit globalement soit finalité par finalité. L’application Mon espace santé utilise également des services de mesure d'audience permettant de générer des statistiques anonymes utiles à l'amélioration du site que vous pouvez désactiver à tout moment sur cette page. Pour en savoir plus, merci de consulter la rubrique :",
+      "privacy_policy_url": "https://www.monespacesante.fr/cgu",
+      "privacy_policy_text": "Conditions générales d'utilisation"
+    },
+    "vendors": {
+      "title": "",
+      "content": "",
+      "privacyPolicyText": "",
+      "deviceStorageTitle": "",
+      "deviceStorageCookieLifetime": "",
+      "deviceStorageOther": "",
+      "deviceStorageCookies": "",
+      "googleVendorsDef": "",
+      "domainsDef": ""
+    },
+    "others": {
+      "title_purpose": "",
+      "title_vendors": ""
+    }
+  },
+  "categories": [
+    {
+      "name": "Cookies strictement nécessaires",
+      "ID": "2",
+      "isMandatory": "true",
+      "related_vendors": [],
+      "description": "Mon espace santé utilise des cookies qui sont indispensables pour garantir l'accès sécurisé à certaines fonctionnalités, et notamment pour nous assurer que vos données sont bien protégées et accessibles à vous seul. C'est pourquoi ces cookies ne peuvent être désactivés."
+    },
+    {
+      "name": "Cookies analytiques / de mesure d'audience",
+      "ID": "1",
+      "related_vendors": [],
+      "description": "Il s'agit des cookies qui nous permettent de connaître l'utilisation et les performances de notre site, d'établir des statistiques anonymes, des volumes de fréquentation et d'utilisation des divers éléments composant notre site (rubriques et contenus visités, parcours de navigation), nous permettant d'améliorer l'intérêt et l'ergonomie de nos services (par exemple, les pages les plus souvent consultées, les recherches les plus fréquentes...)."
+    }
+  ]
+}

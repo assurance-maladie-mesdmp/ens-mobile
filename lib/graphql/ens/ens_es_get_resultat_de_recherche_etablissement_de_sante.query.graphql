@@ -1,0 +1,20 @@
+query get_resultat_de_recherche_etablissements_de_sante($searchStructureInput: SearchStructureInputModel!) {
+    searchStructure(searchStructureInput: $searchStructureInput) {
+        searchStructures {
+            idFineg
+            name
+            alias
+            active
+            mail
+            address {
+                roadNumber
+                roadType
+                labelRoadType
+                commune
+                cityZipCode
+                road
+            }
+            activity
+        }
+    }
+}

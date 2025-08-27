@@ -1,0 +1,5 @@
+mutation delete_groupe_sanguin($id: String!, $patientId: String!) {
+    removeBloodGroup(id: $id, patientId: $patientId) {
+        success
+    }
+}

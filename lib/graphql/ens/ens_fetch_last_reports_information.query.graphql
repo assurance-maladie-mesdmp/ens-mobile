@@ -1,0 +1,6 @@
+query fetch_last_reports_information($patientId: String!, $typeDemande: TypeDemande, $idSignale: String) {
+    fetchLastReportsInformation(patientId: $patientId, typeDemande: $typeDemande, idSignale: $idSignale) {
+        lastReport
+        isReportLimitExceeded
+    }
+}

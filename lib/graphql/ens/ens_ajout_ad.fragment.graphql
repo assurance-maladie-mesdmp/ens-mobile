@@ -1,0 +1,7 @@
+fragment profilMobile on AccountProfil {
+    index
+    lastName
+    firstName
+    statutProfile
+    hasDeleteRequest
+}

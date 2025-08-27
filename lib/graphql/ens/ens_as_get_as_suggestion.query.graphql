@@ -1,0 +1,12 @@
+query get_as_suggestions($patientId: String!, $typeSuggestion: TypeSuggestion) {
+    getHealthActorsSuggestions(patientId: $patientId, typeSuggestion: $typeSuggestion) {
+        healthActorsSuggestions {
+            nationalId
+            name
+            type
+            address
+            profession
+            email
+        }
+    }
+}

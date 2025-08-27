@@ -1,0 +1,7 @@
+# import './ens_messagerie_message_response.fragment.graphql'
+
+query get_messages($input: MessagingInput!){
+    getMessages(messagingInput: $input){
+        ...messageResponse
+    }
+}

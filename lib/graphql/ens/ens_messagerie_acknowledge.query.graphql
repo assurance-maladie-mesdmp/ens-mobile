@@ -1,0 +1,5 @@
+mutation acknowledge($input: AcknowledgeInput!) {
+    acknowledge(acknowledgeInput: $input) {
+        success
+    }
+}

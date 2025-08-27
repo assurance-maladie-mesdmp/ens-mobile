@@ -1,0 +1,12 @@
+query get_reponses_questionnaire($patientId: String!, $code: String!, $version: String!) {
+    getHealthQuizResponses(patientId: $patientId, code: $code, version: $version) {
+        status,
+        responseId,
+        questionToDisplay,
+        lastUpdateUserDate,
+        details {
+            questionCode,
+            value
+        }
+    }
+}

@@ -1,0 +1,5 @@
+mutation delete_handicap($patientId: String!, $id: String!) {
+    removeDisability(patientId: $patientId, id: $id) {
+        success
+    }
+}

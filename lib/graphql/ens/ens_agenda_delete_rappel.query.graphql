@@ -1,0 +1,5 @@
+mutation delete_rappel($rappelId: String!, $patientId: String!) {
+    removeReminderByIdAndPatientId(id: $rappelId, patientId: $patientId) {
+        success
+    }
+}

@@ -1,0 +1,5 @@
+mutation create_account($input: CreateAccountEnsInput!){
+    createAccountEns(createAccountEns: $input) {
+        success
+    }
+}

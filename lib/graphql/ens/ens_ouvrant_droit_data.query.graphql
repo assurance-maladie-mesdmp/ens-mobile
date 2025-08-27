@@ -1,0 +1,24 @@
+# import './ens_personal_information.fragment.graphql'
+# import './ens_ayants_droits.fragment.graphql'
+
+query get_ouvrant_droits_data($patientId: String!, $input: GetAyantsDroitsInput!) {
+    getPersonalInformation(getPersonalInformation: {patientId: $patientId}){
+        ...personalInformation
+    }
+    getAyantsDroits(getAyantsDroits:$input) {
+        ...ayantDroits
+    }
+    fetchNotificationCenter {
+        unreadNotificationsCount
+    }
+    getPendingInvitations(getPendingInvitations: {idEnsOD: $patientId, type: LEGAL_REPRESENTATIVE}) {
+        pendingInvitations {
+            lastName
+            firstName
+            statut
+            idEns
+            endDate
+            birthDate
+        }
+    }
+}

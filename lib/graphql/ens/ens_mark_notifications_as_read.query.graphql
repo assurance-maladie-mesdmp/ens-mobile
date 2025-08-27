@@ -1,0 +1,5 @@
+mutation mark_all_notifications_as_read($patientId: String!) {
+    markAllNotificationsAsRead(patientId: $patientId) {
+        success
+    }
+}

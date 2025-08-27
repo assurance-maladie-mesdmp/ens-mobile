@@ -1,0 +1,11 @@
+query get_confidentialities_ps($dmpConsentementInput: GetDmpConsentementInput!) {
+    getHealthProfessionalConfidentialities(dmpConsentementInput: $dmpConsentementInput) {
+        confidentialities {
+            consentId
+            healthProfessionalId
+            status
+            startDate
+        }
+        btg
+    }
+}

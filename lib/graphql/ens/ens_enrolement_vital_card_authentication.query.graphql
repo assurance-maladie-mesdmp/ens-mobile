@@ -1,0 +1,13 @@
+mutation vital_card_authentication($input: VitalCardAuthenticationInput!){
+    vitalCardAuthentication(vitalCardAuthentication: $input) {
+        ouvrantDroit{
+            compte{
+                isAccountFound
+            }
+        }
+        contact {
+            email
+            mobileNumber
+        }
+    }
+}

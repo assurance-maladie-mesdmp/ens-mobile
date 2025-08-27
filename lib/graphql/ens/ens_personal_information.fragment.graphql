@@ -1,0 +1,14 @@
+fragment personalInformation on PersonalInformationModel {
+    lastName
+    firstName
+    birthDate
+    sex
+    mail
+    phoneNumber
+    ins
+    onboarding
+    inseeCode
+    cguAcceptedAt
+    hasConfidentialitySettingsSet
+    ensStatus
+}

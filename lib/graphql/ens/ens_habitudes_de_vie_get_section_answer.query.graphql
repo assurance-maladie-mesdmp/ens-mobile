@@ -1,0 +1,7 @@
+# import './ens_habitudes_de_vie.fragment.graphql'
+
+query get_habitudes_de_vie_section_answer($patientId: String!, $sectionType: LifestyleSectionEnum!) {
+    fetchLifestyleAnswersForGivenSection(patientId: $patientId, sectionType: $sectionType){
+        ...habitudesDeVie
+    }
+}

@@ -1,0 +1,5 @@
+mutation add_professionnel_de_sante($patientId: String!, $psId: String!, $role: HealthProfessionalRoleEnum) {
+    postHealthProfessional(healthProfessionalInput: {patientId: $patientId, nationalId: $psId, role: $role}) {
+        success
+    }
+}

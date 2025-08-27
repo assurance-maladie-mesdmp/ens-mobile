@@ -1,0 +1,4 @@
+fragment disciplineResponse on DisciplineModel {
+    treCode
+    label
+}

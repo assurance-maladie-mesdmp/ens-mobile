@@ -1,0 +1,5 @@
+mutation update_document($documentPropertiesUpdateInput: DocumentPropertiesUpdateInput!){
+    updateDocumentProperties(documentPropertiesUpdateInput: $documentPropertiesUpdateInput) {
+        success
+    }
+}

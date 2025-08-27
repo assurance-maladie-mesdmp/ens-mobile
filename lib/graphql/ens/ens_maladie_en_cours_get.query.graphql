@@ -1,0 +1,7 @@
+# import './ens_maladie_en_cours.fragment.graphql'
+
+query get_maladies_in_progress($patientId: String!) {
+    getDiseaseEpisodeInProgress(patientId: $patientId) {
+        ...maladieEnCours
+    }
+}

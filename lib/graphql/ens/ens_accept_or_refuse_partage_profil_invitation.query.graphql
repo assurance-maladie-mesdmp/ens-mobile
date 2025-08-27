@@ -1,0 +1,5 @@
+mutation accept_or_refuse_partage_profil_invitation($accessValidatedOrRejectedInput: AccessValidatedOrRejectedInput!) {
+    setAccessValidatedOrRejected(accessValidatedOrRejectedInput: $accessValidatedOrRejectedInput) {
+        success
+    }
+}

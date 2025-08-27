@@ -1,0 +1,7 @@
+fragment mesuresTargets on MeasureTargetsListModel {
+    targets {
+        id
+        type
+        value
+    }
+}

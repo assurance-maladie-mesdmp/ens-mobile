@@ -1,0 +1,9 @@
+fragment adresse_ps_es on HealthProfessionalAddressModel {
+    adresseName
+    cityZipCode
+    roadNumber
+    labelRoadType
+    road
+    commune
+    numeroTelephone
+}

@@ -1,0 +1,15 @@
+# import './ens_enrolement_liste_rattachement.fragment.graphql'
+
+mutation generate_new_enrolement_code($input: GenerateNewEnrolmentCodeInput!){
+    generateNewEnrolmentCode(generateNewEnrolmentCode: $input) {
+        firstName
+        lastName
+        userContact {
+            email
+            mobileNumber
+        }
+        listeRattachement {
+            ...profilRattache
+        }
+    }
+}

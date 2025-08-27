@@ -1,0 +1,5 @@
+mutation verify_otp_to_update_user_contact_in_enrolement($verifyOtpUpdateContact: VerifyOtpUpdateContactInput!) {
+    verifyOtpUpdateContact(verifyOtpUpdateContact: $verifyOtpUpdateContact) {
+        isOtpCodeValid
+    }
+}

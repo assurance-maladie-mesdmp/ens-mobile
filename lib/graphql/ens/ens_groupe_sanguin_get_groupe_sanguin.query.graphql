@@ -1,0 +1,10 @@
+query get_groupe_sanguin($patientId: String!) {
+    fetchBloodGroup(patientId: $patientId) {
+        id,
+        bloodGroup,
+        author {
+            firstName,
+            lastName,
+        }
+    }
+}

@@ -1,0 +1,11 @@
+mutation update_maladie($disease: DiseaseUpdateInput!, $patientId: String!, $linksInput: [LinkInput!]!, $deleteLinksInput: [DeleteLinkInput!]!) {
+    putDisease(diseaseUpdateInput: $disease) {
+        success
+    }
+    postLinks(linksInput: $linksInput) {
+        linkId
+    }
+    deleteLinks(deleteLinksInput: $deleteLinksInput, patientId: $patientId) {
+        linkId
+    }
+}

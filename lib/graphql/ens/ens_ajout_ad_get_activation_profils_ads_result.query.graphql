@@ -1,0 +1,12 @@
+# import './ens_ajout_ad_result.fragment.graphql'
+
+query get_activation_profils_ads_result($accountGetAccountFamilyInput: AccountGetAccountFamilyInput!) {
+    getAccountFamily(accountGetAccountFamilyInput: $accountGetAccountFamilyInput) {
+        profilsActivationSucceed {
+            ...activationProfilResult
+        }
+        profilsActivationFailed {
+            ...activationProfilResult
+        }
+    }
+}

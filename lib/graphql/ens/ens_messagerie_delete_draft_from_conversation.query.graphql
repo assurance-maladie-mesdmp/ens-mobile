@@ -1,0 +1,10 @@
+# import './ens_messagerie_mailbox.fragment.graphql'
+
+mutation delete_draft_from_conversation($deleteDraftFromConversationInput: DeleteDraftFromConversationInput!) {
+    deleteDraftFromConversation(deleteDraftFromConversationInput: $deleteDraftFromConversationInput) {
+        success,
+        mailBox {
+            ...mailBox
+        }
+    }
+}

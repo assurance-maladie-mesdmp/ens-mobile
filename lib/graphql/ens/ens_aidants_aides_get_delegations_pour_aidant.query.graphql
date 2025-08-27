@@ -1,0 +1,7 @@
+# import './ens_aidants_aides_delegation.fragment.graphql'
+
+query get_delegations_pour_aidant{
+    delegations(filter: {onlyActive: true, withDetails: true, type: CAREGIVING, direction: INCOMING}) {
+        ...delegation
+    }
+}

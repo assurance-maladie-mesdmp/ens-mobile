@@ -1,0 +1,5 @@
+mutation delete_questionnaire_reponses($responseId: String!, $patientId: String!){
+    deleteHealthQuizResponses(responseId: $responseId, patientId: $patientId){
+        success
+    }
+}

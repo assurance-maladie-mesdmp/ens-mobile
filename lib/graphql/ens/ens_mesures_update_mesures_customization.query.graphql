@@ -1,0 +1,5 @@
+mutation update_mesures_customization($patientId: String!, $mesureTiles: [MeasureTileInput!]!) {
+    updateMeasuresTiles(patientId: $patientId, tiles: $mesureTiles) {
+        success
+    }
+}

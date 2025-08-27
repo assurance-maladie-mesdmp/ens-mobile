@@ -1,0 +1,7 @@
+# import './ens_mesures_mesure_fields.fragment.graphql'
+
+mutation update_mesure($mesure: MeasureInput!) {
+    updateMeasure(measure: $mesure) {
+        ...mesureFields
+    }
+}

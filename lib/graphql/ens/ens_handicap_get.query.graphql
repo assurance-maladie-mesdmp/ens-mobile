@@ -1,0 +1,16 @@
+query get_handicaps($patientId: String!) {
+    fetchAllDisabilities(patientId: $patientId) {
+        disabilities {
+            id,
+            name,
+            comment,
+            disabilityRate,
+            humanHelp,
+            technicalHelp,
+            types,
+        }
+    }
+    unconcerned(section: DISABILITIES, patientId: $patientId) {
+        declarationDate
+    }
+}

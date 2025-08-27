@@ -1,0 +1,5 @@
+mutation remove_consent_for_service_by_oid($removeFinalityConsentByServiceOid: ChangeFinalityConsentByServiceOidInput!) {
+    removeFinalityConsentByServiceOid(removeFinalityConsentByServiceOid: $removeFinalityConsentByServiceOid) {
+        success
+    }
+}

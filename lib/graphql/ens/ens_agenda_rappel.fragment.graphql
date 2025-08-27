@@ -1,0 +1,9 @@
+fragment rappel on ReminderViewModel{
+    id
+    date
+    title
+    comment
+    author {
+        authorLabel
+    }
+}

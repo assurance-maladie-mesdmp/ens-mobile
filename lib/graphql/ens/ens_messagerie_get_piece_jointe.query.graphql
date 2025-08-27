@@ -1,0 +1,10 @@
+query get_piece_jointe($input: FileGetInput!) {
+    getMessageFile(fileGetInput: $input) {
+        id
+        attachment
+        createdAt
+        mimeType
+        name
+        canAddToDMP
+    }
+}

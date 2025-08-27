@@ -1,0 +1,5 @@
+mutation validate_otp($input: ValidateOtpInput!) {
+    validateOtp(validateOtp: $input) {
+        success
+    }
+}

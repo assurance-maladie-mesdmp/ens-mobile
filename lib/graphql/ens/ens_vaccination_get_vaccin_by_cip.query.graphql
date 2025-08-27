@@ -1,0 +1,10 @@
+query get_vaccin_by_cip($cipCode : String!) {
+    vaccineRefByCipCode(cipCode: $cipCode) {
+        vaccineRefId
+        label
+        pathologies
+        marketingStart
+        marketingEnd
+        cipCodes
+    }
+}

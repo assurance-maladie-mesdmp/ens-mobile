@@ -1,0 +1,5 @@
+mutation set_all_documents_confidentiality($patientId: String!, $documentsMaskedByDefault : Boolean!) {
+    setAllDocumentsConfidentiality(patientId: $patientId, documentsMaskedByDefault: $documentsMaskedByDefault) {
+        success
+    }
+}

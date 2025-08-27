@@ -1,0 +1,11 @@
+mutation create_contact($patientId: String!, $email: String!, $fullName: String!, $esId: String!) {
+    createContactWithControl(createContactWithControlInput: {
+        patientId: $patientId,
+        email: $email,
+        fullName: $fullName,
+        idFineg: $esId,
+    }) {
+        success,
+        contactId,
+    }
+}

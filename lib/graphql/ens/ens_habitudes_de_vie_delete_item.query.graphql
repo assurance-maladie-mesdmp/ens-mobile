@@ -1,0 +1,5 @@
+mutation delete_habitudes_de_vie_item($patientId: String!, $lifestyleItemId:String!) {
+    deleteLifestyleItem(patientId: $patientId, lifestyleItemId: $lifestyleItemId){
+        success
+    }
+}

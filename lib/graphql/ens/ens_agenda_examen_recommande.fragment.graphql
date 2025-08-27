@@ -1,0 +1,12 @@
+fragment examenRecommande on PreventionViewModel {
+    code
+    type
+    title
+    dateDebutCampagne
+    dateFinCampagne
+    dateDebutPrevention
+    dateFinPrevention
+    statut
+    executionDate
+    requirementLevel
+}

@@ -1,0 +1,6 @@
+fragment mesuresTiles on MeasureTileListModel {
+    tiles {
+        type
+        visible
+    }
+}

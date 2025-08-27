@@ -1,0 +1,29 @@
+# Copyright (c) 2020-2025 Caisse Nationale d’Assurance Maladie et Ministère de la Santé et de l’Accès aux Soins. All rights reserved.
+# Use of this source code is governed by a CeCILL v2.1 license that can be
+# found in the LICENSE file.
+
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - test/mocks/mocks.mocks.dart
+    - test/ens_images_test.dart
+    - lib/ui_generated/ens_images.dart
+    - lib/graphql/ens/__generated__/**
+  errors:
+    todo: ignore
+  plugins:
+    - custom_lint
+
+linter:
+  rules:
+    sort_constructors_first: false
+    sort_unnamed_constructors_first: false
+    prefer_single_quotes: true
+    avoid_classes_with_only_static_members: false
+    avoid_redundant_argument_values: false
+    avoid_escaping_inner_quotes: false
+    constant_identifier_names: false
+    unnecessary_string_escapes: false
+    avoid_positional_boolean_parameters: false
+

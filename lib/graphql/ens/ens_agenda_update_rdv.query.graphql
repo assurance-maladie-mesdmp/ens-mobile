@@ -1,0 +1,7 @@
+# import './ens_agenda_rdv.fragment.graphql'
+
+mutation update_rdv($rdv: AppointmentToUpdateInput!) {
+    updateAppointmentByIdAndPatientId(appointment: $rdv) {
+        ...rdv
+    }
+}

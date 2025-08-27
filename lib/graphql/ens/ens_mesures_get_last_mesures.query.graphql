@@ -1,0 +1,15 @@
+# import './ens_mesures_last_mesure.fragment.graphql'
+# import './ens_mesures_mesures_targets.fragment.graphql'
+# import './ens_mesures_mesures_tiles.fragment.graphql'
+
+query get_last_mesures($patientId: String!) {
+    lastMeasures(patientId: $patientId) {
+        ...lastMesure
+    }
+    measuresTiles(patientId: $patientId) {
+        ...mesuresTiles
+    }
+    measuresTargets(patientId: $patientId) {
+        ...mesuresTargets
+    }
+}

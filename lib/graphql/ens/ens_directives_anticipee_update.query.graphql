@@ -1,0 +1,9 @@
+# import './ens_documents.fragment.graphql'
+
+mutation post_directives_anticipees($advanceDirectiveInput: AdvanceDirectiveInput!) {
+    postAdvanceDirectives(advanceDirectiveInput: $advanceDirectiveInput) {
+        document {
+            ...ensDocument
+        }
+    }
+}

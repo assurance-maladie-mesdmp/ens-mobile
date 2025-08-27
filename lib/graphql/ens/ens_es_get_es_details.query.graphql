@@ -1,0 +1,17 @@
+# import './ens_es.fragment.graphql'
+
+query get_es_details($id: String!, $patientId: String!) {
+    getHealthStructureReferential(healthStructureId: $id, patientId: $patientId) {
+        id
+        name
+        alias
+        activity
+        organizationId
+        isContactable
+        mail
+        addresses {
+            ...adresse_ps_es
+        }
+        active
+    }
+}

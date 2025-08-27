@@ -1,0 +1,67 @@
+fragment startQuestionnaire on HealthQuizModel {
+    start {
+        title,
+        description,
+        information {
+            cards {
+                image,
+                text,
+            }
+            mention {
+                text,
+            }
+        }
+    }
+}
+
+fragment endQuestionnaire on HealthQuizModel {
+    end {
+        medicalAppointment {
+            card {
+                description
+                link {
+                    text
+                    href
+                }
+                titleButton
+            }
+        }
+    }
+}
+
+fragment question on QuestionModel {
+    code,
+    rowQuestion {
+        title,
+        description
+    },
+    textQuestion {
+        title,
+    },
+    choiceQuestion {
+        ...choiceQuestion,
+    },
+    required,
+    maxLength,
+    constraints {
+        ...constraintsQuestion
+    },
+}
+
+fragment choiceQuestion on ChoiceQuestionModel {
+    title,
+    type,
+    options {
+        value,
+        code,
+    }
+}
+
+fragment constraintsQuestion on ConstraintModel {
+    regexp,
+    range {
+        min,
+        max,
+    },
+    message
+}

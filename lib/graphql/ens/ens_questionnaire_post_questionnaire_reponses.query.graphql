@@ -1,0 +1,5 @@
+mutation post_questionnaire_reponses($healthQuizResponse: HealthQuizResponseInput!) {
+    postHealthQuizResponses(healthQuizResponseInput: $healthQuizResponse) {
+        success
+    }
+}

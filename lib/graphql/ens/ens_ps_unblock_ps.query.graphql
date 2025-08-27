@@ -1,0 +1,5 @@
+mutation  unblock_ps($patientId: String! $rpps: String!, $consentementId: String!) {
+    unblockPS(patientId: $patientId, rppsId: $rpps, consentementId: $consentementId) {
+        success
+    }
+}

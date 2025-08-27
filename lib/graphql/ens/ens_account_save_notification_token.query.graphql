@@ -1,0 +1,10 @@
+mutation save_notification_token($notificationToken: String!, $os: MobileOsEnum!) {
+    saveNotificationToken(
+        input: {
+            os: $os,
+            token: $notificationToken,
+        },
+    ) {
+        success
+    }
+}

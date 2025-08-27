@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/chtl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow"
+        app:title=" ">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/open_sans_400"
+            android:text="@string/add_document"
+            android:textColor="@color/text_title"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/help_banner_background"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/open_sans_600"
+        android:padding="16dp"
+        android:text="@string/helper_info"
+        android:textColor="@color/text"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/ic_information"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chtl_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:clipChildren="false"
+        app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textBanner">
+
+        <ImageView
+            android:id="@+id/viewImageForBitmap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/img_description"
+            android:visibility="visible" />
+
+        <fr.cnamts.ens.scan.views.PolygonView
+            android:id="@+id/polygon_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/errorSnackBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/error_snackbar_background"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/open_sans_600"
+        android:padding="16dp"
+        android:text="@string/error"
+        android:textColor="@color/text"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:drawableRightCompat="@drawable/ic_cross"
+        app:drawableStartCompat="@drawable/ic_warning"
+        app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/skip_button"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/secondary_button_background"
+            android:elevation="0dp"
+            android:fontFamily="@font/open_sans_700"
+            android:gravity="center"
+            android:text="@string/skip_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/crop_button"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/primary_button_background"
+            android:elevation="0dp"
+            android:fontFamily="@font/open_sans_700"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/continue_btn"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

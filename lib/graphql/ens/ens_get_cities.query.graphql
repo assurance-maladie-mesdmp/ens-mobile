@@ -1,0 +1,8 @@
+query get_cities($input: GetCityInput!) {
+    getGroupedCityInformation(cityInput: $input) {
+        inseeCode
+        departmentCode
+        zipCodes
+        cityName
+    }
+}

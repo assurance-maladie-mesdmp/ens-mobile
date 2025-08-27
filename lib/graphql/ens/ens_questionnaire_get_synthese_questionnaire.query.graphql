@@ -1,0 +1,9 @@
+query get_questionnaire_synthese($patientId: String!, $code: String!, $version: String!) {
+    getHealthQuizPDF(patientId: $patientId, code: $code, version: $version) {
+        name
+        mimeType
+        binary
+        lastUpdateUserDate
+        responseId
+    }
+}

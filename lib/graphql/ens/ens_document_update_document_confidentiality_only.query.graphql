@@ -1,0 +1,7 @@
+mutation update_document_confidentiality_only(
+    $documentUpdateConfidentialityInput: DocumentUpdateConfidentialityInput!
+) {
+    updateConfidentialityDocument(documentUpdateConfidentialityInput: $documentUpdateConfidentialityInput) {
+        success
+    }
+}

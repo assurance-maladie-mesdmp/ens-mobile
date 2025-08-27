@@ -1,0 +1,5 @@
+mutation accept_invitation_from_aide($input: DelegationAcceptInvitationInput!) {
+    delegationAcceptInvitation(input: $input){
+        attestation
+    }
+}

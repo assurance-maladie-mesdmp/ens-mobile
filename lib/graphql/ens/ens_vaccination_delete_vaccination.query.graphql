@@ -1,0 +1,7 @@
+mutation delete_vaccination($patientId: String!, $id: String!) {
+    deleteVaccine(patientId: $patientId, id: $id) {
+        vaccines {
+            vaccineId
+        }
+    }
+}

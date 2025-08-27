@@ -1,0 +1,142 @@
+# import './ens_acteur_sante_auteur.fragment.graphql'
+
+fragment episodeBiologie on BiologyEpisodeViewModel {
+    date
+    category
+    items {
+        name
+        episodeEsAuthor {
+            ...episodeEsAuteur
+        }
+        episodePsAuthor {
+            ...episodePsAuteur
+        }
+    }
+}
+
+fragment episodeMedicament on MedicineEpisodeViewModel {
+    date
+    category
+    items {
+        deliveryDate
+        name
+        therapeuticGroup
+        quantityDelivered
+        episodePsAuthor {
+            ...episodePsAuteur
+        }
+        episodeDeliveredByPsAuthor {
+            ...episodePsAuteur
+        }
+        episodeEsAuthor {
+            ...episodeEsAuteur
+        }
+        episodeDeliveredByEsAuthor {
+            ...episodeEsAuteur
+        }
+    }
+}
+
+fragment episodeSoinDentaire on MedicalDentalCareEpisodeViewModel {
+    date
+    category
+    items {
+        name
+        episodePsAuthor {
+            ...episodePsAuteur
+        }
+        episodeEsAuthor {
+            ...episodeEsAuteur
+        }
+    }
+}
+
+fragment episodeHospitalisation on HospitalizationEpisodeViewModel {
+    date
+    category
+    admissionDate
+    releaseDate
+    nature
+    episodeEsAuthorHospitalization {
+        ...episodeEsAuteur
+    }
+}
+
+fragment episodeRadiologie on RadiologyEpisodeViewModel {
+    date
+    category
+    items {
+        name
+        episodeEsAuthor {
+            ...episodeEsAuteur
+        }
+        episodePsAuthor {
+            ...episodePsAuteur
+        }
+    }
+}
+
+fragment episodeDispositifMedical on MedicalDeviceEpisodeViewModel {
+    date
+    category
+    items {
+        deliveryDate
+        name
+        quantityDelivered
+        episodePsAuthor {
+            ...episodePsAuteur
+        }
+        episodeEsAuthor {
+            ...episodeEsAuteur
+        }
+        episodeDeliveredByEsAuthor {
+            ...episodeEsAuteur
+        }
+    }
+}
+
+fragment episodeVaccin on VaccineEpisodeViewModel {
+    date
+    category
+    items {
+        name
+        vaccineValencia
+        typeCodage
+        codeCIP
+        episodePsAuthor {
+            ...episodePsAuteur
+        }
+        episodeDeliveredByPsAuthor {
+            ...episodePsAuteur
+        }
+        episodeEsAuthor {
+            ...episodeEsAuteur
+        }
+        episodeDeliveredByEsAuthor {
+            ...episodeEsAuteur
+        }
+    }
+}
+
+fragment episodeVaccination on CvaVaccineEpisodeViewModel {
+    date
+    category
+    id
+    name
+    pathologies
+}
+
+fragment episodeMaladie on DiseaseEpisodeViewModel {
+    date
+    category
+    startDate
+    name
+    eventType
+    comment
+    endDate
+    diseaseId
+    hasOnlyYearInStartDate
+    hasOnlyMonthAndYearInStartDate
+    hasOnlyYearInEndDate
+    hasOnlyMonthAndYearInEndDate
+}

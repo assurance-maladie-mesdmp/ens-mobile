@@ -1,0 +1,7 @@
+query get_examens_recommandes($patientId: String!) {
+    fetchPreventionsByPatientId(patientId: $patientId) {
+        dateDebutPrevention
+        dateFinPrevention
+        statut
+    }
+}

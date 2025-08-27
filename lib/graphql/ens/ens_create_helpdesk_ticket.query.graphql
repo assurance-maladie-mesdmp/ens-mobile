@@ -1,0 +1,6 @@
+mutation create_helpdesk_ticket($ticketToCreateInput: TicketToCreateInput!) {
+    createHelpdeskTicketV2(ticketToCreateInput: $ticketToCreateInput){
+        success
+        errorCode
+    }
+}

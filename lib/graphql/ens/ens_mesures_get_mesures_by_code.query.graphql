@@ -1,0 +1,7 @@
+# import './ens_mesure_extract_mesure.fragment.graphql'
+
+query get_mesures_by_code($mesurePageable: MeasurePageableInput!) {
+    measuresByCode(measurePageableInput: $mesurePageable) {
+        ...extractMesure
+    }
+}

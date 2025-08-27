@@ -1,0 +1,5 @@
+mutation delete_mesure_target($patientId: String!, $targetId: String!) {
+    deleteMeasureTarget(patientId: $patientId, targetId: $targetId) {
+        success
+    }
+}

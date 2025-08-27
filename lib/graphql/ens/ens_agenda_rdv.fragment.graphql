@@ -1,0 +1,18 @@
+fragment rdv on AppointmentViewModel {
+    id
+    patientId
+    name
+    type
+    professionalOrEstablishmentName
+    date
+    comment
+    speciality
+    address
+    author {
+        authorLabel
+        type
+    }
+    status
+    idProfessionnelSante
+    idEtablissementSante
+}

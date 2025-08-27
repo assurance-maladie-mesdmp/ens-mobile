@@ -1,0 +1,32 @@
+fragment notificationCenter on NotificationCenterViewModel {
+    profiles {
+        unreadNotificationsCount
+        ensProfil {
+            patientId
+            firstname
+            lastname
+            profileType
+        }
+        notifications {
+            id
+            date
+            elapsedTime
+            label
+            read
+            code
+            actor {
+                id
+                type
+                fullname
+            }
+            resource {
+                type
+                id
+                title
+                date
+            }
+            urn
+            redirectionLabel
+        }
+    }
+}

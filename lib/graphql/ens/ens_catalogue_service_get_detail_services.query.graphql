@@ -1,0 +1,7 @@
+# import './ens_catalogue_service_detail.fragment.graphql'
+
+query get_detail_service($serviceId: String!){
+    fetchServiceById(serviceId: $serviceId){
+        ...detailService
+    }
+}

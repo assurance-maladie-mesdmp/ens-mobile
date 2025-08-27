@@ -1,0 +1,9 @@
+# import './ens_documents.fragment.graphql'
+
+query get_directives_anticipees($patientId: String!) {
+    advanceDirectives(patientId: $patientId) {
+        document {
+            ...ensDocument
+        }
+    }
+}

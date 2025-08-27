@@ -1,0 +1,5 @@
+mutation delete_rdv($rdvId: String!, $patientId: String!) {
+    removeAppointmentByIdAndPatientId(id: $rdvId, patientId: $patientId) {
+        success
+    }
+}

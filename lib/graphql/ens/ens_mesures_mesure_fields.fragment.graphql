@@ -1,0 +1,26 @@
+fragment mesureFields on MeasureModel {
+    id
+    effectiveDate
+    comments {
+        code
+        value
+        extra
+    }
+    metrics {
+        code
+        value
+        unit
+    }
+    author {
+        firstName
+        lastName
+    }
+    formattedMetricValue
+    idDocument
+    nameDocument
+    permissions {
+        delete
+        update
+    }
+    growthMetricsIntervalText
+}

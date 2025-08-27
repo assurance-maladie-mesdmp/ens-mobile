@@ -1,0 +1,5 @@
+mutation send_new_enrolement_code($input: SendNewEnrolmentCodeInput!){
+    sendNewEnrolmentCode(sendNewEnrolmentCode: $input) {
+        success
+    }
+}

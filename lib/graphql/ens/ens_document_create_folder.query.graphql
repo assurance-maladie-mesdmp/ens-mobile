@@ -1,0 +1,5 @@
+mutation create_folder($createFolderInputs: CreateFolderInputs!) {
+    createFolderV2(createFolderInputs: $createFolderInputs) {
+        id
+    }
+}

@@ -1,0 +1,7 @@
+# import './ens_agenda_rdv.fragment.graphql'
+
+query get_rendez_vous_by_id_and_patient_id($patientId: String!, $rdvId: String!){
+    fetchAppointmentByIdAndPatientId(patientId: $patientId, appointmentId: $rdvId){
+        ...rdv
+    }
+}

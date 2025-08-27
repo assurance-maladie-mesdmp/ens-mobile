@@ -1,0 +1,7 @@
+# import './ens_agenda_rdv.fragment.graphql'
+
+mutation create_rdv($rdv: AppointmentToCreateInput!) {
+    createAppointment(appointment: $rdv) {
+        ...rdv
+    }
+}

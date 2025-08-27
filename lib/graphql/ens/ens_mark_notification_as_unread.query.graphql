@@ -1,0 +1,5 @@
+mutation mark_notification_as_unread($notificationId: String!, $patientId: String!) {
+    markNotificationAsUnread(notificationId: $notificationId, patientId: $patientId) {
+        success
+    }
+}

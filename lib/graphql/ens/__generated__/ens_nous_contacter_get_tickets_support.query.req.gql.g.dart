@@ -1,0 +1,379 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'ens_nous_contacter_get_tickets_support.query.req.gql.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+Serializer<Gget_tickets_supportReq> _$ggetTicketsSupportReqSerializer =
+    new _$Gget_tickets_supportReqSerializer();
+
+class _$Gget_tickets_supportReqSerializer
+    implements StructuredSerializer<Gget_tickets_supportReq> {
+  @override
+  final Iterable<Type> types = const [
+    Gget_tickets_supportReq,
+    _$Gget_tickets_supportReq
+  ];
+  @override
+  final String wireName = 'Gget_tickets_supportReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Gget_tickets_supportReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.Gget_tickets_supportVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gget_tickets_supportData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  Gget_tickets_supportReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gget_tickets_supportReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.Gget_tickets_supportVars))!
+              as _i3.Gget_tickets_supportVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gget_tickets_supportData))!
+              as _i2.Gget_tickets_supportData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gget_tickets_supportReq extends Gget_tickets_supportReq {
+  @override
+  final _i3.Gget_tickets_supportVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.Gget_tickets_supportData? Function(
+          _i2.Gget_tickets_supportData?, _i2.Gget_tickets_supportData?)?
+      updateResult;
+  @override
+  final _i2.Gget_tickets_supportData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+  @override
+  final _i4.Context? context;
+
+  factory _$Gget_tickets_supportReq(
+          [void Function(Gget_tickets_supportReqBuilder)? updates]) =>
+      (new Gget_tickets_supportReqBuilder()..update(updates))._build();
+
+  _$Gget_tickets_supportReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen,
+      this.context})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'Gget_tickets_supportReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'Gget_tickets_supportReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(
+        executeOnListen, r'Gget_tickets_supportReq', 'executeOnListen');
+  }
+
+  @override
+  Gget_tickets_supportReq rebuild(
+          void Function(Gget_tickets_supportReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gget_tickets_supportReqBuilder toBuilder() =>
+      new Gget_tickets_supportReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is Gget_tickets_supportReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gget_tickets_supportReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
+        .toString();
+  }
+}
+
+class Gget_tickets_supportReqBuilder
+    implements
+        Builder<Gget_tickets_supportReq, Gget_tickets_supportReqBuilder> {
+  _$Gget_tickets_supportReq? _$v;
+
+  _i3.Gget_tickets_supportVarsBuilder? _vars;
+  _i3.Gget_tickets_supportVarsBuilder get vars =>
+      _$this._vars ??= new _i3.Gget_tickets_supportVarsBuilder();
+  set vars(_i3.Gget_tickets_supportVarsBuilder? vars) => _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.Gget_tickets_supportData? Function(
+          _i2.Gget_tickets_supportData?, _i2.Gget_tickets_supportData?)?
+      _updateResult;
+  _i2.Gget_tickets_supportData? Function(
+          _i2.Gget_tickets_supportData?, _i2.Gget_tickets_supportData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.Gget_tickets_supportData? Function(
+                  _i2.Gget_tickets_supportData?, _i2.Gget_tickets_supportData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.Gget_tickets_supportDataBuilder? _optimisticResponse;
+  _i2.Gget_tickets_supportDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.Gget_tickets_supportDataBuilder();
+  set optimisticResponse(
+          _i2.Gget_tickets_supportDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
+  Gget_tickets_supportReqBuilder() {
+    Gget_tickets_supportReq._initializeBuilder(this);
+  }
+
+  Gget_tickets_supportReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gget_tickets_supportReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gget_tickets_supportReq;
+  }
+
+  @override
+  void update(void Function(Gget_tickets_supportReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gget_tickets_supportReq build() => _build();
+
+  _$Gget_tickets_supportReq _build() {
+    _$Gget_tickets_supportReq _$result;
+    try {
+      _$result = _$v ??
+          new _$Gget_tickets_supportReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'Gget_tickets_supportReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'Gget_tickets_supportReq',
+                  'executeOnListen'),
+              context: context);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gget_tickets_supportReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

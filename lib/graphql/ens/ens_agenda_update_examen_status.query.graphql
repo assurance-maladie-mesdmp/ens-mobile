@@ -1,0 +1,5 @@
+mutation update_examen_status($input: UpdatePreventionStatusViewModel!) {
+    updatePreventionStatus(updatePreventionStatusViewModel: $input) {
+        success
+    }
+}

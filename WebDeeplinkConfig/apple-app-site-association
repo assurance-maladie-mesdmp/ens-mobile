@@ -1,0 +1,18 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "94PGRRE84M.fr.assurancemaladie.monespacesante" ],
+             "components": [
+               {
+                  "/": "/synchronisation/retour-mes"
+               },
+               {
+                  "/": "/mon-compte/services-synchronises",
+                  "?": {"fromMail" : true}
+               }
+             ]
+           }
+       ]
+   }
+}

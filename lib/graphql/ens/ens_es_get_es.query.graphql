@@ -1,0 +1,19 @@
+# import './ens_es.fragment.graphql'
+
+query get_etablissements_de_sante($patientId: String!) {
+    getHealthStructures(patientId: $patientId) {
+        healthStructures {
+            id
+            name
+            alias
+            activity
+            organizationId
+            isContactable
+            mail
+            addresses {
+                ...adresse_ps_es
+            },
+            active
+        }
+    }
+}

@@ -1,0 +1,17 @@
+# import './ens_ayants_droits.fragment.graphql'
+
+query get_ayants_droits($input: GetAyantsDroitsInput!, $getPendingInvitationsInput: GetPendingInvitationInput!) {
+    getAyantsDroits(getAyantsDroits:$input) {
+        ...ayantDroits
+    }
+    getPendingInvitations(getPendingInvitations: $getPendingInvitationsInput) {
+        pendingInvitations {
+            lastName
+            firstName
+            statut
+            idEns
+            endDate
+            birthDate
+        }
+    }
+}

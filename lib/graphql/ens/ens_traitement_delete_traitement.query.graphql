@@ -1,0 +1,5 @@
+mutation delete_traitement($patientId: String!, $id: String!) {
+    deleteTreatment(patientId: $patientId, id: $id) {
+        success
+    }
+}

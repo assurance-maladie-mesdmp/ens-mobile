@@ -1,0 +1,5 @@
+mutation rename_folder($renameFolderInputs: RenameFolderInputs!) {
+    renameFolderV2(renameFolderInputs: $renameFolderInputs) {
+        success
+    }
+}

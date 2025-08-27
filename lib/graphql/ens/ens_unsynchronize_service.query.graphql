@@ -1,0 +1,5 @@
+mutation unsynchronize_service($oid: String!) {
+    deleteSynchronizedService(serviceOid: $oid) {
+        success
+    }
+}

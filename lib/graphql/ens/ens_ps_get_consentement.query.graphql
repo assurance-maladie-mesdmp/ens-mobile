@@ -1,0 +1,13 @@
+query get_consentement_ps($dmpConsentementInput: GetDmpConsentementInput!) {
+    getDmpConsentementForHealthcareStaff(dmpConsentementInput: $dmpConsentementInput) {
+        dmpConsentementModel {
+            type,
+            identifier
+        },
+        startDate,
+        firstName,
+        lastName,
+        id,
+        healthcareStaffType,
+    }
+}

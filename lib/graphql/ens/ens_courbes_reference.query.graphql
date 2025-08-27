@@ -1,0 +1,11 @@
+query get_courbes_reference($params: MeasureGrowthMetricsParams!) {
+    measureGrowthMetrics(params: $params) {
+        categories {
+            name
+            data {
+                date
+                measure
+            }
+        }
+    }
+}

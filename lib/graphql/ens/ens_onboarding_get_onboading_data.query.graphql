@@ -1,0 +1,13 @@
+# import './ens_dmp_consentement.fragment.graphql'
+
+query get_onboarding_data(
+    $dmpConsentementInput: GetDmpConsentementInput!,
+    $patientId: String!,
+){
+    getDmpConsentement(dmpConsentementInput: $dmpConsentementInput){
+        ...dmpConsentement
+    }
+    getDefaultConfidentiality(patientId: $patientId) {
+        masked
+    }
+}

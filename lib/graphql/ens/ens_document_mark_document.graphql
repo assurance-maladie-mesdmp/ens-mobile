@@ -1,0 +1,5 @@
+mutation mark_document($documentMarkInput: SingleDocumentMarkInput!) {
+    markDocument(documentMarkInput: $documentMarkInput) {
+        success
+    }
+}

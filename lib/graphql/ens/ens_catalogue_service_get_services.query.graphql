@@ -1,0 +1,21 @@
+# import './ens_catalogue_services.fragment.graphql'
+
+query get_services($patientId: String)  {
+    fetchCatalogueServices{
+        services {
+            ...service
+            synchronization(patientId: $patientId) {
+                isSynchronized
+                oid
+                isAcknowledged
+                reapprovalLimitDate
+            }
+        }
+        regions {
+            ...region
+        }
+        thematics {
+            ...thematics
+        }
+    }
+}

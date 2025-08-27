@@ -1,0 +1,5 @@
+mutation modify_entourage_contact($contact: ContactUpdateInput!) {
+    putEntourageContact(contactUpdateInput: $contact) {
+        effectiveDate
+    }
+}

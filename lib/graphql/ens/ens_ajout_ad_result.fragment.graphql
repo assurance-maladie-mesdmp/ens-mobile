@@ -1,0 +1,6 @@
+fragment activationProfilResult on AccountProfil {
+    index
+    idEns
+    firstName
+    lastName
+}

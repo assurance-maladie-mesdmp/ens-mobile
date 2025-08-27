@@ -1,0 +1,5 @@
+mutation add_etablissement_de_sante($patientId: String!, $esId: String!) {
+    postHealthStructure(healthStructureInput: {patientId: $patientId, nationalId: $esId}) {
+        success
+    }
+}

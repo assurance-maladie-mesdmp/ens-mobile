@@ -1,0 +1,7 @@
+# import './ens_agenda_rappel.fragment.graphql'
+
+query get_rappel_by_id_and_patient_id($patientId: String!, $rappelId: String!){
+    fetchReminderByIdAndPatientId(patientId: $patientId, reminderId: $rappelId){
+        ...rappel
+    }
+}

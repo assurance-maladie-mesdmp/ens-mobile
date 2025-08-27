@@ -1,0 +1,5 @@
+mutation unconcerned($section : SectionUriEnum!, $patientId: String!) {
+    unconcerned(section: $section, patientId: $patientId) {
+        declarationDate
+    }
+}

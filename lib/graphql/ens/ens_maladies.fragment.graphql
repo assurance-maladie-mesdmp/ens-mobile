@@ -1,0 +1,43 @@
+fragment maladie on DiseaseModel {
+    id
+    name
+    comment
+    startDay
+    startMonth
+    startYear
+    endDay
+    endMonth
+    endYear
+    linkedDocuments {
+        linkId
+        document {
+            id
+            title
+        }
+    }
+    linkedTreatments {
+        ...traitementLie
+    }
+}
+
+fragment traitementLie on LinkedTreatmentModel {
+    linkId
+    treatment {
+        id
+        name
+        comment
+        startDay
+        startMonth
+        startYear
+        endDay
+        endMonth
+        endYear
+        dosage
+        linkedDiseases {
+            linkId
+            disease {
+                id
+            }
+        }
+    }
+}

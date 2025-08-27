@@ -1,0 +1,16 @@
+fragment maladieEnCours on DiseaseEpisodeViewModel {
+    date
+    category
+    categoryLabel
+    isListOfActs
+    startDate
+    name
+    eventType
+    comment
+    endDate
+    diseaseId
+    hasOnlyYearInStartDate
+    hasOnlyMonthAndYearInStartDate
+    hasOnlyYearInEndDate
+    hasOnlyMonthAndYearInEndDate
+}

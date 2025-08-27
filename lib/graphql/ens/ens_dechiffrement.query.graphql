@@ -1,0 +1,5 @@
+query decrypt_value($encryptValue: String!) {
+    decrypt(encryptValue: $encryptValue){
+        decryptedValue
+    }
+}

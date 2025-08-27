@@ -1,0 +1,9 @@
+# import './ens_ps.fragment.graphql'
+
+query get_pml_professionnels_sante($patientId: String!) {
+    getHealthProfessionals(patientId: $patientId) {
+        healthProfessionals {
+            ...ps
+        }
+    }
+}

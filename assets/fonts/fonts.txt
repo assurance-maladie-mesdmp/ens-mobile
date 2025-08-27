@@ -1,0 +1,4 @@
+Les fichiers de police Open Sans ont été supprimés de ce dépôt.
+
+Vous pouvez les retrouver à la source officielle :
+https://fonts.google.com/specimen/Open+Sans

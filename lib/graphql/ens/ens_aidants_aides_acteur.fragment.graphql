@@ -1,0 +1,7 @@
+fragment acteur on DelegationActor {
+    idp
+    givenNames
+    familyName
+    birthDate
+    gender
+}

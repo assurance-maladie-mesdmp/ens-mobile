@@ -1,0 +1,9 @@
+query get_partage_profil($getLegalRepresentatives: GetLegalRepresentativesInput!) {
+    getLegalRepresentatives(getLegalRepresentatives: $getLegalRepresentatives) {
+        legalRepresentative {
+            lastName
+            firstName
+            statut
+        }
+    }
+}

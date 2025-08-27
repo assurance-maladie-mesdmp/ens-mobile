@@ -1,0 +1,13 @@
+# import './ens_habitudes_de_vie.fragment.graphql'
+
+query get_initial_habitudes_de_vie_section_answer($patientId: String!) {
+    alimentaire: fetchLifestyleAnswersForGivenSection(patientId: $patientId, sectionType: FOOD) {
+        ...habitudesDeVie
+    }
+    tabac: fetchLifestyleAnswersForGivenSection(patientId: $patientId, sectionType: TOBACCO) {
+        ...habitudesDeVie
+    }
+    activitePhysique: fetchLifestyleAnswersForGivenSection(patientId: $patientId, sectionType: PHYSICAL_ACTIVITY) {
+        ...habitudesDeVie
+    }
+}

@@ -1,0 +1,48 @@
+query get_habitudes_de_vie($patientId: String!) {
+    fetchLifestylesStatus(patientId: $patientId){
+        sections {
+            name
+            lastModifiedDate
+        }
+    }
+    fetchLifestylesMetadata(patientId: $patientId){
+        sections {
+            name
+            label
+            sectionTag
+            items {
+                name
+                itemTag
+                details {
+                    name
+                    label
+                    description
+                    example
+                    type
+                    detailTag
+                    options {
+                        value
+                        label
+                    }
+                    displayOn {
+                        name
+                        value
+                        range {
+                            min
+                            max
+                        }
+                    }
+                    maxLength
+                    constraints {
+                        message
+                        range {
+                            max
+                            min
+                        }
+                        regexp
+                    }
+                }
+            }
+        }
+    }
+}

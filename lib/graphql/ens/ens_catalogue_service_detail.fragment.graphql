@@ -1,0 +1,32 @@
+fragment detailService on Service {
+    id
+    name
+    description
+    longDescription
+    editor {
+        name
+    }
+    logo {
+        file
+        type
+    }
+    webUrl
+    iOsUrl
+    androidUrl
+    consumerDevice
+    medicalDevice
+    economicalModel
+    screenshots {
+        file
+        type
+    }
+    cguUrl
+    hasEchangeDonnees
+    finalities {
+        libelle
+        description
+        icone
+    }
+    urlSynchronisation
+    status
+}

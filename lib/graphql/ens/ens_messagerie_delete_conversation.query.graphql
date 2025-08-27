@@ -1,0 +1,8 @@
+mutation delete_conversation($patientId: String!, $conversationId: String!) {
+    moveToTrashConversation(conversationTrashInput: {
+        conversationId: $conversationId,
+        patientId: $patientId
+    }) {
+        success
+    }
+}

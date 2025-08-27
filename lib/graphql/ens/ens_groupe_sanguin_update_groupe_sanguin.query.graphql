@@ -1,0 +1,5 @@
+mutation update_groupe_sanguin($bloodGroupUpdateInput: BloodGroupUpdateInput!) {
+    updateBloodGroup(bloodGroupUpdateInput: $bloodGroupUpdateInput) {
+        success
+    }
+}

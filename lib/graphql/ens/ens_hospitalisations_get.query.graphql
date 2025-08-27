@@ -1,0 +1,24 @@
+query get_hospitalisations($patientId: String!) {
+    hospitalizations(patientId: $patientId) {
+        hospitalizations {
+            name,
+            comment,
+            id,
+            startDay,
+            startMonth,
+            startYear,
+            duration,
+            durationUnit,
+            linkedDocuments {
+                linkId
+                document {
+                    id
+                    title
+                }
+            }
+        }
+    }
+    unconcerned(section: HOSPITALIZATIONS, patientId: $patientId) {
+        declarationDate
+    }
+}

@@ -1,0 +1,18 @@
+query get_vaccinations($patientId: String!) {
+    vaccines(patientId: $patientId) {
+        vaccines {
+            vaccineId
+            effectiveTime
+            name
+            lotNumber
+            typeOfAdministration
+            performer
+            author
+            comment
+            pathologies
+            mandatory
+            authoredByPatient
+            vaccineRefId
+        }
+    }
+}

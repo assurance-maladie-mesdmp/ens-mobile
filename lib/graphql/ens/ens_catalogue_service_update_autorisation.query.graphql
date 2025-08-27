@@ -1,0 +1,5 @@
+mutation update_autorisation($serviceOid: String!, $patientId: String!){
+    confirmUpdateServiceVersionInformation(oid: $serviceOid, patientId: $patientId){
+        success
+    }
+}

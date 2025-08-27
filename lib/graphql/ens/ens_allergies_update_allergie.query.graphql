@@ -1,0 +1,5 @@
+mutation update_allergie($allergy: AllergyUpdateInput!) {
+    putAllergy(allergyUpdateInput: $allergy) {
+        success
+    }
+}

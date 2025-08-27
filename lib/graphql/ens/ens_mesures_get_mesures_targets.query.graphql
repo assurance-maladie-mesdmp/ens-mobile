@@ -1,0 +1,11 @@
+query get_mesures_targets($patientId: String!) {
+    measuresTargets(patientId: $patientId) {
+        targets {
+            id
+            type
+            value
+        }
+    }
+}
+
+

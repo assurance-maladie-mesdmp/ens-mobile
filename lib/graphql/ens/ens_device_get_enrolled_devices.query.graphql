@@ -1,0 +1,5 @@
+query get_enrolled_devices {
+    getEnrolledDevices {
+        numberOfDevices
+    }
+}

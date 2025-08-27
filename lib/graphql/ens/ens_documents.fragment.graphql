@@ -1,0 +1,27 @@
+fragment ensDocument on DocumentModel {
+    id
+    title
+    uploadedBy {
+        id
+        sourceAuthor
+        firstName
+        lastName
+        isPsClickable
+    }
+    createdAt
+    reportDate
+    category
+    pinned
+    confidentialities
+    canOwnerDelete
+    covidCertificate
+    canUpdateCategory
+    canUpdateConfidentialityOnly
+    canUpdateTitle
+    canUpdateCreatedAt
+    folder {
+        id
+        title
+    }
+    type
+}

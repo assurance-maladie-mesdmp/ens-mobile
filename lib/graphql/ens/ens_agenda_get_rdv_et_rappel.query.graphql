@@ -1,0 +1,21 @@
+# import './ens_agenda_rappel.fragment.graphql'
+# import './ens_agenda_rdv.fragment.graphql'
+# import './ens_agenda_examen_recommande.fragment.graphql'
+
+query get_rdv_et_rappel($patientId: String!) {
+    fetchAllFuturesAppointmentsByPatientId(patientId: $patientId) {
+        ...rdv
+    }
+    fetchAllPastsAppointmentsByPatientId(patientId: $patientId){
+        ...rdv
+    }
+    fetchAllFuturesRemindersByPatientId(patientId: $patientId){
+        ...rappel
+    }
+    fetchPastsRemindersByPatientId(patientId: $patientId){
+        ...rappel
+    }
+    fetchPreventionsByPatientId(patientId: $patientId) {
+        ...examenRecommande
+    }
+}
